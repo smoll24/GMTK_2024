@@ -1,6 +1,5 @@
-[gd_scene load_steps=18 format=3 uid="uid://4yspnc4n75hy"]
+[gd_scene load_steps=17 format=3 uid="uid://4yspnc4n75hy"]
 
-[ext_resource type="PackedScene" uid="uid://evpntvymwwor" path="res://src/main.tscn" id="1_bx5ub"]
 [ext_resource type="Script" path="res://src/ui_viewport.gd" id="1_os2fa"]
 [ext_resource type="FontFile" uid="uid://817qgoiy1gah" path="res://assets/resources/font/PixelOperator.ttf" id="2_ug1ns"]
 [ext_resource type="Texture2D" uid="uid://cv4ybm4jrow8x" path="res://assets/ui/close.png" id="3_a2srl"]
@@ -77,30 +76,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_os2fa")
-
-[node name="Background" type="ColorRect" parent="."]
-layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0.129412, 0.12549, 0.12549, 1)
-
-[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
-layout_mode = 0
-offset_left = 19.0
-offset_top = 20.0
-offset_right = 1171.0
-offset_bottom = 668.0
-scale = Vector2(0.9, 0.9)
-
-[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
-handle_input_locally = false
-size = Vector2i(1152, 648)
-render_target_update_mode = 4
-
-[node name="Main" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_bx5ub")]
 
 [node name="Text_open" type="Control" parent="."]
 visible = false

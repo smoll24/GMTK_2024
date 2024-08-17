@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://evpntvymwwor"]
+[gd_scene load_steps=5 format=3 uid="uid://evpntvymwwor"]
 
 [ext_resource type="PackedScene" uid="uid://bahqtgm80bqap" path="res://src/background.tscn" id="1_404rv"]
 [ext_resource type="Script" path="res://src/main.gd" id="1_eo8i4"]
+[ext_resource type="PackedScene" uid="uid://4yspnc4n75hy" path="res://src/ui_viewport.tscn" id="2_qdnx7"]
 [ext_resource type="Texture2D" uid="uid://dryje5ntr58m" path="res://assets/ui/fast-forward.png" id="3_vg2qy"]
 
 [node name="Main" type="Control"]
@@ -11,10 +12,30 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 script = ExtResource("1_eo8i4")
 
-[node name="Background" parent="." instance=ExtResource("1_404rv")]
+[node name="UIBackground" type="ColorRect" parent="."]
 layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.129412, 0.12549, 0.12549, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_right = 1152.0
+offset_bottom = 648.0
+scale = Vector2(0.9, 0.9)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Background" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_404rv")]
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 1
@@ -23,6 +44,10 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
+
+[node name="ui_viewport" parent="UI" instance=ExtResource("2_qdnx7")]
+layout_mode = 1
 
 [node name="CurrentTime" type="Label" parent="UI"]
 layout_mode = 0
@@ -37,10 +62,10 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -78.0
-offset_top = 7.0
-offset_right = -54.0
-offset_bottom = 31.0
+offset_left = -1148.0
+offset_top = 577.0
+offset_right = -1124.0
+offset_bottom = 601.0
 grow_horizontal = 0
 scale = Vector2(3, 3)
 icon = ExtResource("3_vg2qy")

@@ -1,7 +1,7 @@
 extends Control
 
 @onready var current_time_label = $UI/CurrentTime
-@onready var background = $Background
+@onready var background = $SubViewportContainer/SubViewport/Background
 
 const END_GAME_TIME = 1.5768e+17 #5 billion years in seconds
 

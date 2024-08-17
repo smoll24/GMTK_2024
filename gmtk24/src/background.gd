@@ -18,10 +18,10 @@ func _ready() -> void:
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
-func update_time(time : float, delta : float) -> void:
+func update_time(time : float, _delta : float) -> void:
 	var day_time = int(time) % TIME_IN_DAY
 	var sun_percent = 1 - float(day_time)/float(TIME_IN_DAY)
 	var sun_deg = sun_percent * 360
