@@ -13,7 +13,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if current_time - delta < 1.5768e+17:
+	if current_time - delta < 1.5768e+17: #billion years in seconds
 		current_time += delta
 	else:
 		current_time = 1.5768e+17
