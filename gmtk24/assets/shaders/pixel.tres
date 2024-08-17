@@ -1,0 +1,7 @@
+[gd_resource type="ShaderMaterial" load_steps=2 format=3 uid="uid://c4lpwrdmu5g8i"]
+
+[ext_resource type="Shader" path="res://assets/shaders/pixel.gdshader" id="1_loc1n"]
+
+[resource]
+shader = ExtResource("1_loc1n")
+shader_parameter/amount = 16
