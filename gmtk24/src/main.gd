@@ -9,7 +9,7 @@ var fast_forward_until = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	current_time = 0
-	time_skip_amount = 60
+	time_skip_amount = 60*60*24
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -27,5 +27,5 @@ func _process(delta: float) -> void:
 
 func _on_fast_forward_pressed() -> void:
 	fast_forward_until = current_time + time_skip_amount
-	Engine.time_scale = time_skip_amount
+	Engine.time_scale = time_skip_amount / 30
 	time_skip_amount *= 2

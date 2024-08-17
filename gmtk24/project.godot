@@ -19,6 +19,12 @@ config/icon="res://icon.svg"
 
 GlobalVariables="*res://src/GlobalVariables.gd"
 
+[display]
+
+window/stretch/mode="viewport"
+window/stretch/aspect="expand"
+window/stretch/scale_mode="integer"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
