@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bahqtgm80bqap"]
+[gd_scene load_steps=6 format=3 uid="uid://bahqtgm80bqap"]
 
 [ext_resource type="Script" path="res://src/background.gd" id="1_m0aom"]
 [ext_resource type="Texture2D" uid="uid://bifpf3nsvjh5k" path="res://assets/sun.png" id="2_4v1jc"]
+[ext_resource type="Texture2D" uid="uid://cv2ago7uw4bid" path="res://assets/city/city.png" id="3_lb1sw"]
 
 [sub_resource type="Gradient" id="Gradient_v6jeb"]
 colors = PackedColorArray(0.52549, 0.827451, 1, 1, 0.113725, 0.368627, 1, 1)
@@ -57,3 +58,12 @@ offset_bottom = -480.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_4v1jc")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_lb1sw")

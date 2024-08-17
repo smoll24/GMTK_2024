@@ -10,8 +10,7 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	roration_point.rotation -= delta/10
+	roration_point.rotation_degrees -= (delta/(60*60*24))*360
 	var sun_pos : Vector2 = sun.get_global_position()
 	var screen_size = GlobalVariables.get_screen_size()
 	sky.texture.fill_from = Vector2(sun_pos.x/screen_size.x,1)
-	print(sky.texture.fill_from)
