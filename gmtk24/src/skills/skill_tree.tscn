@@ -1,0 +1,58 @@
+[gd_scene load_steps=2 format=3 uid="uid://bfqpxdvn3ca7d"]
+
+[ext_resource type="PackedScene" uid="uid://ddqnukilp40yk" path="res://src/skills/skill_node.tscn" id="1_xlj7l"]
+
+[node name="SkillTree" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="UIBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.129412, 0.12549, 0.12549, 0.705882)
+
+[node name="SkillNode" parent="." instance=ExtResource("1_xlj7l")]
+layout_mode = 0
+offset_left = 518.0
+offset_top = 505.0
+offset_right = 582.0
+offset_bottom = 569.0
+max_level = 5
+
+[node name="SkillNode2" parent="SkillNode" instance=ExtResource("1_xlj7l")]
+layout_mode = 0
+offset_left = 103.2
+offset_top = -99.2
+offset_right = 167.2
+offset_bottom = -35.1999
+max_level = 2
+
+[node name="SkillNode4" parent="SkillNode/SkillNode2" instance=ExtResource("1_xlj7l")]
+layout_mode = 0
+offset_left = -66.2001
+offset_top = -80.8
+offset_right = -2.20007
+offset_bottom = -16.8
+
+[node name="SkillNode5" parent="SkillNode/SkillNode2" instance=ExtResource("1_xlj7l")]
+layout_mode = 0
+offset_left = 73.7999
+offset_top = -80.8
+offset_right = 137.8
+offset_bottom = -16.8
+
+[node name="SkillNode3" parent="SkillNode" instance=ExtResource("1_xlj7l")]
+layout_mode = 0
+offset_left = -93.9999
+offset_top = -87.0
+offset_right = -29.9999
+offset_bottom = -22.9999
+required_prev_level = 3
