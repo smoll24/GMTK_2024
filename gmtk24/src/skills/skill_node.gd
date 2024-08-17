@@ -33,4 +33,4 @@ func enable_button(new_level) -> void:
 func _on_pressed() -> void:
 	level = min(level + 1, max_level)
 	emit_signal("level_up", level)
-	self.self_modulate = Color(1,1,1)
+	self.self_modulate = Color(0.9,0.9,0.9)
