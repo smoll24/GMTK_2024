@@ -12,8 +12,8 @@ extends Control
 
 var day_modulate = Color(1,1,1)
 var night_modulate = Color(61.0/255.0, 41.0/255.0, 66.0/255.0)
-var summer_modulate = Color(0.382347, 0.467146, 0.780447)
-var winter_modulate = Color(0.4,0.45,0.5)
+var summer_modulate = Color(0.39, 0.47, 0.8)
+var winter_modulate = Color(0.35,0.44,0.63)
 var sunset_color = Color(1,1,0.2)
 
 # Called when the node enters the scene tree for the first time.
@@ -35,12 +35,16 @@ func update_time(time : float, _delta : float, sim_time_scale : int) -> void:
 	
 	var day_night_coef : float = sun_day_night.sample_baked(sun_percent)
 	var sunset_coef : float = sunset_blend.sample_baked(sun_percent)
+	var season_coef : float = sun_day_night.sample_baked(year_percent)
+	sun.position.y = 400 + 200 * sun_height.sample_baked(year_percent)
+	
 	var target_color : Color = day_modulate.lerp(night_modulate, day_night_coef)
 	var target_white_color : Color = Color(1,1,1).lerp(sunset_color, sunset_coef)
+	var target_sky_color : Color = summer_modulate.lerp(winter_modulate, season_coef)
 	var target_city_color : Color = Color(1,1,1).lerp(Color(0.5,0.5,0.5), day_night_coef)
 	var target_city_lights : Color = Color(1,1,1,0).lerp(Color(1,1,0.4,0.7), day_night_coef)
 	
-	sun.position.y = 400 + 200 * sun_height.sample_baked(year_percent)
+	sky.texture.gradient.colors[1] = sky.texture.gradient.colors[1].lerp(target_sky_color, 0.05)
 	
 	if sim_time_scale < GlobalVariables.SEC_IN_DAY*7:
 		var sun_pos : Vector2 = sun.get_global_position()

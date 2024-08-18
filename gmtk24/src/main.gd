@@ -42,7 +42,7 @@ func _process(delta: float) -> void:
 
 func _on_fast_forward_pressed() -> void:
 	fast_forward_until = sim_time + time_skip_amount
-	sim_time_scale = time_skip_amount# / 15
+	sim_time_scale = time_skip_amount / 15
 	time_skip_amount *= 2
 	choose_event()
 
