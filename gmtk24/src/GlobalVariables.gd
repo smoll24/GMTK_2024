@@ -17,6 +17,7 @@ func seconds_to_calendar(time_in_sec) -> Dictionary:
 	var hours = ((time_in_sec/60)/60)%24
 	var days = (((time_in_sec/60)/60)/24)%365
 	var years = (((time_in_sec/60)/60)/24)/365
+	days = days - years/4 + 1
 	
 	return {'year' : years,
 			'day' : days,
@@ -25,6 +26,7 @@ func seconds_to_calendar(time_in_sec) -> Dictionary:
 			'second' : seconds}
 
 func display_time_from_seconds(time_in_sec) -> String:
+	#return str(Time.get_datetime_dict_from_unix_time(time_in_sec))
 	var calendar_time : Dictionary = seconds_to_calendar(time_in_sec)
 	var seconds = calendar_time['second']
 	var minutes = calendar_time['minute']
@@ -37,7 +39,7 @@ func display_time_from_seconds(time_in_sec) -> String:
 	if days > 0:
 		time = "Day %02d " % [days] + time
 	if years > 0:
-		time = "Year %s " % [format_number(years + 2024)] + time
+		time = "Year %s " % [format_number(years + 1970)] + time
 	return time
 	
 func format_number(n: int) -> String:

@@ -26,7 +26,7 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func update_time(time : float, _delta : float) -> void:
+func update_time(time : float, _delta : float, sim_time_scale : int) -> void:
 	var calendar_time = GlobalVariables.seconds_to_calendar(time)
 	var day_time = int(time) % TIME_IN_DAY
 	var sun_percent = 1 - float(day_time)/float(TIME_IN_DAY)
@@ -44,7 +44,7 @@ func update_time(time : float, _delta : float) -> void:
 	
 	sun.position.y = 400 + 200 * sun_height.sample_baked(year_percent)
 	
-	if Engine.time_scale < TIME_IN_DAY*7:
+	if sim_time_scale < TIME_IN_DAY*7:
 		var sun_pos : Vector2 = sun.get_global_position()
 		var screen_size = GlobalVariables.get_screen_size()
 		sky.texture.fill_from = Vector2(sun_pos.x/screen_size.x,1)
