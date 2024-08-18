@@ -3,14 +3,16 @@ extends Node
 var aspect_ratio = Vector2i(16,9)
 var viewport_size : Vector2
 
-var resource : Dictionary = {
-	'people' : {'amount' : 5000, 'growth' : 10},
-	'food' : {'amount' : 5000, 'growth' : 10},
-	'lumber' : {'amount' : 5000, 'growth' : 10},
-	'metal' : {'amount' : 5000, 'growth' : 10},
-	'energy' : {'amount' : 5000, 'growth' : 10},
-	'finance' : {'amount' : 5000, 'growth' : 10},
-	'comms' : {'amount' : 5000, 'growth' : 10},
+enum RES{PEOPLE, FOOD, LUMBER, METAL, ENERGY, FINANCE, COMMS}
+
+var resource_dict : Dictionary = {
+	RES.PEOPLE : {'name' : 'People', 'amount' : 5000.0, 'growth' : 0.01},
+	RES.FOOD : {'name' : 'Food','amount' : 5000.0, 'growth' : 0.01},
+	RES.LUMBER : {'name' : 'Lumber','amount' : 100.0, 'growth' : 0.01},
+	RES.METAL : {'name' : 'Metal','amount' : 0.0, 'growth' : 0.01},
+	RES.ENERGY : {'name' : 'Energy','amount' : 0.0, 'growth' : 0.01},
+	RES.FINANCE : {'name' : 'Finance','amount' : 0.0, 'growth' : 0.01},
+	RES.COMMS : {'name' : 'Communication', 'amount' : 0.0, 'growth' : 0.01},
 }
 
 const SEC_IN_MIN : int = 60
@@ -69,3 +71,7 @@ func format_number(n: int) -> String:
 		return str(i).replace(",", ".") + "k"
 	else:
 		return str(n)
+
+func incease_resources(delta) -> void:
+	for res in resource_dict.values():
+		res['amount'] += res['growth'] * delta

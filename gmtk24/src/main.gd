@@ -30,6 +30,7 @@ func _process(delta: float) -> void:
 		print('YOU WIN')
 		sim_time_scale = 0
 	
+	GlobalVariables.incease_resources(delta * sim_time_scale)
 	background.update_time(start_sim_unix_time + sim_time, delta, sim_time_scale)
 	current_time_label.text = "current time: " + GlobalVariables.display_time_from_seconds(start_sim_unix_time + sim_time)
 	

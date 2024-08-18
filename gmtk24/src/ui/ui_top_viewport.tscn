@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://src/ui/ui_top_viewport.gd" id="1_85tmj"]
 [ext_resource type="Texture2D" uid="uid://p7da3ew0hyyq" path="res://assets/ui/frame.png" id="1_mfl0d"]
 [ext_resource type="PackedScene" uid="uid://dh3ovw33a5cvc" path="res://src/ui/tab_button.tscn" id="3_3kx3b"]
-[ext_resource type="Texture2D" uid="uid://c0hjpyr1gdqij" path="res://assets/ui/sheltertree.png" id="3_rs1l4"]
 [ext_resource type="Texture2D" uid="uid://cv7ahjl0067ys" path="res://assets/ui/foodtree.png" id="4_41wai"]
+[ext_resource type="PackedScene" uid="uid://coc5jpcvv4kv2" path="res://src/ui/resource_display.tscn" id="4_42rt0"]
 [ext_resource type="Texture2D" uid="uid://c4u0n5uhmrqq3" path="res://assets/ui/woodtree.png" id="5_6aaea"]
 [ext_resource type="Texture2D" uid="uid://81hjphrobqj7" path="res://assets/ui/metaltree.png" id="6_siv4h"]
 [ext_resource type="Texture2D" uid="uid://b4dbcfc3l6ugy" path="res://assets/ui/satellitetree.png" id="7_an0kb"]
@@ -36,7 +36,6 @@ grow_vertical = 2
 script = ExtResource("1_85tmj")
 
 [node name="Res_open" type="Control" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -164,45 +163,39 @@ offset_bottom = 51.4696
 rotation = 1.5708
 scale = Vector2(3, -3)
 
-[node name="Sheltertree" type="Sprite2D" parent="Res_open"]
-position = Vector2(825.542, 101.997)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("3_rs1l4")
-
-[node name="Foodtree" type="Sprite2D" parent="Res_open"]
-position = Vector2(824.741, 174.527)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("4_41wai")
-
-[node name="Woodtree" type="Sprite2D" parent="Res_open"]
-position = Vector2(824.741, 246.527)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("5_6aaea")
-
-[node name="Metaltree" type="Sprite2D" parent="Res_open"]
-position = Vector2(824.741, 318.527)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("6_siv4h")
-
-[node name="Energytree" type="Sprite2D" parent="Res_open"]
-position = Vector2(824.741, 390.527)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("8_tmmcp")
-
-[node name="Financetree" type="Sprite2D" parent="Res_open"]
-position = Vector2(824.741, 462.527)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("8_ofb1n")
-
-[node name="Satellitetree" type="Sprite2D" parent="Res_open"]
-position = Vector2(824.741, 534.527)
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("7_an0kb")
-
-[node name="Fisttree" type="Sprite2D" parent="Res_open"]
-position = Vector2(824.741, 606.527)
-scale = Vector2(0.3, 0.3)
+[node name="People" parent="Res_open" instance=ExtResource("4_42rt0")]
+position = Vector2(824, 110)
 texture = ExtResource("11_ql56o")
+
+[node name="Food" parent="Res_open" instance=ExtResource("4_42rt0")]
+position = Vector2(825.001, 181)
+texture = ExtResource("4_41wai")
+resource_type = 1
+
+[node name="Lumber" parent="Res_open" instance=ExtResource("4_42rt0")]
+position = Vector2(824, 252)
+texture = ExtResource("5_6aaea")
+resource_type = 2
+
+[node name="Metal" parent="Res_open" instance=ExtResource("4_42rt0")]
+position = Vector2(824, 323)
+texture = ExtResource("6_siv4h")
+resource_type = 3
+
+[node name="Energy" parent="Res_open" instance=ExtResource("4_42rt0")]
+position = Vector2(824, 394)
+texture = ExtResource("8_tmmcp")
+resource_type = 4
+
+[node name="Finance" parent="Res_open" instance=ExtResource("4_42rt0")]
+position = Vector2(824, 465)
+texture = ExtResource("8_ofb1n")
+resource_type = 5
+
+[node name="Comms" parent="Res_open" instance=ExtResource("4_42rt0")]
+position = Vector2(824, 536)
+texture = ExtResource("7_an0kb")
+resource_type = 5
 
 [node name="Res_close" type="Control" parent="."]
 layout_mode = 1
