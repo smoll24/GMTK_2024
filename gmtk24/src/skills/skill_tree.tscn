@@ -1,5 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://bfqpxdvn3ca7d"]
+[gd_scene load_steps=4 format=3 uid="uid://bfqpxdvn3ca7d"]
 
+[ext_resource type="Script" path="res://src/skills/skill_tree.gd" id="1_duxut"]
 [ext_resource type="PackedScene" uid="uid://ddqnukilp40yk" path="res://src/skills/skill_node.tscn" id="1_xlj7l"]
 [ext_resource type="Texture2D" uid="uid://c0hjpyr1gdqij" path="res://assets/ui/sheltertree.png" id="2_8phaf"]
 
@@ -10,6 +11,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_duxut")
 
 [node name="UIBackground" type="ColorRect" parent="."]
 layout_mode = 1
