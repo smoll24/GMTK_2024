@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://bahqtgm80bqap"]
+[gd_scene load_steps=7 format=3 uid="uid://bahqtgm80bqap"]
 
 [ext_resource type="Script" path="res://src/background.gd" id="1_m0aom"]
 [ext_resource type="Texture2D" uid="uid://bifpf3nsvjh5k" path="res://assets/sky/sun.png" id="2_4v1jc"]
 [ext_resource type="Texture2D" uid="uid://cv2ago7uw4bid" path="res://assets/city/city.png" id="3_lb1sw"]
+[ext_resource type="Texture2D" uid="uid://bevqnqsbj5iar" path="res://assets/city/city_light_mask.png" id="4_2stuj"]
 
 [sub_resource type="Gradient" id="Gradient_v6jeb"]
 colors = PackedColorArray(1, 1, 1, 1, 0.382347, 0.467146, 0.780447, 1)
@@ -50,9 +51,9 @@ anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
 offset_left = -20.0
-offset_top = 480.0
+offset_top = 500.0
 offset_right = 20.0
-offset_bottom = 520.0
+offset_bottom = 540.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_4v1jc")
@@ -65,3 +66,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_lb1sw")
+
+[node name="CityLightMask" type="TextureRect" parent="."]
+self_modulate = Color(1, 1, 0.4, 0)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_2stuj")
