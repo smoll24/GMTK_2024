@@ -50,8 +50,16 @@ func choose_event():
 	#Choose unoccupied department
 	if len(Events.avail_dept) == 1:
 		dept = Events.avail_dept[0]
+		diff = ["small","medium","large"].pick_random()
+		event = Events.events_dict[dept][diff].pick_random()
+		Events.cur_events.append(event)
+		Events.avail_dept.erase(dept)
+		print("Event chosen is: ",event[0])
+		
 	elif len(Events.avail_dept) > 1:
 		dept = Events.avail_dept.pick_random()
-	diff = ["small","medium","large"].pick_random()
-	event = Events.events_dict[dept][diff].pick_random()
-	print("Event chosen is: ",event[0])
+		diff = ["small","medium","large"].pick_random()
+		event = Events.events_dict[dept][diff].pick_random()
+		Events.cur_events.append(event)
+		Events.avail_dept.erase(dept)
+		print("Event chosen is: ",event[0])

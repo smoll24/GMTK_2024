@@ -1,0 +1,199 @@
+[gd_scene load_steps=9 format=3 uid="uid://evpntvymwwor"]
+
+[ext_resource type="PackedScene" uid="uid://bahqtgm80bqap" path="res://src/background.tscn" id="1_404rv"]
+[ext_resource type="Script" path="res://src/main.gd" id="1_eo8i4"]
+[ext_resource type="PackedScene" uid="uid://4yspnc4n75hy" path="res://src/ui/ui_viewport.tscn" id="2_qdnx7"]
+[ext_resource type="Texture2D" uid="uid://dpb4dsqoohil2" path="res://assets/ui/ff2.png" id="4_o4dih"]
+[ext_resource type="PackedScene" uid="uid://bfqpxdvn3ca7d" path="res://src/skills/skill_tree.tscn" id="5_q30sc"]
+[ext_resource type="Texture2D" uid="uid://p7da3ew0hyyq" path="res://assets/ui/frame.png" id="6_2b8w4"]
+[ext_resource type="PackedScene" uid="uid://brj5osgqq1xqi" path="res://src/ui/ui_top_viewport.tscn" id="7_508dp"]
+[ext_resource type="PackedScene" uid="uid://dm312lppyqi6y" path="res://src/ui/ui_pause.tscn" id="8_w2nap"]
+
+[node name="Main" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_eo8i4")
+
+[node name="UIBackground" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.129412, 0.12549, 0.12549, 1)
+
+[node name="SubViewportContainer" type="SubViewportContainer" parent="."]
+layout_mode = 0
+offset_top = 14.0
+offset_right = 1152.0
+offset_bottom = 662.0
+scale = Vector2(0.9, 0.9)
+
+[node name="SubViewport" type="SubViewport" parent="SubViewportContainer"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 4
+
+[node name="Background" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_404rv")]
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+
+[node name="ui_viewport" parent="UI" instance=ExtResource("2_qdnx7")]
+layout_mode = 1
+
+[node name="CurrentTime" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 7.0
+offset_top = 24.0
+offset_right = 109.0
+offset_bottom = 47.0
+text = "current time:"
+
+[node name="Button_Frame" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -24.0
+offset_right = 2.0
+offset_bottom = -655.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame3" type="Sprite2D" parent="UI/Button_Frame"]
+position = Vector2(103, 588)
+rotation = 1.5708
+scale = Vector2(4, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
+
+[node name="Frame4" type="Sprite2D" parent="UI/Button_Frame"]
+position = Vector2(63, 634)
+scale = Vector2(4, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
+
+[node name="Frame5" type="Sprite2D" parent="UI/Button_Frame"]
+position = Vector2(17, 590.129)
+rotation = 1.5708
+scale = Vector2(4.34412, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
+
+[node name="Frame2" type="Sprite2D" parent="UI/Button_Frame"]
+position = Vector2(60, 548)
+scale = Vector2(4.25, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
+
+[node name="FastForward" type="Button" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1128.0
+offset_top = 527.0
+offset_right = -970.0
+offset_bottom = 685.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("4_o4dih")
+
+[node name="SkillTree" parent="." instance=ExtResource("5_q30sc")]
+visible = false
+layout_mode = 1
+
+[node name="UI_Top" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Frame" type="Control" parent="UI_Top"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Top_Bar" type="Control" parent="UI_Top/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_bottom = -631.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame2" type="Sprite2D" parent="UI_Top/Frame/Top_Bar"]
+position = Vector2(808, 8)
+scale = Vector2(4, 4)
+texture = ExtResource("6_2b8w4")
+
+[node name="Frame" type="Sprite2D" parent="UI_Top/Frame/Top_Bar"]
+position = Vector2(288, 8)
+scale = Vector2(4, 4)
+texture = ExtResource("6_2b8w4")
+
+[node name="Frame3" type="Sprite2D" parent="UI_Top/Frame/Top_Bar"]
+position = Vector2(864, 8)
+rotation = 3.14159
+scale = Vector2(4, -4)
+texture = ExtResource("6_2b8w4")
+
+[node name="Bottom_Bar" type="Control" parent="UI_Top/Frame"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 648.0
+offset_bottom = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(1, -1)
+
+[node name="Frame2" type="Sprite2D" parent="UI_Top/Frame/Bottom_Bar"]
+position = Vector2(808, 8)
+scale = Vector2(4, 4)
+texture = ExtResource("6_2b8w4")
+
+[node name="Frame" type="Sprite2D" parent="UI_Top/Frame/Bottom_Bar"]
+position = Vector2(288, 8)
+scale = Vector2(4, 4)
+texture = ExtResource("6_2b8w4")
+
+[node name="Frame3" type="Sprite2D" parent="UI_Top/Frame/Bottom_Bar"]
+position = Vector2(864, 8)
+rotation = 3.14159
+scale = Vector2(4, -4)
+texture = ExtResource("6_2b8w4")
+
+[node name="ui_top_viewport" parent="UI_Top" instance=ExtResource("7_508dp")]
+layout_mode = 1
+mouse_filter = 2
+
+[node name="ui_pause" parent="." instance=ExtResource("8_w2nap")]
+layout_mode = 1
+
+[connection signal="focus_entered" from="UI/FastForward" to="." method="_on_fast_forward_focus_entered"]
+[connection signal="focus_exited" from="UI/FastForward" to="." method="_on_fast_forward_focus_exited"]
+[connection signal="pressed" from="UI/FastForward" to="." method="_on_fast_forward_pressed"]
