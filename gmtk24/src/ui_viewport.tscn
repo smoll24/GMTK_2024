@@ -11,12 +11,12 @@
 [ext_resource type="Texture2D" uid="uid://p7da3ew0hyyq" path="res://assets/ui/frame.png" id="10_dg1cu"]
 [ext_resource type="Texture2D" uid="uid://dluv43yynb7bk" path="res://assets/ui/close2.png" id="10_qe3hc"]
 
-[sub_resource type="Gradient" id="Gradient_54u1x"]
+[sub_resource type="Gradient" id="Gradient_0v7p3"]
 offsets = PackedFloat32Array(0, 0.727273)
 colors = PackedColorArray(0.129412, 0.12549, 0.12549, 0.541176, 0.129412, 0.12549, 0.12549, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_noich"]
-gradient = SubResource("Gradient_54u1x")
+gradient = SubResource("Gradient_0v7p3")
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ejbu2"]
 bg_color = Color(1, 1, 1, 1)
