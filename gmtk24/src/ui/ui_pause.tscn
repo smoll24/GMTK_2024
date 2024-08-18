@@ -1,0 +1,133 @@
+[gd_scene load_steps=7 format=3 uid="uid://dm312lppyqi6y"]
+
+[ext_resource type="Script" path="res://src/ui/ui_pause.gd" id="1_vyssb"]
+[ext_resource type="Texture2D" uid="uid://p7da3ew0hyyq" path="res://assets/ui/frame.png" id="1_x5u1l"]
+[ext_resource type="FontFile" uid="uid://817qgoiy1gah" path="res://assets/resources/font/PixelOperator.ttf" id="2_8awh0"]
+
+[sub_resource type="Gradient" id="Gradient_s1hiu"]
+colors = PackedColorArray(0, 0, 0, 1, 1, 1, 1, 0)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_g0rqf"]
+gradient = SubResource("Gradient_s1hiu")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_n21g1"]
+bg_color = Color(0, 0, 0, 0.772549)
+
+[node name="ui_pause" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vyssb")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_top = 653.0
+offset_right = -497.0
+offset_bottom = 1182.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+texture = SubResource("GradientTexture1D_g0rqf")
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.513726)
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -161.0
+offset_right = 259.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.129412, 0.12549, 0.12549, 1)
+
+[node name="Frame" type="Sprite2D" parent="."]
+position = Vector2(577.5, 156)
+scale = Vector2(3.78472, 4)
+texture = ExtResource("1_x5u1l")
+
+[node name="Frame3" type="Sprite2D" parent="."]
+position = Vector2(313, 323.376)
+rotation = 1.5708
+scale = Vector2(4.8759, 4)
+texture = ExtResource("1_x5u1l")
+hframes = 2
+
+[node name="Frame2" type="Sprite2D" parent="."]
+position = Vector2(577.5, 492)
+scale = Vector2(3.78472, -4)
+texture = ExtResource("1_x5u1l")
+
+[node name="Frame4" type="Sprite2D" parent="."]
+position = Vector2(842, 323.906)
+rotation = 1.5708
+scale = Vector2(4.89071, -4)
+texture = ExtResource("1_x5u1l")
+hframes = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -113.0
+offset_top = -106.0
+offset_right = 121.0
+offset_bottom = 105.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8awh0")
+theme_override_font_sizes/font_size = 50
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="cont_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8awh0")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_n21g1")
+text = "Continue"
+
+[node name="sound_toggle" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8awh0")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_n21g1")
+text = "Sound"
+
+[node name="restart_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_8awh0")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_n21g1")
+text = "Restart"
+
+[connection signal="pressed" from="VBoxContainer/cont_button" to="." method="_on_cont_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/restart_button" to="." method="_on_restart_button_pressed"]
