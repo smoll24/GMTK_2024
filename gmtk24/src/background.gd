@@ -12,6 +12,8 @@ extends Control
 
 var day_modulate = Color(1,1,1)
 var night_modulate = Color(61.0/255.0, 41.0/255.0, 66.0/255.0)
+var summer_modulate = Color(0.382347, 0.467146, 0.780447)
+var winter_modulate = Color(0.4,0.45,0.5)
 var sunset_color = Color(1,1,0.2)
 
 const TIME_IN_DAY = 60*60*24

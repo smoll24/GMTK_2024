@@ -1,0 +1,47 @@
+[gd_scene load_steps=14 format=3 uid="uid://dh3ovw33a5cvc"]
+
+[ext_resource type="Texture2D" uid="uid://dluv43yynb7bk" path="res://assets/ui/close2.png" id="1_rneqr"]
+[ext_resource type="Script" path="res://src/ui/tab_button.gd" id="2_vtlvl"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_5mpfy"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ttlni"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ivdp0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_apaxi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wvt4t"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_qkp00"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1sfkq"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kj7pf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_a5p1i"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uqs6m"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_n37tr"]
+
+[node name="Tab_button" type="Button"]
+offset_right = 14.0
+offset_bottom = 19.0
+scale = Vector2(3, 3)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_5mpfy")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_ttlni")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ivdp0")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_apaxi")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_wvt4t")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_qkp00")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_1sfkq")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_kj7pf")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_a5p1i")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_uqs6m")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_n37tr")
+icon = ExtResource("1_rneqr")
+script = ExtResource("2_vtlvl")
+
+[connection signal="mouse_entered" from="." to="." method="_on_mouse_entered"]
+[connection signal="mouse_exited" from="." to="." method="_on_mouse_exited"]
