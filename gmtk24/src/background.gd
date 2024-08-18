@@ -25,9 +25,9 @@ func _process(_delta: float) -> void:
 	pass
 
 func update_time(time : float, _delta : float, sim_time_scale : int) -> void:
-	var calendar_time = GlobalVariables.seconds_to_calendar(time)
-	var day_time = int(time) % GlobalVariables.SEC_IN_DAY
-	var sun_percent = 1 - float(day_time)/float(GlobalVariables.SEC_IN_DAY)
+	var calendar_time = GV.seconds_to_calendar(time)
+	var day_time = int(time) % GV.SEC_IN_DAY
+	var sun_percent = 1 - float(day_time)/float(GV.SEC_IN_DAY)
 	var year_percent = float(calendar_time['day'])/365.0
 	var sun_deg = sun_percent * 360
 	
@@ -46,9 +46,9 @@ func update_time(time : float, _delta : float, sim_time_scale : int) -> void:
 	
 	sky.texture.gradient.colors[1] = sky.texture.gradient.colors[1].lerp(target_sky_color, 0.05)
 	
-	if sim_time_scale < GlobalVariables.SEC_IN_DAY*7:
+	if sim_time_scale < GV.SEC_IN_DAY*7:
 		var sun_pos : Vector2 = sun.get_global_position()
-		var screen_size = GlobalVariables.get_screen_size()
+		var screen_size = GV.get_screen_size()
 		sky.texture.fill_from = Vector2(sun_pos.x/screen_size.x,1)
 		sky.self_modulate = sky.self_modulate.lerp(target_color, 0.1)
 		sky.texture.gradient.colors[0] = target_white_color
