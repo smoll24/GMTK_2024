@@ -1,0 +1,144 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbgr0en7oeex3"]
+
+[ext_resource type="Script" path="res://src/introduction.gd" id="1_holq8"]
+[ext_resource type="Texture2D" uid="uid://cv2ago7uw4bid" path="res://assets/city/city.png" id="2_10lnd"]
+[ext_resource type="Texture2D" uid="uid://p7da3ew0hyyq" path="res://assets/ui/frame.png" id="2_elxqo"]
+[ext_resource type="FontFile" uid="uid://817qgoiy1gah" path="res://assets/resources/font/PixelOperator.ttf" id="3_2k6vy"]
+
+[sub_resource type="Gradient" id="Gradient_tjq33"]
+colors = PackedColorArray(1, 1, 1, 1, 0.382347, 0.467146, 0.780447, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_xe31x"]
+gradient = SubResource("Gradient_tjq33")
+fill = 1
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_76y7l"]
+bg_color = Color(0, 0, 0, 0.772549)
+
+[node name="introduction" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_holq8")
+
+[node name="bg" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Sky" type="TextureRect" parent="bg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = 24.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_xe31x")
+
+[node name="City" type="TextureRect" parent="bg"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -16.0
+offset_right = 24.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_10lnd")
+
+[node name="box" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="box"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -256.0
+offset_top = -161.0
+offset_right = 259.0
+offset_bottom = 161.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.129412, 0.12549, 0.12549, 1)
+
+[node name="Frame" type="Sprite2D" parent="box"]
+position = Vector2(577.5, 156)
+scale = Vector2(3.78472, 4)
+texture = ExtResource("2_elxqo")
+
+[node name="Frame3" type="Sprite2D" parent="box"]
+position = Vector2(313, 323.376)
+rotation = 1.5708
+scale = Vector2(4.8759, 4)
+texture = ExtResource("2_elxqo")
+hframes = 2
+
+[node name="Frame2" type="Sprite2D" parent="box"]
+position = Vector2(577.5, 492)
+scale = Vector2(3.78472, -4)
+texture = ExtResource("2_elxqo")
+
+[node name="Frame4" type="Sprite2D" parent="box"]
+position = Vector2(842, 323.906)
+rotation = 1.5708
+scale = Vector2(4.89071, -4)
+texture = ExtResource("2_elxqo")
+hframes = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -221.0
+offset_top = -137.0
+offset_right = 232.0
+offset_bottom = 139.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_2k6vy")
+theme_override_font_sizes/normal_font_size = 25
+text = "Welcome etc introductiory text and all that jazz"
+fit_content = true
+
+[node name="name_input" type="LineEdit" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2k6vy")
+theme_override_font_sizes/font_size = 20
+text = "Enter City Name"
+alignment = 1
+
+[node name="submit_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_2k6vy")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_76y7l")
+text = "Submit"
+
+[connection signal="pressed" from="VBoxContainer/submit_button" to="." method="_on_submit_button_pressed"]
