@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://bahqtgm80bqap" path="res://src/background.tscn" id="1_404rv"]
 [ext_resource type="Script" path="res://src/main.gd" id="1_eo8i4"]
 [ext_resource type="PackedScene" uid="uid://4yspnc4n75hy" path="res://src/ui_viewport.tscn" id="2_qdnx7"]
-[ext_resource type="Texture2D" uid="uid://dryje5ntr58m" path="res://assets/ui/fast-forward.png" id="3_vg2qy"]
+[ext_resource type="Texture2D" uid="uid://dpb4dsqoohil2" path="res://assets/ui/ff2.png" id="4_o4dih"]
 [ext_resource type="PackedScene" uid="uid://bfqpxdvn3ca7d" path="res://src/skills/skill_tree.tscn" id="5_q30sc"]
 [ext_resource type="Texture2D" uid="uid://p7da3ew0hyyq" path="res://assets/ui/frame.png" id="6_2b8w4"]
 
@@ -60,18 +60,29 @@ offset_right = 109.0
 offset_bottom = 47.0
 text = "current time:"
 
+[node name="ButtonFrame" type="TextureRect" parent="UI"]
+layout_mode = 0
+offset_left = -4.0
+offset_top = 548.0
+offset_right = 19.0
+offset_bottom = 573.0
+scale = Vector2(4, 4)
+texture = ExtResource("6_2b8w4")
+expand_mode = 1
+stretch_mode = 1
+
 [node name="FastForward" type="Button" parent="UI"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -1140.0
-offset_top = 545.0
-offset_right = -1116.0
-offset_bottom = 569.0
+offset_left = -1150.0
+offset_top = 554.0
+offset_right = -992.0
+offset_bottom = 712.0
 grow_horizontal = 0
-scale = Vector2(3, 3)
-icon = ExtResource("3_vg2qy")
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("4_o4dih")
 
 [node name="SkillTree" parent="." instance=ExtResource("5_q30sc")]
 visible = false
