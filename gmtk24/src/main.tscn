@@ -192,7 +192,6 @@ layout_mode = 1
 mouse_filter = 2
 
 [node name="ui_pause" parent="." instance=ExtResource("8_w2nap")]
-visible = false
 layout_mode = 1
 
 [connection signal="focus_entered" from="UI/FastForward" to="." method="_on_fast_forward_focus_entered"]

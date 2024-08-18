@@ -40,7 +40,7 @@ func anim_up():
 	
 
 func _on_start_button_pressed() -> void:
-	get_tree().change_scene_to_file("res://src/main.tscn")
+	get_tree().change_scene_to_file("res://src/introduction.tscn")
 
 func _on_quit_button_pressed() -> void:
 	get_tree().quit()
