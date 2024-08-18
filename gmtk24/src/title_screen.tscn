@@ -1,0 +1,212 @@
+[gd_scene load_steps=14 format=3 uid="uid://dcpjgjxkhe4gy"]
+
+[ext_resource type="Texture2D" uid="uid://c4sjw10hkq48" path="res://assets/city/city4.png" id="1_5c71m"]
+[ext_resource type="Texture2D" uid="uid://bifpf3nsvjh5k" path="res://assets/sky/sun.png" id="1_cakot"]
+[ext_resource type="Script" path="res://src/title_screen.gd" id="1_lxook"]
+[ext_resource type="Texture2D" uid="uid://cgtbriheb0atp" path="res://assets/city/city3.png" id="2_5oksm"]
+[ext_resource type="Texture2D" uid="uid://8v0kx2dr5g3t" path="res://assets/city/city2.png" id="3_8c1jc"]
+[ext_resource type="Texture2D" uid="uid://b3ocotmk40wlm" path="res://assets/city/city1.png" id="4_tslen"]
+[ext_resource type="Texture2D" uid="uid://p7da3ew0hyyq" path="res://assets/ui/frame.png" id="6_82k3e"]
+[ext_resource type="FontFile" uid="uid://817qgoiy1gah" path="res://assets/resources/font/PixelOperator.ttf" id="7_b71kp"]
+
+[sub_resource type="Gradient" id="Gradient_v6jeb"]
+colors = PackedColorArray(1, 1, 1, 1, 0.382347, 0.467146, 0.780447, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_aj7x0"]
+gradient = SubResource("Gradient_v6jeb")
+fill = 1
+fill_from = Vector2(0.5, 1)
+fill_to = Vector2(0.5, 0)
+
+[sub_resource type="Gradient" id="Gradient_bfqfx"]
+colors = PackedColorArray(0.262745, 0.0156863, 0.364706, 0.498039, 0, 0.752941, 0.854902, 0.478431)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_1iacx"]
+gradient = SubResource("Gradient_bfqfx")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gwuim"]
+bg_color = Color(0, 0, 0, 0.772549)
+
+[node name="TitleScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_lxook")
+
+[node name="Sky" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("GradientTexture2D_aj7x0")
+
+[node name="Sun" type="TextureRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -172.0
+offset_right = 20.0
+offset_bottom = -132.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_cakot")
+
+[node name="city4" type="Sprite2D" parent="."]
+position = Vector2(571, 350)
+texture = ExtResource("1_5c71m")
+
+[node name="city3" type="Sprite2D" parent="."]
+position = Vector2(570, 355)
+texture = ExtResource("2_5oksm")
+
+[node name="city2" type="Sprite2D" parent="."]
+position = Vector2(573, 336)
+texture = ExtResource("3_8c1jc")
+
+[node name="city1" type="Sprite2D" parent="."]
+position = Vector2(568, 328)
+texture = ExtResource("4_tslen")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -19.0
+offset_top = 668.0
+offset_right = -494.0
+offset_bottom = 1200.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+texture = SubResource("GradientTexture2D_1iacx")
+
+[node name="TItle" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 56.0
+offset_bottom = 56.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="TItle"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -343.0
+offset_top = -275.0
+offset_right = 343.0
+offset_bottom = -157.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.760784)
+
+[node name="Frame" type="Control" parent="TItle"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -56.0
+offset_bottom = -462.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame6" type="Sprite2D" parent="TItle/Frame"]
+position = Vector2(926, 164.788)
+rotation = 1.5708
+scale = Vector2(5.213, -4)
+texture = ExtResource("6_82k3e")
+hframes = 5
+
+[node name="Frame5" type="Sprite2D" parent="TItle/Frame"]
+position = Vector2(227, 164.788)
+rotation = 1.5708
+scale = Vector2(5.21298, 4)
+texture = ExtResource("6_82k3e")
+hframes = 5
+
+[node name="Frame" type="Sprite2D" parent="TItle/Frame"]
+position = Vector2(507, 98)
+scale = Vector2(4, 4)
+texture = ExtResource("6_82k3e")
+
+[node name="Frame2" type="Sprite2D" parent="TItle/Frame"]
+position = Vector2(646, 98)
+scale = Vector2(-4, 4)
+texture = ExtResource("6_82k3e")
+
+[node name="Frame3" type="Sprite2D" parent="TItle/Frame"]
+position = Vector2(507, 231)
+scale = Vector2(4, -4)
+texture = ExtResource("6_82k3e")
+
+[node name="Frame4" type="Sprite2D" parent="TItle/Frame"]
+position = Vector2(646, 231)
+scale = Vector2(-4, -4)
+texture = ExtResource("6_82k3e")
+
+[node name="Label" type="Label" parent="TItle"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.204
+anchor_top = 0.165
+anchor_right = 0.796
+anchor_bottom = 0.347
+offset_left = -0.00801086
+offset_top = -55.92
+offset_right = 0.00793457
+offset_bottom = -55.856
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("7_b71kp")
+theme_override_font_sizes/font_size = 60
+text = "CityScaler"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -194.0
+offset_top = -19.0
+offset_right = 195.0
+offset_bottom = 187.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Start_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_b71kp")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_gwuim")
+text = "Start"
+
+[node name="Quit_button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("7_b71kp")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_gwuim")
+text = "Quit"
+
+[connection signal="pressed" from="VBoxContainer/Start_button" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Quit_button" to="." method="_on_quit_button_pressed"]

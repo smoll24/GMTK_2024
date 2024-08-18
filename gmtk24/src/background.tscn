@@ -5,11 +5,11 @@
 [ext_resource type="Texture2D" uid="uid://cv2ago7uw4bid" path="res://assets/city/city.png" id="3_lb1sw"]
 [ext_resource type="Texture2D" uid="uid://bevqnqsbj5iar" path="res://assets/city/city_light_mask.png" id="4_2stuj"]
 
-[sub_resource type="Gradient" id="Gradient_v6jeb"]
+[sub_resource type="Gradient" id="Gradient_tjq33"]
 colors = PackedColorArray(1, 1, 1, 1, 0.382347, 0.467146, 0.780447, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_mwag0"]
-gradient = SubResource("Gradient_v6jeb")
+gradient = SubResource("Gradient_tjq33")
 fill = 1
 fill_from = Vector2(0.5, 1)
 fill_to = Vector2(0.5, 0)

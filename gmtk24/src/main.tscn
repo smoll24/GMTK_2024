@@ -60,26 +60,53 @@ offset_right = 109.0
 offset_bottom = 47.0
 text = "current time:"
 
-[node name="ButtonFrame" type="TextureRect" parent="UI"]
-layout_mode = 0
-offset_left = -4.0
-offset_top = 548.0
-offset_right = 19.0
-offset_bottom = 573.0
+[node name="Button_Frame" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -24.0
+offset_right = 2.0
+offset_bottom = -655.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame3" type="Sprite2D" parent="UI/Button_Frame"]
+position = Vector2(103, 588)
+rotation = 1.5708
 scale = Vector2(4, 4)
 texture = ExtResource("6_2b8w4")
-expand_mode = 1
-stretch_mode = 1
+hframes = 6
+
+[node name="Frame4" type="Sprite2D" parent="UI/Button_Frame"]
+position = Vector2(63, 634)
+scale = Vector2(4, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
+
+[node name="Frame5" type="Sprite2D" parent="UI/Button_Frame"]
+position = Vector2(17, 590.129)
+rotation = 1.5708
+scale = Vector2(4.34412, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
+
+[node name="Frame2" type="Sprite2D" parent="UI/Button_Frame"]
+position = Vector2(60, 548)
+scale = Vector2(4.25, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
 
 [node name="FastForward" type="Button" parent="UI"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -1150.0
-offset_top = 554.0
-offset_right = -992.0
-offset_bottom = 712.0
+offset_left = -1128.0
+offset_top = 527.0
+offset_right = -970.0
+offset_bottom = 685.0
 grow_horizontal = 0
 scale = Vector2(0.5, 0.5)
 icon = ExtResource("4_o4dih")
@@ -149,4 +176,6 @@ rotation = 3.14159
 scale = Vector2(4, -4)
 texture = ExtResource("6_2b8w4")
 
+[connection signal="focus_entered" from="UI/FastForward" to="." method="_on_fast_forward_focus_entered"]
+[connection signal="focus_exited" from="UI/FastForward" to="." method="_on_fast_forward_focus_exited"]
 [connection signal="pressed" from="UI/FastForward" to="." method="_on_fast_forward_pressed"]

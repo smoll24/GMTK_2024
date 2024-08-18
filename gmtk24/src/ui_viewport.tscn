@@ -1,14 +1,15 @@
-[gd_scene load_steps=17 format=3 uid="uid://4yspnc4n75hy"]
+[gd_scene load_steps=40 format=3 uid="uid://4yspnc4n75hy"]
 
 [ext_resource type="Script" path="res://src/ui_viewport.gd" id="1_os2fa"]
 [ext_resource type="FontFile" uid="uid://817qgoiy1gah" path="res://assets/resources/font/PixelOperator.ttf" id="2_ug1ns"]
-[ext_resource type="Texture2D" uid="uid://cv4ybm4jrow8x" path="res://assets/ui/close.png" id="3_a2srl"]
 [ext_resource type="Texture2D" uid="uid://l8qlbg0dwrmw" path="res://assets/officers/kesslerframe1.png" id="4_4b0th"]
 [ext_resource type="Texture2D" uid="uid://do4apuhxsivbl" path="res://assets/officers/kesslerframe2.png" id="5_55eqo"]
 [ext_resource type="Texture2D" uid="uid://codn28k14or4r" path="res://assets/officers/monroeframe1.png" id="6_84txg"]
 [ext_resource type="Texture2D" uid="uid://ciinphn3sh3xh" path="res://assets/officers/monroeframe2.png" id="7_cread"]
 [ext_resource type="Texture2D" uid="uid://1ped7r4qt3ml" path="res://assets/officers/reyesframe1.png" id="8_s1bh5"]
 [ext_resource type="Texture2D" uid="uid://bkqt8j0frqtnu" path="res://assets/officers/reyesframe2.png" id="9_slrn2"]
+[ext_resource type="Texture2D" uid="uid://p7da3ew0hyyq" path="res://assets/ui/frame.png" id="10_dg1cu"]
+[ext_resource type="Texture2D" uid="uid://dluv43yynb7bk" path="res://assets/ui/close2.png" id="10_qe3hc"]
 
 [sub_resource type="Gradient" id="Gradient_54u1x"]
 offsets = PackedFloat32Array(0, 0.727273)
@@ -22,6 +23,28 @@ bg_color = Color(1, 1, 1, 1)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_nkcmu"]
 bg_color = Color(1, 1, 1, 1)
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_425y4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_m3hmh"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ufhou"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_6f5n0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_0wleb"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_t1kul"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_dnitv"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_lcbe3"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_1lnl4"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_v0aoi"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_wcfvv"]
 
 [sub_resource type="Theme" id="Theme_55n37"]
 
@@ -67,6 +90,28 @@ animations = [{
 "name": &"Reyes",
 "speed": 5.0
 }]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_on667"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_cbo8e"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_2g8il"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_ufyop"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gey6b"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_uw6k5"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_fywp7"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_vlg2y"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_esurf"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_olj0x"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_veb6d"]
 
 [node name="ui_viewport" type="Control"]
 layout_mode = 3
@@ -210,6 +255,45 @@ theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_nkcmu")
 text = "  Ressource n.2"
 
+[node name="Button_Frame" type="Control" parent="Text_open"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 719.0
+offset_top = -268.0
+offset_right = 719.0
+offset_bottom = -899.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.6)
+
+[node name="Frame3" type="Sprite2D" parent="Text_open/Button_Frame"]
+position = Vector2(106.607, 602.913)
+rotation = 1.5708
+scale = Vector2(4.5534, 6.01601)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Frame4" type="Sprite2D" parent="Text_open/Button_Frame"]
+position = Vector2(64, 646.667)
+scale = Vector2(4.58334, 5.49998)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Frame2" type="Sprite2D" parent="Text_open/Button_Frame"]
+position = Vector2(59.3251, 543.333)
+scale = Vector2(4.94375, 5.00003)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Frame5" type="Sprite2D" parent="Text_open/Button_Frame"]
+position = Vector2(11.1684, 595.156)
+rotation = 1.5708
+scale = Vector2(5.20299, 6.08417)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
 [node name="Close_text" type="Button" parent="Text_open"]
 layout_mode = 1
 anchors_preset = 8
@@ -217,14 +301,25 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 151.5
-offset_top = -272.0
-offset_right = 168.5
-offset_bottom = -248.0
+offset_left = 152.0
+offset_top = -264.0
+offset_right = 166.0
+offset_bottom = -245.0
 grow_horizontal = 2
 grow_vertical = 2
 scale = Vector2(3, 3)
-icon = ExtResource("3_a2srl")
+theme_override_styles/focus = SubResource("StyleBoxEmpty_425y4")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_m3hmh")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_ufhou")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_6f5n0")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_0wleb")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_t1kul")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_dnitv")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_lcbe3")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_1lnl4")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_v0aoi")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_wcfvv")
+icon = ExtResource("10_qe3hc")
 
 [node name="Officer_bg" type="Label" parent="Text_open"]
 layout_mode = 1
@@ -253,11 +348,13 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 352.0
-offset_right = 352.0
+offset_left = 353.0
+offset_top = -3.0
+offset_right = 353.0
+offset_bottom = -3.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 2
+mouse_filter = 1
 
 [node name="Text_bg" type="TextureRect" parent="Text_close"]
 layout_mode = 1
@@ -371,6 +468,45 @@ theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_nkcmu")
 text = "  Ressource n.2"
 
+[node name="Button_Frame" type="Control" parent="Text_close"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 719.0
+offset_top = -265.0
+offset_right = 719.0
+offset_bottom = -896.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.6)
+
+[node name="Frame3" type="Sprite2D" parent="Text_close/Button_Frame"]
+position = Vector2(107.475, 605.168)
+rotation = 1.5708
+scale = Vector2(4.32544, 5.65547)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Frame4" type="Sprite2D" parent="Text_close/Button_Frame"]
+position = Vector2(63.9065, 646.667)
+scale = Vector2(4.57554, 5.49998)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Frame2" type="Sprite2D" parent="Text_close/Button_Frame"]
+position = Vector2(59.3779, 543.333)
+scale = Vector2(4.94815, 5.00003)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Frame5" type="Sprite2D" parent="Text_close/Button_Frame"]
+position = Vector2(11.1684, 595.156)
+rotation = 1.5708
+scale = Vector2(5.20299, 6.08417)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
 [node name="Open_text" type="Button" parent="Text_close"]
 layout_mode = 1
 anchors_preset = 8
@@ -378,14 +514,34 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 201.0
-offset_top = -201.0
-offset_right = 218.0
-offset_bottom = -177.0
+offset_left = 194.0
+offset_top = -261.0
+offset_right = 208.0
+offset_bottom = -242.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(-3, -3)
-icon = ExtResource("3_a2srl")
+scale = Vector2(-3, 3)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_on667")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxEmpty_cbo8e")
+theme_override_styles/disabled = SubResource("StyleBoxEmpty_2g8il")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxEmpty_ufyop")
+theme_override_styles/hover_pressed = SubResource("StyleBoxEmpty_gey6b")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxEmpty_uw6k5")
+theme_override_styles/hover = SubResource("StyleBoxEmpty_fywp7")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxEmpty_vlg2y")
+theme_override_styles/pressed = SubResource("StyleBoxEmpty_esurf")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxEmpty_olj0x")
+theme_override_styles/normal = SubResource("StyleBoxEmpty_veb6d")
+icon = ExtResource("10_qe3hc")
 
+[node name="Control" type="Control" parent="Text_close"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[connection signal="mouse_entered" from="Text_open/Close_text" to="." method="_on_close_text_mouse_entered"]
+[connection signal="mouse_exited" from="Text_open/Close_text" to="." method="_on_close_text_mouse_exited"]
 [connection signal="pressed" from="Text_open/Close_text" to="." method="_on_close_text_pressed"]
+[connection signal="mouse_entered" from="Text_close/Open_text" to="." method="_on_open_text_mouse_entered"]
+[connection signal="mouse_exited" from="Text_close/Open_text" to="." method="_on_open_text_mouse_exited"]
 [connection signal="pressed" from="Text_close/Open_text" to="." method="_on_open_text_pressed"]
