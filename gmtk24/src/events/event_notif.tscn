@@ -41,6 +41,7 @@ animations = [{
 }]
 
 [node name="EventNotif" type="Control"]
+custom_minimum_size = Vector2(0, 25)
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -52,6 +53,7 @@ grow_vertical = 2
 script = ExtResource("1_t24ib")
 
 [node name="Text_bg" type="TextureRect" parent="."]
+layout_mode = 0
 offset_left = 199.0
 offset_top = 137.0
 offset_right = 335.0
@@ -79,10 +81,10 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -379.5
-offset_top = -97.5
-offset_right = -377.5
-offset_bottom = -97.5
+offset_left = -216.0
+offset_top = 1.0
+offset_right = -214.0
+offset_bottom = 111.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -92,10 +94,10 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 35.5
-offset_top = -97.5
-offset_right = 37.5
-offset_bottom = -97.5
+offset_left = 198.0
+offset_top = 1.0
+offset_right = 200.0
+offset_bottom = 111.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -106,6 +108,7 @@ sprite_frames = SubResource("SpriteFrames_p11v1")
 animation = &"medium"
 
 [node name="Low_Level" type="Label" parent="."]
+layout_mode = 0
 offset_left = -89.0
 offset_top = 35.0
 offset_right = 170.0
@@ -119,6 +122,7 @@ horizontal_alignment = 1
 
 [node name="Medium_Level" type="Label" parent="."]
 visible = false
+layout_mode = 0
 offset_left = -89.0
 offset_top = 35.0
 offset_right = 170.0
@@ -132,6 +136,7 @@ horizontal_alignment = 1
 
 [node name="High_Level" type="Label" parent="."]
 visible = false
+layout_mode = 0
 offset_left = -86.0
 offset_top = 35.0
 offset_right = 173.0
@@ -144,6 +149,7 @@ text = "HIGH  LEVEL THREAT"
 horizontal_alignment = 1
 
 [node name="Event_title" type="Label" parent="."]
+layout_mode = 0
 offset_left = -90.0
 offset_top = 70.0
 offset_right = 178.0
@@ -153,6 +159,7 @@ theme_override_font_sizes/font_size = 20
 text = "Revolution against the government"
 
 [node name="Time_label" type="Label" parent="."]
+layout_mode = 0
 offset_left = -91.0
 offset_top = 97.0
 offset_right = 177.0

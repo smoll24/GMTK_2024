@@ -1,7 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://4yspnc4n75hy"]
+[gd_scene load_steps=15 format=3 uid="uid://4yspnc4n75hy"]
 
 [ext_resource type="Script" path="res://src/ui/ui_viewport.gd" id="1_os2fa"]
-[ext_resource type="PackedScene" uid="uid://djw6l22i0d5b2" path="res://src/events/event_report.tscn" id="3_wglx1"]
 [ext_resource type="Texture2D" uid="uid://l8qlbg0dwrmw" path="res://assets/officers/kesslerframe1.png" id="4_4b0th"]
 [ext_resource type="PackedScene" uid="uid://dh3ovw33a5cvc" path="res://src/ui/tab_button.tscn" id="4_dyn61"]
 [ext_resource type="Texture2D" uid="uid://do4apuhxsivbl" path="res://assets/officers/kesslerframe2.png" id="5_55eqo"]
@@ -125,9 +124,6 @@ offset_top = -597.0
 offset_right = 1121.0
 offset_bottom = 583.0
 alignment = 2
-
-[node name="EventReport" parent="Text_open/EventsList" instance=ExtResource("3_wglx1")]
-layout_mode = 2
 
 [node name="Button_Frame" type="Control" parent="Text_open"]
 layout_mode = 1

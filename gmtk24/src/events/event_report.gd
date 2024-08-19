@@ -10,9 +10,8 @@ var active_event : ActiveEvent:
 		active_event = event
 		$Cur_text.text = Events.events_desc[active_event.type][1]
 
-
 func _process(delta: float) -> void:
-	if active_event:
+	if active_event != null:
 		var time_remaining = active_event.countdown
 		if time_remaining > 0:
 			countdown.text = 'Time Remaining: ' + GV.display_countdown(time_remaining)
@@ -23,6 +22,7 @@ func expire(color) -> void:
 	self.modulate = color
 	choice_tree.visible = false
 	time_tree.visible = false
+	active_event.expire()
 	
 func _on_choice_1_pressed() -> void:
 	expire(Color(0.5,0.5,0.5,0.5))

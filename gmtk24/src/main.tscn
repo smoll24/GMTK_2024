@@ -213,7 +213,7 @@ grow_horizontal = 0
 scale = Vector2(0.5, 0.5)
 icon = ExtResource("7_g1rcf")
 
-[node name="notification_tree" type="Control" parent="UI"]
+[node name="notification_tree" type="VBoxContainer" parent="UI"]
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5

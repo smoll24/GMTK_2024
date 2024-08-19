@@ -41,7 +41,7 @@ func popup(event : ActiveEvent, category : Events.CATG):
 	self.modulate.a = 0
 	tween.tween_property(self, "modulate:a", 1, 0.2)
 	
-	await get_tree().create_timer(1).timeout
+	await get_tree().create_timer(3).timeout
 	tween = create_tween()
 	tween.tween_property(self, "modulate:a", 0, 0.5)
 	tween.parallel().tween_property(self, "position", Vector2(self.position.x,self.position.y-20), 0.5)
@@ -49,7 +49,7 @@ func popup(event : ActiveEvent, category : Events.CATG):
 	queue_free()
 
 func _process(delta: float) -> void:
-	if active_event:
+	if active_event != null:
 		var time_remaining = active_event.countdown
 		if time_remaining > 0:
 			$Time_label.text = '[Time Remaining] ' + GV.display_countdown(time_remaining)

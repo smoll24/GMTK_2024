@@ -52,7 +52,7 @@ func choose_event():
 		var diff = Events.CATG.values().pick_random()
 		var event = Events.events_categories[dept][diff].pick_random()
 		
-		var active_event = ActiveEvent.new(event, GV.SEC_IN_DAY*7)
+		var active_event = ActiveEvent.new(event, dept, GV.SEC_IN_DAY*7)
 		
 		Events.cur_events.append(active_event)
 		Events.avail_dept.erase(dept)
