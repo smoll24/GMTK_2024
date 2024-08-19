@@ -5,6 +5,7 @@ class_name SkillNode
 @onready var skill_branch = $SkillBranch
 
 @export var max_level : int = 3
+@onready var infinite : bool = false
 @export var required_prev_level : int = 1
 
 signal level_up(new_level)
@@ -12,7 +13,7 @@ signal level_up(new_level)
 var level : int = 0:
 	set(value):
 		level = value
-		skill_level.text = '%d/%d' % [level, max_level]
+		skill_level.text = '%d/%d' % [level, max_level] if not infinite else '%d' % level
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -31,6 +32,6 @@ func enable_button(new_level) -> void:
 		skill_branch.default_color = Color(1,1,1)
 
 func _on_pressed() -> void:
-	level = min(level + 1, max_level)
+	level = min(level + 1, max_level) if not infinite else level + 1
 	emit_signal("level_up", level)
 	self.self_modulate = Color(0.9,0.9,0.9)
