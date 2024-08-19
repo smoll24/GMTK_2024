@@ -7,6 +7,7 @@ const SEC_IN_MIN : int = 60
 const SEC_IN_HOUR : int = SEC_IN_MIN * 60
 const SEC_IN_DAY : int = SEC_IN_HOUR * 24
 const SEC_IN_YEAR : int = SEC_IN_DAY * 365.25
+const END_GAME_TIME = 1.5768e+17 #5 billion years in seconds
 
 enum RES{PEOPLE, FOOD, LUMBER, METAL, ENERGY, FINANCE, COMMS}
 
@@ -43,7 +44,7 @@ func seconds_to_calendar(time_in_sec) -> Dictionary:
 			'minute' : minutes,
 			'second' : seconds}
 
-func display_time_from_seconds(time_in_sec) -> String:
+func display_time_from_seconds(time_in_sec, reverse = false) -> String:
 	#return str(Time.get_datetime_dict_from_unix_time(time_in_sec))
 	var calendar_time : Dictionary = seconds_to_calendar(time_in_sec)
 	var seconds = calendar_time['second']
@@ -54,9 +55,9 @@ func display_time_from_seconds(time_in_sec) -> String:
 	
 	var time : String = "%02d:%02d:%02d" % [hours, minutes, seconds]
 	if days > 0:
-		time = "Day %02d " % [days + 2] + time
+		time = ("Day %02d " if not reverse else "%02d days ") % [days + 2] + time
 	if years > 0:
-		time = "Year %s " % [format_number(years + 1970)] + time
+		time = ("Year %s " if not reverse else "%s years ") % [format_number(years + 1970)] + time
 	return time
 	
 func format_number(n: int) -> String:

@@ -7,7 +7,7 @@ var text_toggle
 @onready var officer_sprite = $Text_open/Officer_img
 @onready var envent_list = $Text_open/EventsList
 
-@onready var event_report = load("res://src/ui/event_report.tscn")
+@onready var event_report = load("res://src/events/event_report.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,9 +17,9 @@ func _ready() -> void:
 	text_close.visible = true
 	officer_sprite.play()
 
-func add_event_report(event : Events.EVENT):
+func add_event_report(event : ActiveEvent):
 	var e : EventReport = event_report.instantiate()
-	e.init_event(event)
+	e.active_event = event
 	envent_list.add_child(e)
 
 func _on_close_text_pressed() -> void:

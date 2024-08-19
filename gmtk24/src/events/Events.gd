@@ -102,3 +102,7 @@ var events_desc = {
 	EVENT.CLIMATE_SHIFT : ["Global climate shift","Chief, it looks like Mother Nature’s hit the reset button. We’re seeing rapid and unpredictable changes in the global climate—deserts turning into swamps, polar ice caps melting like popsicles in the sun, the works. It’s as if the planet’s gone on a wild ride, and we’re all just hanging on for dear life here. We’re going to need a few creative solutions right about now. How do you want to steer this ship through the storm?"],
 	EVENT.ECOSYS_COLLAPSE : ["Ecosystem collapse","Chief, this is it—the big one. We’re looking at a full-blown extinction event. Ecosystems are collapsing left and right, species are disappearing faster than we can count, and the entire food chain is unraveling. It’s like watching the planet’s life support system get unplugged. We need to pull out all the stops before everything goes completely South."]
 }
+
+func reduce_countdown(delta):
+	for active_event in cur_events:
+		active_event.reduce_countdown(delta)
