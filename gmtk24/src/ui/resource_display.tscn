@@ -8,6 +8,7 @@ position = Vector2(34, 32)
 scale = Vector2(0.3, 0.3)
 texture = ExtResource("1_2wg3j")
 script = ExtResource("2_t3wr7")
+resource_type = null
 
 [node name="resource_name" type="Label" parent="."]
 offset_left = 130.0

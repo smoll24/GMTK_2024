@@ -13,14 +13,14 @@ const END_GAME_TIME = 4.09968e+16 #1.3 billion years in seconds
 
 enum RES{PEOPLE, FOOD, LUMBER, METAL, ENERGY, FINANCE, COMMS}
 
-var resource_dict : Dictionary = {
-	RES.PEOPLE : {'name' : 'People', 'amount' : 5000.0, 'growth' : 1.0/SEC_IN_DAY},
-	RES.FOOD : {'name' : 'Food','amount' : 5000.0, 'growth' : 1.0/SEC_IN_DAY},
-	RES.LUMBER : {'name' : 'Lumber','amount' : 100.0, 'growth' : 1.0/SEC_IN_DAY},
+var res_dict : Dictionary = {
+	RES.PEOPLE : {'name' : 'People', 'amount' : 1000.0, 'growth' : 0.5/SEC_IN_DAY},
+	RES.FOOD : {'name' : 'Food','amount' : 5000.0, 'growth' : 1500.0/SEC_IN_DAY},
+	RES.LUMBER : {'name' : 'Lumber','amount' : 500.0, 'growth' : 1.0/SEC_IN_DAY},
 	RES.METAL : {'name' : 'Metal','amount' : 0.0, 'growth' : 1.0/SEC_IN_DAY},
-	RES.ENERGY : {'name' : 'Energy','amount' : 0.0, 'growth' : 1.0/SEC_IN_DAY},
+	RES.ENERGY : {'name' : 'Energy','amount' : 500.0, 'growth' : 1.0/SEC_IN_DAY},
 	RES.FINANCE : {'name' : 'Finance','amount' : 0.0, 'growth' : 1.0/SEC_IN_DAY},
-	RES.COMMS : {'name' : 'Communication', 'amount' : 0.0, 'growth' : 1.0/SEC_IN_DAY},
+	RES.COMMS : {'name' : 'Communication', 'amount' : 100.0, 'growth' : 1.0/SEC_IN_DAY},
 }
 
 func _ready():
@@ -105,5 +105,9 @@ func format_number(n: int) -> String:
 		return str(n)
 
 func incease_resources(delta) -> void:
-	for res in resource_dict.values():
+	for res in res_dict.values():
 		res['amount'] += res['growth'] * delta
+	
+	res_dict[RES.FOOD]['amount'] -= (res_dict[RES.PEOPLE]['amount'] / SEC_IN_DAY) * delta
+	
+	

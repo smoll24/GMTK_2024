@@ -102,35 +102,35 @@ func _on_cryo_pressed() -> void:
 
 func event_effect(event_type : Events.EVENT) -> void:
 	match event_type as Events.EVENT:
-		Events.EVENT.SAT_COL: GV.resource_dict[GV.RES.COMMS]['amount'] -= 10
-		Events.EVENT.MIN_AST: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.SOL_FLAR: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.LARG_AST: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.SOL_STORM: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.SPACE_DEBRIS: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.SUN_DEATH: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.ALIENS: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.ROGUE_PLANET: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.BLACK_HOLE: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.SAT_COL: GV.res_dict[GV.RES.COMMS]['amount'] -= 10
+		Events.EVENT.MIN_AST: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.SOL_FLAR: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.LARG_AST: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.SOL_STORM: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.SPACE_DEBRIS: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.SUN_DEATH: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.ALIENS: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.ROGUE_PLANET: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.BLACK_HOLE: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
 		
-		Events.EVENT.CIV_UNREST: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.CYBERATTACK: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.ECON_DOWN: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.HAPPY_DECILNE: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.PROTESTS: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.RECESSION: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.CULT: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.NUCLEAR_WAR: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.PANDEMIC: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.ECON_COLLAPSE: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.REVOLUTION: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.CIV_UNREST: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.CYBERATTACK: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.ECON_DOWN: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.HAPPY_DECILNE: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.PROTESTS: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.RECESSION: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.CULT: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.NUCLEAR_WAR: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.PANDEMIC: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.ECON_COLLAPSE: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.REVOLUTION: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
 		
-		Events.EVENT.RAIN: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.THUNDER: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.EARTHQUAKE: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.DROUGHT: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.FLOOD: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.TORNADO: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.VOLCANO: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.CLIMATE_SHIFT: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.ECOSYS_COLLAPSE: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.RAIN: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.THUNDER: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.EARTHQUAKE: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.DROUGHT: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.FLOOD: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.TORNADO: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.VOLCANO: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.CLIMATE_SHIFT: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.ECOSYS_COLLAPSE: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
