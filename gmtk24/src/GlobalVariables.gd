@@ -14,8 +14,8 @@ const END_GAME_TIME = 4.09968e+16 #1.3 billion years in seconds
 enum RES{PEOPLE, FOOD, LUMBER, METAL, ENERGY, FINANCE, COMMS}
 
 var res_dict : Dictionary = {
-	RES.PEOPLE : {'name' : 'People', 'amount' : 100000.0, 'growth' : 0.5/SEC_IN_DAY},
-	RES.FOOD : {'name' : 'Food','amount' : 500.0, 'growth' : 1500.0/SEC_IN_DAY},
+	RES.PEOPLE : {'name' : 'People', 'amount' : 1000.0, 'growth' : 0.5/SEC_IN_DAY},
+	RES.FOOD : {'name' : 'Food','amount' : 5000.0, 'growth' : 1500.0/SEC_IN_DAY},
 	RES.LUMBER : {'name' : 'Lumber','amount' : 500.0, 'growth' : 1.0/SEC_IN_DAY},
 	RES.METAL : {'name' : 'Metal','amount' : 0.0, 'growth' : 1.0/SEC_IN_DAY},
 	RES.ENERGY : {'name' : 'Energy','amount' : 500.0, 'growth' : 1.0/SEC_IN_DAY},
