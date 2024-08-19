@@ -7,7 +7,7 @@ var text_toggle
 @onready var officer_sprite = $Text_open/Officer_img
 @onready var envent_list = $Text_open/EventsList
 
-@onready var event_report = load("res://src/events/event_report.tscn")
+@onready var event_report = preload("res://src/events/event_report.tscn")
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
