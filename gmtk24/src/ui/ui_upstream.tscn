@@ -1,5 +1,6 @@
-[gd_scene load_steps=8 format=3 uid="uid://82x1whxfmupu"]
+[gd_scene load_steps=9 format=3 uid="uid://82x1whxfmupu"]
 
+[ext_resource type="Script" path="res://src/ui/ui_upstream.gd" id="1_3qde1"]
 [ext_resource type="Texture2D" uid="uid://dwv4bsvhpfcvf" path="res://assets/ui/alert_L.png" id="1_stedh"]
 [ext_resource type="Texture2D" uid="uid://clrwrleeqfawk" path="res://assets/ui/alert_m.png" id="2_x2qr1"]
 [ext_resource type="Texture2D" uid="uid://b5ufk8tthf6fm" path="res://assets/ui/alert_sm.png" id="3_kchu4"]
@@ -44,10 +45,13 @@ layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -13.0
+offset_right = -13.0
 offset_bottom = -529.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
+script = ExtResource("1_3qde1")
 
 [node name="Text_bg" type="TextureRect" parent="."]
 offset_left = 772.0
@@ -153,10 +157,10 @@ text = "Revolution against the government"
 
 [node name="Time_label" type="Label" parent="."]
 offset_left = 482.0
-offset_top = 99.0
+offset_top = 97.0
 offset_right = 750.0
-offset_bottom = 130.0
-theme_override_colors/font_color = Color(0.378006, 0.746584, 0.773168, 1)
+offset_bottom = 128.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_fonts/font = ExtResource("4_4bu0u")
 theme_override_font_sizes/font_size = 20
 text = "[Time Remaining]"

@@ -4,6 +4,8 @@ extends Control
 @onready var background = $SubViewportContainer/SubViewport/Background
 @onready var skill_tree = $SkillTree
 @onready var event_report_ui = $UI/ui_viewport
+@onready var ui = $UI
+@onready var event_popup = preload("res://src/ui/ui_upstream.tscn")
 
 var sim_time : float
 var time_skip_amount
@@ -56,3 +58,5 @@ func choose_event():
 		Events.avail_dept.erase(dept)
 		print("Event chosen is: ", Events.events_desc[event][0])
 		event_report_ui.add_event_report(active_event)
+		var event_instance = event_popup.instantiate()
+		ui.add_child(event_instance)
