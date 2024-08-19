@@ -45,11 +45,14 @@ theme_override_font_sizes/normal_font_size = 25
 text = "Officer Kessler"
 fit_content = true
 
-[node name="HSeparator2" type="HSeparator" parent="."]
+[node name="time_tree" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="HSeparator2" type="HSeparator" parent="time_tree"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
-[node name="Countdown" type="Label" parent="."]
+[node name="Countdown" type="Label" parent="time_tree"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_qnw2m")
 theme_override_font_sizes/font_size = 25

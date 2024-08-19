@@ -2,7 +2,8 @@ extends VBoxContainer
 class_name EventReport
 
 @onready var choice_tree = $choice_tree
-@onready var countdown = $Countdown
+@onready var time_tree = $time_tree
+@onready var countdown = $time_tree/Countdown
 
 var active_event : ActiveEvent: 
 	set(event):
@@ -19,7 +20,6 @@ func _process(delta: float) -> void:
 			countdown.text = 'Time Remaining: ' + GV.display_countdown(time_remaining)
 		else:
 			expire(Color(1,0.5,0.5,0.5))
-		
 
 func expire(color) -> void:
 	self.modulate = color
