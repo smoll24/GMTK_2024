@@ -14,11 +14,16 @@ func _ready() -> void:
 
 func _process(delta: float) -> void:
 	if active_event:
-		countdown.text = 'Time left: ' + GV.display_time_from_seconds(active_event.countdown, true)
+		var time_remaining = active_event.countdown
+		if time_remaining > 0:
+			countdown.text = 'Time Remaining: ' + GV.display_countdown(time_remaining)
+		else:
+			expire(Color(1,0.5,0.5,0.5))
+		
 
-func expire() -> void:
-	self.modulate = Color(0.5,0.5,0.5,0.5)
+func expire(color) -> void:
+	self.modulate = color
 	choice_tree.visible = false
 	
 func _on_choice_1_pressed() -> void:
-	expire()
+	expire(Color(0.5,0.5,0.5,0.5))

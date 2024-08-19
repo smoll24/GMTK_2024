@@ -44,7 +44,7 @@ func seconds_to_calendar(time_in_sec) -> Dictionary:
 			'minute' : minutes,
 			'second' : seconds}
 
-func display_time_from_seconds(time_in_sec, reverse = false) -> String:
+func display_time_from_seconds(time_in_sec) -> String:
 	#return str(Time.get_datetime_dict_from_unix_time(time_in_sec))
 	var calendar_time : Dictionary = seconds_to_calendar(time_in_sec)
 	var seconds = calendar_time['second']
@@ -55,11 +55,26 @@ func display_time_from_seconds(time_in_sec, reverse = false) -> String:
 	
 	var time : String = "%02d:%02d:%02d" % [hours, minutes, seconds]
 	if days > 0:
-		time = ("Day %02d " if not reverse else "%02d days ") % [days + 2] + time
+		time = "Day %02d " % [days + 2] + time
 	if years > 0:
-		time = ("Year %s " if not reverse else "%s years ") % [format_number(years + 1970)] + time
+		time = "Year %s " % [format_number(years + 1970)] + time
 	return time
+
+func display_countdown(time_in_sec) -> String:
+	var calendar_time : Dictionary = seconds_to_calendar(time_in_sec)
+	var seconds = calendar_time['second']
+	var minutes = calendar_time['minute']
+	var hours = calendar_time['hour']
+	var days = calendar_time['day']
+	var years = calendar_time['year']
 	
+	var time : String = "%02d:%02d:%02d" % [hours, minutes, seconds]
+	if days > 0:
+		time = "%02d days " % days + time
+	if years > 0:
+		time = "%s years " % format_number(years) + time
+	return time
+
 func format_number(n: int) -> String:
 	if n >= 1e9:
 		var i:float = snapped(float(n)/1e9, .01)
