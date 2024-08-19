@@ -1,9 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://bahqtgm80bqap"]
+[gd_scene load_steps=10 format=3 uid="uid://bahqtgm80bqap"]
 
 [ext_resource type="Script" path="res://src/background.gd" id="1_m0aom"]
 [ext_resource type="Texture2D" uid="uid://bifpf3nsvjh5k" path="res://assets/sky/sun.png" id="2_4v1jc"]
-[ext_resource type="Texture2D" uid="uid://cv2ago7uw4bid" path="res://assets/city/city.png" id="3_lb1sw"]
+[ext_resource type="Texture2D" uid="uid://c4sjw10hkq48" path="res://assets/city/city4.png" id="3_i0r0s"]
 [ext_resource type="Texture2D" uid="uid://bevqnqsbj5iar" path="res://assets/city/city_light_mask.png" id="4_2stuj"]
+[ext_resource type="Texture2D" uid="uid://cgtbriheb0atp" path="res://assets/city/city3.png" id="4_17fhb"]
+[ext_resource type="Texture2D" uid="uid://8v0kx2dr5g3t" path="res://assets/city/city2.png" id="5_1tnwl"]
+[ext_resource type="Texture2D" uid="uid://b3ocotmk40wlm" path="res://assets/city/city1.png" id="6_k01kb"]
 
 [sub_resource type="Gradient" id="Gradient_tjq33"]
 colors = PackedColorArray(1, 1, 1, 1, 0.38, 0.46, 0.78, 1)
@@ -58,14 +61,57 @@ grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("2_4v1jc")
 
+[node name="City4" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = 123.0
+offset_right = 24.0
+offset_bottom = 155.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_i0r0s")
+
+[node name="City3" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -29.0
+offset_right = 24.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("4_17fhb")
+
+[node name="City2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -29.0
+offset_right = 24.0
+offset_bottom = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("5_1tnwl")
+
 [node name="City" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -29.0
+offset_right = 24.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_lb1sw")
+texture = ExtResource("6_k01kb")
 
 [node name="CityLightMask" type="TextureRect" parent="."]
 self_modulate = Color(1, 1, 0.4, 0)
@@ -73,6 +119,10 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -24.0
+offset_top = -29.0
+offset_right = 24.0
+offset_bottom = 3.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("4_2stuj")

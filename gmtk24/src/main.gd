@@ -95,7 +95,7 @@ func _on_forward_pressed() -> void:
 
 func _on_fast_forward_pressed() -> void:
 	time_skip_amount = max(GV.SEC_IN_DAY, sim_time)
-	speed_up(time_skip_amount / 5, time_skip_amount * 10000)
+	speed_up(time_skip_amount, time_skip_amount * 1_000_000)
 	
 func _on_cryo_pressed() -> void:
 	pass # Replace with function body.

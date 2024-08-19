@@ -16,6 +16,8 @@ var summer_modulate = Color(0.39, 0.47, 0.8)
 var winter_modulate = Color(0.35,0.44,0.63)
 var sunset_color = Color(1,1,0.2)
 
+var final_city_pos = Vector2(-24,-29)
+
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass
@@ -32,6 +34,9 @@ func update_time(time : float, _delta : float, sim_time_scale : int) -> void:
 	var sun_deg = sun_percent * 360
 	
 	rotation_point.rotation_degrees = sun_deg
+	
+	var n_people = GV.res_dict[GV.RES.PEOPLE]['amount']
+	$City4.position = Vector2(-24,123).lerp(final_city_pos, min(1, n_people/5_000_000))
 	
 	var day_night_coef : float = sun_day_night.sample_baked(sun_percent)
 	var sunset_coef : float = sunset_blend.sample_baked(sun_percent)

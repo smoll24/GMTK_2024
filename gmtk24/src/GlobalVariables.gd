@@ -14,8 +14,8 @@ const END_GAME_TIME = 4.09968e+16 #1.3 billion years in seconds
 enum RES{PEOPLE, FOOD, LUMBER, METAL, ENERGY, FINANCE, COMMS}
 
 var res_dict : Dictionary = {
-	RES.PEOPLE : {'name' : 'People', 'amount' : 1000.0, 'growth' : 0.5/SEC_IN_DAY},
-	RES.FOOD : {'name' : 'Food','amount' : 5000.0, 'growth' : 1500.0/SEC_IN_DAY},
+	RES.PEOPLE : {'name' : 'People', 'amount' : 100000.0, 'growth' : 0.5/SEC_IN_DAY},
+	RES.FOOD : {'name' : 'Food','amount' : 500.0, 'growth' : 1500.0/SEC_IN_DAY},
 	RES.LUMBER : {'name' : 'Lumber','amount' : 500.0, 'growth' : 1.0/SEC_IN_DAY},
 	RES.METAL : {'name' : 'Metal','amount' : 0.0, 'growth' : 1.0/SEC_IN_DAY},
 	RES.ENERGY : {'name' : 'Energy','amount' : 500.0, 'growth' : 1.0/SEC_IN_DAY},
@@ -104,10 +104,27 @@ func format_number(n: int) -> String:
 	else:
 		return str(n)
 
+func per_day(value, delta):
+	return (float(value) / SEC_IN_DAY) * delta
+
+var starving_counter = 0
+
 func incease_resources(delta) -> void:
-	for res in res_dict.values():
-		res['amount'] += res['growth'] * delta
+	res_dict[RES.FOOD]['amount'] -= per_day(res_dict[RES.PEOPLE]['amount'], delta)
 	
-	res_dict[RES.FOOD]['amount'] -= (res_dict[RES.PEOPLE]['amount'] / SEC_IN_DAY) * delta
+	if starving_counter >= 30:
+		res_dict[RES.PEOPLE]['amount'] -= (res_dict[RES.PEOPLE]['amount'] - res_dict[RES.FOOD]['amount'])
+	if res_dict[RES.FOOD]['amount'] < res_dict[RES.PEOPLE]['amount']:
+		starving_counter += per_day(1, delta)
+		res_dict[RES.PEOPLE]['amount'] -= per_day((res_dict[RES.PEOPLE]['amount'] - res_dict[RES.FOOD]['amount'])/10, delta)
+	else:
+		starving_counter = 0
+		
+	if res_dict[RES.PEOPLE]['amount'] < 0:
+		print('GAME OVER')
+	
+	for res in res_dict.values():
+		res['amount'] = max(0, res['amount'] + res['growth'] * delta)
+
 	
 	
