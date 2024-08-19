@@ -5,12 +5,6 @@ extends Control
 @onready var skill_tree = $SkillTree
 @onready var event_report_ui = $UI/ui_viewport
 
-var dept
-var diff
-var event
-
-const END_GAME_TIME = 1.5768e+17 #5 billion years in seconds
-
 var sim_time : float
 var time_skip_amount
 var fast_forward_until = 0
@@ -28,14 +22,15 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
-	if sim_time - delta * sim_time_scale < END_GAME_TIME:
+	if sim_time - delta * sim_time_scale < GV.END_GAME_TIME:
 		sim_time += delta * sim_time_scale
 	else:
-		sim_time = END_GAME_TIME
+		sim_time = GV.END_GAME_TIME
 		print('YOU WIN')
 		sim_time_scale = 0
 	
 	GV.incease_resources(delta * sim_time_scale)
+	Events.reduce_countdown(delta * sim_time_scale)
 	background.update_time(start_sim_unix_time + sim_time, delta, sim_time_scale)
 	current_time_label.text = "current time: " + GV.display_time_from_seconds(start_sim_unix_time + sim_time)
 	
@@ -51,11 +46,13 @@ func _on_fast_forward_pressed() -> void:
 func choose_event():
 	#Choose unoccupied department
 	if len(Events.avail_dept) >= 1:
-		dept = Events.avail_dept.pick_random()
-		diff = Events.CATG.values().pick_random()
+		var dept = Events.avail_dept.pick_random()
+		var diff = Events.CATG.values().pick_random()
+		var event = Events.events_categories[dept][diff].pick_random()
 		
-		event = Events.events_categories[dept][diff].pick_random()
-		Events.cur_events.append(event)
+		var active_event = ActiveEvent.new(event, GV.SEC_IN_DAY*7)
+		
+		Events.cur_events.append(active_event)
 		Events.avail_dept.erase(dept)
 		print("Event chosen is: ", Events.events_desc[event][0])
-		event_report_ui.add_event_report(event)
+		event_report_ui.add_event_report(active_event)

@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=3 uid="uid://djw6l22i0d5b2"]
 
-[ext_resource type="Script" path="res://src/ui/event_report.gd" id="1_ofno7"]
+[ext_resource type="Script" path="res://src/events/event_report.gd" id="1_ofno7"]
 [ext_resource type="FontFile" uid="uid://817qgoiy1gah" path="res://assets/resources/font/PixelOperator.ttf" id="1_qnw2m"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rjrgb"]
@@ -28,7 +28,7 @@ anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 offset_right = -825.0
-offset_bottom = -352.0
+offset_bottom = -316.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ofno7")
@@ -49,6 +49,16 @@ fit_content = true
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
+[node name="Countdown" type="Label" parent="."]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_qnw2m")
+theme_override_font_sizes/font_size = 25
+text = "Time Remaining: 0:00:0"
+
+[node name="HSeparator4" type="HSeparator" parent="."]
+custom_minimum_size = Vector2(0, 10)
+layout_mode = 2
+
 [node name="Cur_text" type="RichTextLabel" parent="."]
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("1_qnw2m")
@@ -60,18 +70,23 @@ fit_content = true
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
 
-[node name="Choice1" type="Button" parent="."]
+[node name="choice_tree" type="VBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Choice1" type="Button" parent="choice_tree"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme = SubResource("Theme_sd6wq")
 text = " Ressource n.1     "
 
-[node name="Choice2" type="Button" parent="."]
+[node name="Choice2" type="Button" parent="choice_tree"]
 layout_mode = 2
 size_flags_horizontal = 0
 theme = SubResource("Theme_sd6wq")
 text = " Ressource n.2     "
 
-[node name="HSeparator4" type="HSeparator" parent="."]
+[node name="HSeparator4" type="HSeparator" parent="choice_tree"]
 custom_minimum_size = Vector2(0, 10)
 layout_mode = 2
+
+[connection signal="pressed" from="choice_tree/Choice1" to="." method="_on_choice_1_pressed"]

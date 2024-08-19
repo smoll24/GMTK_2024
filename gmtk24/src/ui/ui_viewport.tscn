@@ -1,8 +1,8 @@
-[gd_scene load_steps=17 format=3 uid="uid://4yspnc4n75hy"]
+
+[gd_scene load_steps=16 format=3 uid="uid://4yspnc4n75hy"]
 
 [ext_resource type="Script" path="res://src/ui/ui_viewport.gd" id="1_os2fa"]
-[ext_resource type="FontFile" uid="uid://817qgoiy1gah" path="res://assets/resources/font/PixelOperator.ttf" id="2_ug1ns"]
-[ext_resource type="PackedScene" uid="uid://djw6l22i0d5b2" path="res://src/ui/event_report.tscn" id="3_wglx1"]
+[ext_resource type="PackedScene" uid="uid://djw6l22i0d5b2" path="res://src/events/event_report.tscn" id="3_wglx1"]
 [ext_resource type="Texture2D" uid="uid://l8qlbg0dwrmw" path="res://assets/officers/kesslerframe1.png" id="4_4b0th"]
 [ext_resource type="PackedScene" uid="uid://dh3ovw33a5cvc" path="res://src/ui/tab_button.tscn" id="4_dyn61"]
 [ext_resource type="Texture2D" uid="uid://do4apuhxsivbl" path="res://assets/officers/kesslerframe2.png" id="5_55eqo"]
@@ -126,15 +126,6 @@ offset_top = -597.0
 offset_right = 1121.0
 offset_bottom = 583.0
 alignment = 2
-
-[node name="Prev_text" type="RichTextLabel" parent="Text_open/EventsList"]
-layout_mode = 2
-theme_override_colors/default_color = Color(0.419813, 0.419813, 0.419813, 1)
-theme_override_fonts/normal_font = ExtResource("2_ug1ns")
-theme_override_font_sizes/normal_font_size = 25
-text = "....On the bright side, at least we won’t need sunscreen for a while. But seriously, we need to act fast."
-fit_content = true
-scroll_active = false
 
 [node name="EventReport" parent="Text_open/EventsList" instance=ExtResource("3_wglx1")]
 layout_mode = 2
