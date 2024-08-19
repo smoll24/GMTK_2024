@@ -9,7 +9,7 @@ const SEC_IN_MIN : int = 60
 const SEC_IN_HOUR : int = SEC_IN_MIN * 60
 const SEC_IN_DAY : int = SEC_IN_HOUR * 24
 const SEC_IN_YEAR : int = SEC_IN_DAY * 365.25
-const END_GAME_TIME = 1.5768e+17 #5 billion years in seconds
+const END_GAME_TIME = 4.09968e+16 #1.3 billion years in seconds
 
 enum RES{PEOPLE, FOOD, LUMBER, METAL, ENERGY, FINANCE, COMMS}
 
@@ -78,7 +78,18 @@ func display_countdown(time_in_sec) -> String:
 	return time
 
 func display_magnitude(time_in_sec) -> String:
-	return ''
+	var calendar_time : Dictionary = seconds_to_calendar(time_in_sec)
+	
+	if calendar_time['year'] > 0:
+		return '%s year' % format_number(calendar_time['year'])
+	elif calendar_time['day'] > 0:
+		return '%02d day' % calendar_time['day']
+	elif calendar_time['hour'] > 0:
+		return '%02d h' % calendar_time['hour']
+	elif calendar_time['minute'] > 0:
+		return '%02d m' % calendar_time['minute']
+	else:
+		return '%02d s' % calendar_time['second']
 
 func format_number(n: int) -> String:
 	if n >= 1e9:

@@ -196,7 +196,7 @@ resource_type = 5
 [node name="Comms" parent="Res_open" instance=ExtResource("4_42rt0")]
 position = Vector2(824, 552)
 texture = ExtResource("7_an0kb")
-resource_type = 5
+resource_type = 6
 
 [node name="Res_close" type="Control" parent="."]
 layout_mode = 1

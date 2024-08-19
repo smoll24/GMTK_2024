@@ -35,13 +35,13 @@ func _process(delta: float) -> void:
 	else:
 		sim_time = GV.END_GAME_TIME
 		print('YOU WIN')
-		sim_time_scale = 0
+		target_sim_speed = 0
 	
 	GV.incease_resources(delta * sim_time_scale)
 	Events.reduce_countdown(delta * sim_time_scale)
 	background.update_time(start_sim_unix_time + sim_time, delta, sim_time_scale)
 	current_time_label.text = "current time: " + GV.display_time_from_seconds(start_sim_unix_time + sim_time)
-	time_scale_label.text = "Time Scale: x" + GV.format_number(sim_time_scale)
+	time_scale_label.text = "Time Scale: %s/s" % GV.display_magnitude(sim_time_scale)
 	
 	sim_time_scale = int(lerp(float(sim_time_scale),float(target_sim_speed), delta))
 	
@@ -95,10 +95,9 @@ func _on_forward_pressed() -> void:
 
 func _on_fast_forward_pressed() -> void:
 	time_skip_amount = max(GV.SEC_IN_DAY, sim_time)
-	speed_up(time_skip_amount / 5, time_skip_amount * 10)
+	speed_up(time_skip_amount / 5, time_skip_amount * 10000)
 
 func event_effect(event_type : Events.EVENT) -> void:
-	print(event_type)
 	match event_type as Events.EVENT:
 		Events.EVENT.SAT_COL: GV.resource_dict[GV.RES.COMMS]['amount'] -= 10
 		Events.EVENT.MIN_AST: GV.resource_dict[GV.RES.PEOPLE]['amount'] -= 10
