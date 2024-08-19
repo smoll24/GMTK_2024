@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://evpntvymwwor"]
+[gd_scene load_steps=12 format=3 uid="uid://evpntvymwwor"]
 
 [ext_resource type="PackedScene" uid="uid://bahqtgm80bqap" path="res://src/background.tscn" id="1_404rv"]
 [ext_resource type="Script" path="res://src/main.gd" id="1_eo8i4"]
@@ -6,8 +6,12 @@
 [ext_resource type="Texture2D" uid="uid://dpb4dsqoohil2" path="res://assets/ui/ff2.png" id="4_o4dih"]
 [ext_resource type="PackedScene" uid="uid://bfqpxdvn3ca7d" path="res://src/skills/skill_tree.tscn" id="5_q30sc"]
 [ext_resource type="Texture2D" uid="uid://p7da3ew0hyyq" path="res://assets/ui/frame.png" id="6_2b8w4"]
+[ext_resource type="Texture2D" uid="uid://boex0pdratvpb" path="res://assets/ui/ff1.png" id="6_ni07f"]
 [ext_resource type="PackedScene" uid="uid://brj5osgqq1xqi" path="res://src/ui/ui_top_viewport.tscn" id="7_508dp"]
+[ext_resource type="Texture2D" uid="uid://cnwbimr2625if" path="res://assets/ui/ff3.png" id="7_g1rcf"]
 [ext_resource type="PackedScene" uid="uid://dm312lppyqi6y" path="res://src/ui/ui_pause.tscn" id="8_w2nap"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nhuxe"]
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -62,39 +66,39 @@ offset_right = 109.0
 offset_bottom = 47.0
 text = "current time:"
 
-[node name="Button_Frame" type="Control" parent="UI"]
+[node name="FastForward_frame" type="Control" parent="UI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 2.0
+offset_left = 189.0
 offset_top = -24.0
-offset_right = 2.0
+offset_right = 189.0
 offset_bottom = -655.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Frame3" type="Sprite2D" parent="UI/Button_Frame"]
+[node name="Frame3" type="Sprite2D" parent="UI/FastForward_frame"]
 position = Vector2(103, 588)
 rotation = 1.5708
 scale = Vector2(4, 4)
 texture = ExtResource("6_2b8w4")
 hframes = 6
 
-[node name="Frame4" type="Sprite2D" parent="UI/Button_Frame"]
+[node name="Frame4" type="Sprite2D" parent="UI/FastForward_frame"]
 position = Vector2(63, 634)
 scale = Vector2(4, 4)
 texture = ExtResource("6_2b8w4")
 hframes = 6
 
-[node name="Frame5" type="Sprite2D" parent="UI/Button_Frame"]
+[node name="Frame5" type="Sprite2D" parent="UI/FastForward_frame"]
 position = Vector2(17, 590.129)
 rotation = 1.5708
 scale = Vector2(4.34412, 4)
 texture = ExtResource("6_2b8w4")
 hframes = 6
 
-[node name="Frame2" type="Sprite2D" parent="UI/Button_Frame"]
+[node name="Frame2" type="Sprite2D" parent="UI/FastForward_frame"]
 position = Vector2(60, 548)
 scale = Vector2(4.25, 4)
 texture = ExtResource("6_2b8w4")
@@ -105,13 +109,109 @@ layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -1128.0
+offset_left = -941.0
 offset_top = 527.0
-offset_right = -970.0
+offset_right = -783.0
 offset_bottom = 685.0
 grow_horizontal = 0
 scale = Vector2(0.5, 0.5)
 icon = ExtResource("4_o4dih")
+
+[node name="Forward_frame" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 81.0
+offset_top = -24.0
+offset_right = 81.0
+offset_bottom = -655.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame3" type="Sprite2D" parent="UI/Forward_frame"]
+position = Vector2(97, 588)
+rotation = 1.5708
+scale = Vector2(4, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
+
+[node name="Frame4" type="Sprite2D" parent="UI/Forward_frame"]
+position = Vector2(60, 634)
+scale = Vector2(3.75, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
+
+[node name="Frame2" type="Sprite2D" parent="UI/Forward_frame"]
+position = Vector2(57, 548)
+scale = Vector2(4, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
+
+[node name="Forward" type="Button" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1047.0
+offset_top = 527.0
+offset_right = -909.0
+offset_bottom = 685.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+theme_override_styles/focus = SubResource("StyleBoxEmpty_nhuxe")
+icon = ExtResource("6_ni07f")
+
+[node name="Backward_frame" type="Control" parent="UI"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 10.0
+offset_top = -24.0
+offset_right = 10.0
+offset_bottom = -655.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Frame3" type="Sprite2D" parent="UI/Backward_frame"]
+position = Vector2(87, 588)
+rotation = 1.5708
+scale = Vector2(4, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
+
+[node name="Frame4" type="Sprite2D" parent="UI/Backward_frame"]
+position = Vector2(52.5, 634)
+scale = Vector2(3.625, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
+
+[node name="Frame5" type="Sprite2D" parent="UI/Backward_frame"]
+position = Vector2(17, 590.129)
+rotation = 1.5708
+scale = Vector2(4.34412, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
+
+[node name="Frame2" type="Sprite2D" parent="UI/Backward_frame"]
+position = Vector2(52.5, 548)
+scale = Vector2(3.625, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
+
+[node name="Backward" type="Button" parent="UI"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1120.0
+offset_top = 527.0
+offset_right = -1002.0
+offset_bottom = 685.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("7_g1rcf")
 
 [node name="SkillTree" parent="." instance=ExtResource("5_q30sc")]
 visible = false
