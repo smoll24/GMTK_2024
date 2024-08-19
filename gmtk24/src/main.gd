@@ -3,6 +3,8 @@ extends Control
 @onready var current_time_label = $UI/CurrentTime
 @onready var background = $SubViewportContainer/SubViewport/Background
 @onready var skill_tree = $SkillTree
+@onready var event_report_ui = $UI/ui_viewport
+
 var dept
 var diff
 var event
@@ -56,3 +58,4 @@ func choose_event():
 		Events.cur_events.append(event)
 		Events.avail_dept.erase(dept)
 		print("Event chosen is: ", Events.events_desc[event][0])
+		event_report_ui.add_event_report(event)

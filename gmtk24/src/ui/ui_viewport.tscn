@@ -124,30 +124,25 @@ offset_right = 204.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Prev_text" type="RichTextLabel" parent="Text_open"]
-layout_mode = 1
-anchors_preset = 11
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -352.0
-offset_top = 30.0
-offset_right = -18.0
-offset_bottom = -510.0
-grow_horizontal = 0
-grow_vertical = 2
+[node name="EventsList" type="VBoxContainer" parent="Text_open"]
+layout_mode = 0
+offset_left = 792.0
+offset_top = -597.0
+offset_right = 1121.0
+offset_bottom = 583.0
+alignment = 2
+
+[node name="Prev_text" type="RichTextLabel" parent="Text_open/EventsList"]
+layout_mode = 2
 theme_override_colors/default_color = Color(0.419813, 0.419813, 0.419813, 1)
 theme_override_fonts/normal_font = ExtResource("2_ug1ns")
 theme_override_font_sizes/normal_font_size = 25
 text = "....On the bright side, at least we won’t need sunscreen for a while. But seriously, we need to act fast."
+fit_content = true
 scroll_active = false
 
-[node name="EventReport" parent="Text_open" instance=ExtResource("3_wglx1")]
-layout_mode = 1
-offset_left = 801.0
-offset_top = 155.0
-offset_right = -24.0
-offset_bottom = -197.0
+[node name="EventReport" parent="Text_open/EventsList" instance=ExtResource("3_wglx1")]
+layout_mode = 2
 
 [node name="Button_Frame" type="Control" parent="Text_open"]
 layout_mode = 1

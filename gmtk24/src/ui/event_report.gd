@@ -1,15 +1,16 @@
 extends VBoxContainer
 class_name EventReport
 
-var event_dict
+var event_type : Events.EVENT: 
+	set(event):
+		event_type = event
+		$Cur_text.text = Events.events_desc[event][1]
 
-func _init(event = null) -> void:
-	event_dict = event
-
-# Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	pass
 
+func init_event(event : Events.EVENT) -> void:
+	event_type = event
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
