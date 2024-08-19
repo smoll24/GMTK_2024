@@ -53,3 +53,5 @@ func _process(delta: float) -> void:
 		var time_remaining = active_event.countdown
 		if time_remaining > 0:
 			$Time_label.text = '[Time Remaining] ' + GV.display_countdown(time_remaining)
+	else:
+		$Time_label.text = '[Time Remaining] ' + GV.display_countdown(0)

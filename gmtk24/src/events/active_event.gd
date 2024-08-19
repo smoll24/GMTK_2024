@@ -5,6 +5,8 @@ var type : Events.EVENT
 var dept : Events.DEPT
 var countdown : float
 
+signal event_expire(event_type : Events.EVENT)
+
 func _init(event : Events.EVENT, deptartement : Events.DEPT, start_time : float) -> void:
 	type = event
 	dept = deptartement
@@ -14,6 +16,8 @@ func reduce_countdown(delta : float) -> void:
 	countdown -= delta
 
 func expire() -> void:
+	emit_signal("event_expire", type)
+	
 	Events.avail_dept.append(dept)
 	Events.cur_events.erase(self)
 	self.queue_free()
