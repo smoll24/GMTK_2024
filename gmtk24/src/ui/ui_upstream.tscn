@@ -105,15 +105,14 @@ grow_vertical = 2
 position = Vector2(424, 83)
 scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_wxteh")
-animation = &"large"
+animation = &"small"
 
 [node name="Low_Level" type="Label" parent="."]
-visible = false
 layout_mode = 0
-offset_left = 502.0
-offset_top = 9.0
-offset_right = 761.0
-offset_bottom = 40.0
+offset_left = 484.0
+offset_top = 35.0
+offset_right = 743.0
+offset_bottom = 66.0
 theme_override_colors/font_color = Color(0.772549, 0.698039, 0.317647, 1)
 theme_override_colors/font_shadow_color = Color(0.427451, 0.376471, 0.121569, 1)
 theme_override_fonts/font = ExtResource("4_4bu0u")
@@ -123,10 +122,10 @@ horizontal_alignment = 1
 
 [node name="Medium_Level" type="Label" parent="."]
 visible = false
-offset_left = 502.0
-offset_top = 9.0
-offset_right = 761.0
-offset_bottom = 40.0
+offset_left = 484.0
+offset_top = 35.0
+offset_right = 743.0
+offset_bottom = 66.0
 theme_override_colors/font_color = Color(0.87451, 0.447059, 0.227451, 1)
 theme_override_colors/font_shadow_color = Color(0.513726, 0.2, 0.0745098, 1)
 theme_override_fonts/font = ExtResource("4_4bu0u")
@@ -135,6 +134,7 @@ text = "MEDIUM LEVEL THREAT"
 horizontal_alignment = 1
 
 [node name="High_Level" type="Label" parent="."]
+visible = false
 offset_left = 484.0
 offset_top = 35.0
 offset_right = 743.0
