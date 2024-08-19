@@ -57,6 +57,7 @@ func choose_event():
 	#Choose unoccupied department
 	if len(Events.avail_dept) >= 1:
 		var dept = Events.avail_dept.pick_random()
+		Events.dept = dept
 		var diff = Events.CATG.values().pick_random()
 		var event = Events.events_categories[dept][diff].pick_random()
 		

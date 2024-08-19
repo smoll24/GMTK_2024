@@ -16,6 +16,19 @@ func _ready() -> void:
 	text_open.visible = false
 	text_close.visible = true
 	officer_sprite.play()
+	
+func _process(_delta: float) -> void:
+	if Events.dept == Events.DEPT.SPACE:
+		officer_sprite.visible = true
+		officer_sprite.play("Kessler")
+	elif Events.dept == Events.DEPT.HUMAN:
+		officer_sprite.visible = true
+		officer_sprite.play("Monroe")
+	elif Events.dept == Events.DEPT.NATURE:
+		officer_sprite.visible = true
+		officer_sprite.play("Reyes")
+	else:
+		officer_sprite.visible = false
 
 func add_event_report(event : ActiveEvent):
 	var e : EventReport = event_report.instantiate()
