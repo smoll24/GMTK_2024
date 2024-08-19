@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://evpntvymwwor"]
+[gd_scene load_steps=17 format=3 uid="uid://evpntvymwwor"]
 
 [ext_resource type="PackedScene" uid="uid://bahqtgm80bqap" path="res://src/background.tscn" id="1_404rv"]
 [ext_resource type="Script" path="res://src/main.gd" id="1_eo8i4"]
@@ -10,6 +10,15 @@
 [ext_resource type="PackedScene" uid="uid://brj5osgqq1xqi" path="res://src/ui/ui_top_viewport.tscn" id="7_508dp"]
 [ext_resource type="Texture2D" uid="uid://cnwbimr2625if" path="res://assets/ui/ff3.png" id="7_g1rcf"]
 [ext_resource type="PackedScene" uid="uid://dm312lppyqi6y" path="res://src/ui/ui_pause.tscn" id="8_w2nap"]
+[ext_resource type="Texture2D" uid="uid://ds02eijxnwgv6" path="res://assets/ui/icicles2.png" id="11_ykb7c"]
+[ext_resource type="Texture2D" uid="uid://daglj0lbuunta" path="res://assets/ui/icicles3.png" id="12_ag5kd"]
+[ext_resource type="Texture2D" uid="uid://gd2e4kcqd6ol" path="res://assets/ui/icicles1.png" id="13_nral6"]
+
+[sub_resource type="Gradient" id="Gradient_j5h18"]
+colors = PackedColorArray(0.0235294, 0.427451, 0.65098, 0.470588, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_w2tum"]
+gradient = SubResource("Gradient_j5h18")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nhuxe"]
 
@@ -45,6 +54,19 @@ size = Vector2i(1152, 648)
 render_target_update_mode = 4
 
 [node name="Background" parent="SubViewportContainer/SubViewport" instance=ExtResource("1_404rv")]
+
+[node name="Cyro_effect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 647.0
+offset_right = -505.0
+offset_bottom = 1153.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = -1.5708
+texture = SubResource("GradientTexture1D_w2tum")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 1
@@ -302,6 +324,70 @@ mouse_filter = 2
 
 [node name="ui_pause" parent="." instance=ExtResource("8_w2nap")]
 layout_mode = 1
+
+[node name="Cryo_Icicles" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="Icicles2" type="Sprite2D" parent="Cryo_Icicles"]
+position = Vector2(203, 30)
+scale = Vector2(5, 5)
+texture = ExtResource("11_ykb7c")
+
+[node name="Icicles3" type="Sprite2D" parent="Cryo_Icicles"]
+position = Vector2(320, 28)
+scale = Vector2(5, 5)
+texture = ExtResource("12_ag5kd")
+
+[node name="Icicles1" type="Sprite2D" parent="Cryo_Icicles"]
+position = Vector2(391, 38)
+scale = Vector2(5, 5)
+texture = ExtResource("13_nral6")
+
+[node name="Icicles4" type="Sprite2D" parent="Cryo_Icicles"]
+position = Vector2(643, 30)
+scale = Vector2(5, 5)
+texture = ExtResource("11_ykb7c")
+
+[node name="Icicles5" type="Sprite2D" parent="Cryo_Icicles"]
+position = Vector2(534, 43)
+scale = Vector2(5, 5)
+texture = ExtResource("13_nral6")
+
+[node name="Icicles6" type="Sprite2D" parent="Cryo_Icicles"]
+position = Vector2(708, 29)
+scale = Vector2(5, 5)
+texture = ExtResource("11_ykb7c")
+
+[node name="Icicles7" type="Sprite2D" parent="Cryo_Icicles"]
+position = Vector2(79.0001, 38)
+scale = Vector2(5, 5)
+texture = ExtResource("13_nral6")
+
+[node name="Icicles8" type="Sprite2D" parent="Cryo_Icicles"]
+position = Vector2(783, 38)
+scale = Vector2(5, 5)
+texture = ExtResource("13_nral6")
+
+[node name="Icicles9" type="Sprite2D" parent="Cryo_Icicles"]
+position = Vector2(904, 28)
+scale = Vector2(5, 5)
+texture = ExtResource("12_ag5kd")
+
+[node name="Icicles10" type="Sprite2D" parent="Cryo_Icicles"]
+position = Vector2(979, 30)
+scale = Vector2(5, 5)
+texture = ExtResource("11_ykb7c")
+
+[node name="Icicles11" type="Sprite2D" parent="Cryo_Icicles"]
+position = Vector2(1032, 28)
+scale = Vector2(5, 5)
+texture = ExtResource("12_ag5kd")
 
 [connection signal="focus_entered" from="UI/FastForward" to="." method="_on_fast_forward_focus_entered"]
 [connection signal="focus_exited" from="UI/FastForward" to="." method="_on_fast_forward_focus_exited"]
