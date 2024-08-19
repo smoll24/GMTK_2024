@@ -16,11 +16,11 @@ var active_event : ActiveEvent:
 		$Cur_text.text = Events.events_desc[active_event.type][1]
 		choice1.text = Events.events_desc[active_event.type][2]
 		choice2.text = Events.events_desc[active_event.type][3]
-		if Events.cur_dept == "space":
+		if Events.cur_dept == Events.DEPT.SPACE:
 			officer_name.text = "Offcier Kessler"
-		elif Events.cur_dept == "human":
+		elif Events.cur_dept == Events.DEPT.HUMAN:
 			officer_name.text = "Offcier Monroe"
-		elif Events.cur_dept == "nature":
+		elif Events.cur_dept == Events.DEPT.NATURE:
 			officer_name.text = "Offcier Reyes"
 			
 func _process(delta: float) -> void:

@@ -18,13 +18,13 @@ func _ready() -> void:
 	officer_sprite.play()
 	
 func _process(_delta: float) -> void:
-	if Events.dept == Events.DEPT.SPACE:
+	if Events.cur_dept == Events.DEPT.SPACE:
 		officer_sprite.visible = true
 		officer_sprite.play("Kessler")
-	elif Events.dept == Events.DEPT.HUMAN:
+	elif Events.cur_dept == Events.DEPT.HUMAN:
 		officer_sprite.visible = true
 		officer_sprite.play("Monroe")
-	elif Events.dept == Events.DEPT.NATURE:
+	elif Events.cur_dept == Events.DEPT.NATURE:
 		officer_sprite.visible = true
 		officer_sprite.play("Reyes")
 	else:
