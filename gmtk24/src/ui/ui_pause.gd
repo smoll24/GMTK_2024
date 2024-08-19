@@ -5,11 +5,9 @@ func _input(event):
 		if visible == false:
 			get_tree().paused = true
 			visible = true
-			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
 		else:
 			get_tree().paused = false
 			visible = false
-			Input.set_mouse_mode(Input.MOUSE_MODE_HIDDEN)
 
 func _on_cont_button_pressed() -> void:
 	get_tree().paused = false
