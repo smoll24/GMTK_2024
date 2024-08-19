@@ -19,12 +19,12 @@ colors = PackedColorArray(0.129412, 0.12549, 0.12549, 0.541176, 0.129412, 0.1254
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_um2xx"]
 gradient = SubResource("Gradient_54u1x")
 
-[sub_resource type="Gradient" id="Gradient_hm70d"]
+[sub_resource type="Gradient" id="Gradient_esvjp"]
 offsets = PackedFloat32Array(0, 0.727273)
 colors = PackedColorArray(0.129412, 0.12549, 0.12549, 0.541176, 0.129412, 0.12549, 0.12549, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_va2nf"]
-gradient = SubResource("Gradient_hm70d")
+gradient = SubResource("Gradient_esvjp")
 
 [node name="ui_top_viewport" type="Control"]
 layout_mode = 3
@@ -36,6 +36,7 @@ grow_vertical = 2
 script = ExtResource("1_85tmj")
 
 [node name="Res_open" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -164,36 +165,36 @@ rotation = 1.5708
 scale = Vector2(3, -3)
 
 [node name="People" parent="Res_open" instance=ExtResource("4_42rt0")]
-position = Vector2(824, 110)
+position = Vector2(824, 126)
 texture = ExtResource("11_ql56o")
 
 [node name="Food" parent="Res_open" instance=ExtResource("4_42rt0")]
-position = Vector2(825.001, 181)
+position = Vector2(825.001, 197)
 texture = ExtResource("4_41wai")
 resource_type = 1
 
 [node name="Lumber" parent="Res_open" instance=ExtResource("4_42rt0")]
-position = Vector2(824, 252)
+position = Vector2(824, 268)
 texture = ExtResource("5_6aaea")
 resource_type = 2
 
 [node name="Metal" parent="Res_open" instance=ExtResource("4_42rt0")]
-position = Vector2(824, 323)
+position = Vector2(824, 339)
 texture = ExtResource("6_siv4h")
 resource_type = 3
 
 [node name="Energy" parent="Res_open" instance=ExtResource("4_42rt0")]
-position = Vector2(824, 394)
+position = Vector2(824, 410)
 texture = ExtResource("8_tmmcp")
 resource_type = 4
 
 [node name="Finance" parent="Res_open" instance=ExtResource("4_42rt0")]
-position = Vector2(824, 465)
+position = Vector2(824, 481)
 texture = ExtResource("8_ofb1n")
 resource_type = 5
 
 [node name="Comms" parent="Res_open" instance=ExtResource("4_42rt0")]
-position = Vector2(824, 536)
+position = Vector2(824, 552)
 texture = ExtResource("7_an0kb")
 resource_type = 5
 
