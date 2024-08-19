@@ -89,6 +89,14 @@ offset_right = 109.0
 offset_bottom = 47.0
 text = "current time:"
 
+[node name="TimeScale" type="Label" parent="UI"]
+layout_mode = 0
+offset_left = 319.0
+offset_top = 598.0
+offset_right = 421.0
+offset_bottom = 621.0
+text = "Time Scale:"
+
 [node name="FastForward_frame" type="Control" parent="UI"]
 layout_mode = 1
 anchors_preset = 15
@@ -185,7 +193,7 @@ scale = Vector2(0.5, 0.5)
 theme_override_styles/focus = SubResource("StyleBoxEmpty_nhuxe")
 icon = ExtResource("6_ni07f")
 
-[node name="Backward_frame" type="Control" parent="UI"]
+[node name="SlowDown_frame" type="Control" parent="UI"]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -197,33 +205,33 @@ offset_bottom = -655.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Frame3" type="Sprite2D" parent="UI/Backward_frame"]
+[node name="Frame3" type="Sprite2D" parent="UI/SlowDown_frame"]
 position = Vector2(87, 588)
 rotation = 1.5708
 scale = Vector2(4, 4)
 texture = ExtResource("6_2b8w4")
 hframes = 6
 
-[node name="Frame4" type="Sprite2D" parent="UI/Backward_frame"]
+[node name="Frame4" type="Sprite2D" parent="UI/SlowDown_frame"]
 position = Vector2(52.5, 634)
 scale = Vector2(3.625, 4)
 texture = ExtResource("6_2b8w4")
 hframes = 6
 
-[node name="Frame5" type="Sprite2D" parent="UI/Backward_frame"]
+[node name="Frame5" type="Sprite2D" parent="UI/SlowDown_frame"]
 position = Vector2(17, 590.129)
 rotation = 1.5708
 scale = Vector2(4.34412, 4)
 texture = ExtResource("6_2b8w4")
 hframes = 6
 
-[node name="Frame2" type="Sprite2D" parent="UI/Backward_frame"]
+[node name="Frame2" type="Sprite2D" parent="UI/SlowDown_frame"]
 position = Vector2(52.5, 548)
 scale = Vector2(3.625, 4)
 texture = ExtResource("6_2b8w4")
 hframes = 6
 
-[node name="Backward" type="Button" parent="UI"]
+[node name="SlowDown" type="Button" parent="UI"]
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
@@ -394,3 +402,5 @@ texture = ExtResource("12_ag5kd")
 [connection signal="focus_entered" from="UI/FastForward" to="." method="_on_fast_forward_focus_entered"]
 [connection signal="focus_exited" from="UI/FastForward" to="." method="_on_fast_forward_focus_exited"]
 [connection signal="pressed" from="UI/FastForward" to="." method="_on_fast_forward_pressed"]
+[connection signal="pressed" from="UI/Forward" to="." method="_on_forward_pressed"]
+[connection signal="pressed" from="UI/SlowDown" to="." method="_on_slow_down_pressed"]

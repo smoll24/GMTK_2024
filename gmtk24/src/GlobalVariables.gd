@@ -75,6 +75,9 @@ func display_countdown(time_in_sec) -> String:
 		time = "%s years " % format_number(years) + time
 	return time
 
+func display_magnitude(time_in_sec) -> String:
+	return ''
+
 func format_number(n: int) -> String:
 	if n >= 1e9:
 		var i:float = snapped(float(n)/1e9, .01)
