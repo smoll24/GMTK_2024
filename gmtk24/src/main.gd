@@ -7,6 +7,7 @@ extends Control
 @onready var event_report_ui = $UI/ui_viewport
 @onready var notification_tree = $UI/notification_tree
 @onready var event_popup = preload("res://src/events/event_notif.tscn")
+@onready var city_name_label = $UI/CityName
 
 var sim_time : float
 var time_skip_amount
@@ -23,6 +24,8 @@ func _ready() -> void:
 	sim_time = 0
 	
 	time_skip_amount = GV.SEC_IN_DAY
+	
+	city_name_label.text = GV.CityName
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:

@@ -89,6 +89,15 @@ offset_right = 109.0
 offset_bottom = 47.0
 text = "current time:"
 
+[node name="CityName" type="Label" parent="UI"]
+offset_left = 3.0
+offset_top = 24.0
+offset_right = 1152.0
+offset_bottom = 47.0
+text = "Name of City"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="TimeScale" type="Label" parent="UI"]
 layout_mode = 0
 offset_left = 319.0

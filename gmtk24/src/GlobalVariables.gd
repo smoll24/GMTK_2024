@@ -1,5 +1,7 @@
 extends Node
 
+var CityName = "New New York"
+
 var aspect_ratio = Vector2i(16,9)
 var viewport_size : Vector2
 

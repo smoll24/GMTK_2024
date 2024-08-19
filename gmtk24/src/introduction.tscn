@@ -59,6 +59,7 @@ grow_vertical = 2
 texture = ExtResource("2_10lnd")
 
 [node name="box" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -105,6 +106,79 @@ scale = Vector2(4.89071, -4)
 texture = ExtResource("2_elxqo")
 hframes = 2
 
+[node name="box2" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 16.0
+offset_bottom = 16.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect" type="ColorRect" parent="box2"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -332.0
+offset_top = -285.0
+offset_right = 325.0
+offset_bottom = 254.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.129412, 0.12549, 0.12549, 1)
+
+[node name="Frame3" type="Sprite2D" parent="box2"]
+position = Vector2(239, 203.376)
+rotation = 1.5708
+scale = Vector2(4.8759, 4)
+texture = ExtResource("2_elxqo")
+hframes = 2
+
+[node name="Frame6" type="Sprite2D" parent="box2"]
+position = Vector2(239, 411.376)
+rotation = 1.5708
+scale = Vector2(4.8759, 4)
+texture = ExtResource("2_elxqo")
+hframes = 2
+
+[node name="Frame" type="Sprite2D" parent="box2"]
+position = Vector2(503.5, 36)
+scale = Vector2(3.78472, 4)
+texture = ExtResource("2_elxqo")
+
+[node name="Frame2" type="Sprite2D" parent="box2"]
+position = Vector2(504.5, 580)
+scale = Vector2(3.78472, -4)
+texture = ExtResource("2_elxqo")
+
+[node name="Frame4" type="Sprite2D" parent="box2"]
+position = Vector2(906, 204.906)
+rotation = 1.5708
+scale = Vector2(4.89071, -4)
+texture = ExtResource("2_elxqo")
+hframes = 2
+
+[node name="Frame5" type="Sprite2D" parent="box2"]
+position = Vector2(642.5, 36)
+scale = Vector2(-3.785, 4)
+texture = ExtResource("2_elxqo")
+
+[node name="Frame7" type="Sprite2D" parent="box2"]
+position = Vector2(906, 411.906)
+rotation = 1.5708
+scale = Vector2(4.89071, -4)
+texture = ExtResource("2_elxqo")
+hframes = 2
+
+[node name="Frame8" type="Sprite2D" parent="box2"]
+position = Vector2(641.5, 580)
+scale = Vector2(-3.785, -4)
+texture = ExtResource("2_elxqo")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = 8
@@ -112,10 +186,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -221.0
-offset_top = -137.0
-offset_right = 232.0
-offset_bottom = 139.0
+offset_left = -302.0
+offset_top = -229.5
+offset_right = 305.0
+offset_bottom = 234.5
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/separation = 20
@@ -124,7 +198,13 @@ theme_override_constants/separation = 20
 layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("3_2k6vy")
 theme_override_font_sizes/normal_font_size = 25
-text = "Welcome etc introductiory text and all that jazz"
+text = "Welcome, Chief. 
+
+ As the newly appointed Chief in Command of this wondrous city, you hold the fate of its people in your hands. Your task is to safeguard its population, maintain its prosperity, and ensure its survival against the looming dangers that threaten from all sides.
+
+You will be aided by the officers of the various department of security. Prepare yourself, Chief. The city awaits your command, and every moment counts. 
+
+But first, what do you wish to call this city you are destined to protect?"
 fit_content = true
 
 [node name="name_input" type="LineEdit" parent="VBoxContainer"]
@@ -141,4 +221,5 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_76y7l")
 text = "Submit"
 
+[connection signal="text_submitted" from="VBoxContainer/name_input" to="." method="_on_name_input_text_submitted"]
 [connection signal="pressed" from="VBoxContainer/submit_button" to="." method="_on_submit_button_pressed"]
