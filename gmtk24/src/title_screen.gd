@@ -14,7 +14,8 @@ var why = 10
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 
 func _ready() -> void:
-	Tetanus.play()
+	if not Tetanus.is_playing():
+		Tetanus.play()
 
 func _process(delta: float) -> void:
 	if anim_bool1:
