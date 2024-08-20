@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://4yspnc4n75hy"]
+[gd_scene load_steps=18 format=3 uid="uid://4yspnc4n75hy"]
 
 [ext_resource type="Script" path="res://src/ui/ui_viewport.gd" id="1_os2fa"]
 [ext_resource type="Texture2D" uid="uid://l8qlbg0dwrmw" path="res://assets/officers/kesslerframe1.png" id="4_4b0th"]
@@ -9,6 +9,9 @@
 [ext_resource type="Texture2D" uid="uid://1ped7r4qt3ml" path="res://assets/officers/reyesframe1.png" id="8_s1bh5"]
 [ext_resource type="Texture2D" uid="uid://bkqt8j0frqtnu" path="res://assets/officers/reyesframe2.png" id="9_slrn2"]
 [ext_resource type="Texture2D" uid="uid://p7da3ew0hyyq" path="res://assets/ui/frame.png" id="10_dg1cu"]
+[ext_resource type="Texture2D" uid="uid://b4dbcfc3l6ugy" path="res://assets/ui/satellitetree.png" id="10_l4v4a"]
+[ext_resource type="Texture2D" uid="uid://bhs0o47tjp1qj" path="res://assets/ui/fisttree.png" id="11_ysnjj"]
+[ext_resource type="Texture2D" uid="uid://c4u0n5uhmrqq3" path="res://assets/ui/woodtree.png" id="12_757us"]
 
 [sub_resource type="Gradient" id="Gradient_0v7p3"]
 offsets = PackedFloat32Array(0, 0.727273)
@@ -176,21 +179,156 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -0.5
-offset_top = 157.0
+offset_left = -0.500061
+offset_top = 141.0
 offset_right = 203.0
-offset_bottom = -296.0
+offset_bottom = -312.0
 grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_55n37")
 theme_override_styles/normal = SubResource("StyleBoxFlat_a2ivx")
 
 [node name="Officer_img" type="AnimatedSprite2D" parent="Text_open"]
-position = Vector2(691, 252)
+position = Vector2(691, 236)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_1gxdg")
 animation = &"Reyes"
 speed_scale = 0.5
+
+[node name="Space_button" type="Control" parent="Text_open"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 719.0
+offset_top = 42.0
+offset_right = 719.0
+offset_bottom = -589.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.6)
+mouse_filter = 2
+
+[node name="Frame3" type="Sprite2D" parent="Text_open/Space_button"]
+position = Vector2(114.94, 590.391)
+rotation = 1.5708
+scale = Vector2(5.59693, 6.01601)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Frame4" type="Sprite2D" parent="Text_open/Space_button"]
+position = Vector2(42, 646.667)
+scale = Vector2(7.16667, 5.49998)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Frame2" type="Sprite2D" parent="Text_open/Space_button"]
+position = Vector2(32, 533.333)
+scale = Vector2(6.33333, 5.00003)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Frame5" type="Sprite2D" parent="Text_open/Space_button"]
+position = Vector2(-31.4976, 590.439)
+rotation = 1.5708
+scale = Vector2(5.61273, 6.4179)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Satellitetree" type="Sprite2D" parent="Text_open/Space_button"]
+position = Vector2(42, 590)
+scale = Vector2(0.6, 0.5)
+texture = ExtResource("10_l4v4a")
+
+[node name="Human_button" type="Control" parent="Text_open"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 719.0
+offset_top = 130.0
+offset_right = 719.0
+offset_bottom = -501.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.6)
+mouse_filter = 2
+
+[node name="Frame3" type="Sprite2D" parent="Text_open/Human_button"]
+position = Vector2(114.94, 590.391)
+rotation = 1.5708
+scale = Vector2(5.59693, 6.01601)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Frame4" type="Sprite2D" parent="Text_open/Human_button"]
+position = Vector2(42, 646.667)
+scale = Vector2(7.16667, 5.49998)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Frame2" type="Sprite2D" parent="Text_open/Human_button"]
+position = Vector2(32, 533.333)
+scale = Vector2(6.33333, 5.00003)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Frame5" type="Sprite2D" parent="Text_open/Human_button"]
+position = Vector2(-31.4976, 590.439)
+rotation = 1.5708
+scale = Vector2(5.61273, 6.4179)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Satellitetree" type="Sprite2D" parent="Text_open/Human_button"]
+position = Vector2(42, 590)
+scale = Vector2(0.6, 0.5)
+texture = ExtResource("11_ysnjj")
+
+[node name="Nature_button" type="Control" parent="Text_open"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 719.0
+offset_top = 217.0
+offset_right = 719.0
+offset_bottom = -414.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.5, 0.6)
+mouse_filter = 2
+
+[node name="Frame3" type="Sprite2D" parent="Text_open/Nature_button"]
+position = Vector2(114.94, 590.391)
+rotation = 1.5708
+scale = Vector2(5.59693, 6.01601)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Frame4" type="Sprite2D" parent="Text_open/Nature_button"]
+position = Vector2(42, 646.667)
+scale = Vector2(7.16667, 5.49998)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Frame2" type="Sprite2D" parent="Text_open/Nature_button"]
+position = Vector2(32, 533.333)
+scale = Vector2(6.33333, 5.00003)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Frame5" type="Sprite2D" parent="Text_open/Nature_button"]
+position = Vector2(-31.4976, 590.439)
+rotation = 1.5708
+scale = Vector2(5.61273, 6.4179)
+texture = ExtResource("10_dg1cu")
+hframes = 6
+
+[node name="Satellitetree" type="Sprite2D" parent="Text_open/Nature_button"]
+position = Vector2(42, 590)
+scale = Vector2(0.6, 0.5)
+texture = ExtResource("12_757us")
 
 [node name="Text_close" type="Control" parent="."]
 visible = false
