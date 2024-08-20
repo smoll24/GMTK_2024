@@ -253,10 +253,14 @@ scale = Vector2(5.61273, 6.4179)
 texture = ExtResource("10_dg1cu")
 hframes = 6
 
-[node name="Satellitetree" type="Sprite2D" parent="Text_open/Space_button"]
-position = Vector2(42, 590)
+[node name="Space_icon" type="Button" parent="Text_open/Space_button"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 535.0
+offset_right = 206.0
+offset_bottom = 747.0
 scale = Vector2(0.6, 0.5)
-texture = ExtResource("10_l4v4a")
+icon = ExtResource("10_l4v4a")
 
 [node name="Human_button" type="Control" parent="Text_open"]
 layout_mode = 1
@@ -298,10 +302,14 @@ scale = Vector2(5.61273, 6.4179)
 texture = ExtResource("10_dg1cu")
 hframes = 6
 
-[node name="Satellitetree" type="Sprite2D" parent="Text_open/Human_button"]
-position = Vector2(42, 590)
+[node name="Human_icon" type="Button" parent="Text_open/Human_button"]
+layout_mode = 0
+offset_left = -26.0
+offset_top = 536.667
+offset_right = 206.0
+offset_bottom = 748.667
 scale = Vector2(0.6, 0.5)
-texture = ExtResource("11_ysnjj")
+icon = ExtResource("11_ysnjj")
 
 [node name="Nature_button" type="Control" parent="Text_open"]
 layout_mode = 1
@@ -343,10 +351,14 @@ scale = Vector2(5.61273, 6.4179)
 texture = ExtResource("10_dg1cu")
 hframes = 6
 
-[node name="Satellitetree" type="Sprite2D" parent="Text_open/Nature_button"]
-position = Vector2(42, 590)
+[node name="Nature_icon" type="Button" parent="Text_open/Nature_button"]
+layout_mode = 0
+offset_left = -24.0
+offset_top = 535.0
+offset_right = 208.0
+offset_bottom = 747.0
 scale = Vector2(0.6, 0.5)
-texture = ExtResource("12_757us")
+icon = ExtResource("12_757us")
 
 [node name="Text_close" type="Control" parent="."]
 visible = false
@@ -441,4 +453,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [connection signal="pressed" from="Text_open/Close_text" to="." method="_on_close_text_pressed"]
+[connection signal="pressed" from="Text_open/Space_button/Space_icon" to="." method="_on_space_icon_pressed"]
+[connection signal="pressed" from="Text_open/Human_button/Human_icon" to="." method="_on_human_icon_pressed"]
+[connection signal="pressed" from="Text_open/Nature_button/Nature_icon" to="." method="_on_nature_icon_pressed"]
 [connection signal="pressed" from="Text_close/Open_text" to="." method="_on_open_text_pressed"]
