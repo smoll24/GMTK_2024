@@ -66,6 +66,7 @@ func game_over_screen():
 	sim_time_scale = 0
 	$UI_Top/Pop_up_box.visible = true
 	$UI_Top/Pop_up_box/Lose_screen.visible = true
+	$UI_Top/ui_top_viewport._on_open_text_pressed()
 
 func choose_event():
 	#Choose unoccupied department

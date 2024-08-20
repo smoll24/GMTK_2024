@@ -50,12 +50,15 @@ func _process(delta: float) -> void:
 	if enabled and has_resources():
 		self.disabled = false
 		skill_branch.default_color = Color(1,1,1)
+	else:
+		self.self_modulate = Color(0.5,0.5,0.5)
 
 func _on_pressed() -> void:
-	Click.play()
-	for res in resources.keys():
-		GV.res_dict[res]['amount'] -= resources[res]
+	if has_resources():
+		Click.play()
+		for res in resources.keys():
+			GV.res_dict[res]['amount'] -= resources[res]
 	
-	level = min(level + 1, max_level) if not infinite else level + 1
-	emit_signal("level_up", level)
-	self.self_modulate = Color(0.9,0.9,0.9)
+		level = min(level + 1, max_level) if not infinite else level + 1
+		emit_signal("level_up", level)
+		self.self_modulate = Color(0.9,0.9,0.9)

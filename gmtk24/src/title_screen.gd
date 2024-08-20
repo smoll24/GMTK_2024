@@ -46,6 +46,7 @@ func anim_up():
 
 func _on_start_button_pressed() -> void:
 	Click.play()
+	GV._ready()
 	get_tree().change_scene_to_file("res://src/introduction.tscn")
 
 

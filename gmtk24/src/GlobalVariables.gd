@@ -119,7 +119,7 @@ func incease_resources(delta) -> void:
 	if res_dict[RES.FOOD]['amount'] < res_dict[RES.PEOPLE]['amount']:
 		res_dict[RES.PEOPLE]['amount'] -= per_day((res_dict[RES.PEOPLE]['amount'] - res_dict[RES.FOOD]['amount'])/10, delta)
 		
-	if res_dict[RES.PEOPLE]['amount'] < 0:
+	if res_dict[RES.PEOPLE]['amount'] <= 1:
 		print('GAME OVER')
 		emit_signal("game_over")
 	
