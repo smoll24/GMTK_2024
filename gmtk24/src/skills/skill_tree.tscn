@@ -245,20 +245,20 @@ self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
 offset_left = 496.0
 offset_top = 244.0
-offset_right = 690.0
+offset_right = 710.0
 offset_bottom = 313.0
-text = "Buy Food [$100 for 1000 food]
+text = "Make Food [100 people for 1000 food per day]
 "
 icon = ExtResource("7_0y56v")
 autowrap_mode = 3
 infinite = true
 resources = {
-0: 0,
+0: 100,
 1: 0,
 2: 0,
 3: 0,
 4: 0,
-5: 100,
+5: 0,
 6: 0
 }
 

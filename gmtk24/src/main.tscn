@@ -517,6 +517,7 @@ text = "Restart"
 
 [node name="Lose_screen" type="Control" parent="UI_Top/Pop_up_box"]
 visible = false
+z_index = 2
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0

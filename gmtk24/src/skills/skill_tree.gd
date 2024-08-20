@@ -41,4 +41,4 @@ func _on_make_dams_pressed() -> void:
 	pass # Replace with function body.
 
 func _on_buy_food_pressed() -> void:
-	GV.res_dict[GV.RES.FOOD]['amount'] += 1000
+	GV.res_dict[GV.RES.FOOD]['growth'] += 1000

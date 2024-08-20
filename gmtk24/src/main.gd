@@ -28,6 +28,8 @@ func _ready() -> void:
 	time_skip_amount = GV.SEC_IN_DAY
 	
 	city_name_label.text = GV.CityName
+	
+	GV.game_over.connect(game_over_screen)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -37,6 +39,9 @@ func _process(delta: float) -> void:
 		sim_time = GV.END_GAME_TIME
 		print('YOU WIN')
 		target_sim_speed = 0
+		sim_time_scale = 0
+		$UI_Top/Pop_up_box.visible = true
+		$UI_Top/Pop_up_box/Win_screen.visible = true
 	
 	GV.incease_resources(delta * sim_time_scale)
 	Events.reduce_countdown(delta * sim_time_scale)
@@ -55,6 +60,12 @@ func _process(delta: float) -> void:
 		#print(GV.display_countdown(next_event_until - sim_time))
 
 var last_event_time = 0
+
+func game_over_screen():
+	target_sim_speed = 0
+	sim_time_scale = 0
+	$UI_Top/Pop_up_box.visible = true
+	$UI_Top/Pop_up_box/Lose_screen.visible = true
 
 func choose_event():
 	#Choose unoccupied department
@@ -105,10 +116,10 @@ func _on_forward_pressed() -> void:
 
 func _on_fast_forward_pressed() -> void:
 	time_skip_amount = max(GV.SEC_IN_DAY, sim_time)
-	speed_up(sim_time_scale + + GV.SEC_IN_DAY * 30, time_skip_amount)
+	speed_up(sim_time_scale + GV.SEC_IN_DAY * 31.2, time_skip_amount)
 
 func _on_cryo_freeze_pressed() -> void:
-	speed_up(sim_time_scale + + GV.SEC_IN_YEAR, time_skip_amount)
+	speed_up(sim_time_scale + max(GV.SEC_IN_YEAR * 5_000, sim_time), time_skip_amount)
 	cryo_timer = GV.SEC_IN_YEAR * 5_000
 	$Cryo_effect.visible = true
 
