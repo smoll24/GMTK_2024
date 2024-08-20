@@ -62,23 +62,18 @@ layout_mode = 2
 [node name="choice_tree" type="VBoxContainer" parent="."]
 layout_mode = 2
 
-[node name="Choice1" type="RichTextLabel" parent="choice_tree"]
+[node name="Choice1" type="Button" parent="choice_tree"]
 layout_mode = 2
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("1_qnw2m")
-theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_ia855")
 text = "Choice 1"
-fit_content = true
+alignment = 0
+autowrap_mode = 3
 
-[node name="Choice2" type="RichTextLabel" parent="choice_tree"]
+[node name="Choice2" type="Button" parent="choice_tree"]
 layout_mode = 2
-theme_override_colors/default_color = Color(1, 1, 1, 1)
-theme_override_fonts/normal_font = ExtResource("1_qnw2m")
-theme_override_font_sizes/normal_font_size = 25
 theme_override_styles/normal = SubResource("StyleBoxFlat_xyrsv")
 text = "Choice 2"
-fit_content = true
+alignment = 0
 
 [node name="HSeparator4" type="HSeparator" parent="choice_tree"]
 custom_minimum_size = Vector2(0, 10)
@@ -87,9 +82,9 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 2
 
-[connection signal="meta_clicked" from="choice_tree/Choice1" to="." method="_on_choice_1_meta_clicked"]
 [connection signal="mouse_entered" from="choice_tree/Choice1" to="." method="_on_choice_1_mouse_entered"]
 [connection signal="mouse_exited" from="choice_tree/Choice1" to="." method="_on_choice_1_mouse_exited"]
-[connection signal="meta_clicked" from="choice_tree/Choice2" to="." method="_on_choice_2_meta_clicked"]
+[connection signal="pressed" from="choice_tree/Choice1" to="." method="_on_choice_1_pressed"]
 [connection signal="mouse_entered" from="choice_tree/Choice2" to="." method="_on_choice_2_mouse_entered"]
 [connection signal="mouse_exited" from="choice_tree/Choice2" to="." method="_on_choice_2_mouse_exited"]
+[connection signal="pressed" from="choice_tree/Choice2" to="." method="_on_choice_2_pressed"]

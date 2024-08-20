@@ -54,16 +54,15 @@ func _on_choice_2_mouse_exited() -> void:
 	$choice_tree/Choice2.self_modulate = Color(1,1,1,1)
 
 
-func _on_choice_1_meta_clicked(_meta: Variant) -> void:
+func _on_choice_1_pressed() -> void:
 	if choice1_bool:
 		print("Choice 1")
 		expire(Color(0.5,0.5,0.5,0.5), 0)
 
-
-func _on_choice_2_meta_clicked(_meta: Variant) -> void:
+func _on_choice_2_pressed() -> void:
 	if choice2_bool:
 		print("Choice 2")
-		expire(Color(0.5,0.5,0.5,0.5), 2)
+		expire(Color(0.5,0.5,0.5,0.5), 1)
 		
 	
 func has_resources(resources) -> bool:
