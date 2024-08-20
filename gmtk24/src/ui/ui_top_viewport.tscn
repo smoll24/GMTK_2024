@@ -167,6 +167,7 @@ scale = Vector2(3, -3)
 [node name="People" parent="Res_open" instance=ExtResource("4_42rt0")]
 position = Vector2(824, 126)
 texture = ExtResource("11_ql56o")
+resource_type = 0
 
 [node name="Food" parent="Res_open" instance=ExtResource("4_42rt0")]
 position = Vector2(825.001, 197)
