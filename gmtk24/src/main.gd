@@ -45,30 +45,40 @@ func _process(delta: float) -> void:
 	
 	sim_time_scale = int(lerp(float(sim_time_scale),float(target_sim_speed), delta))
 	
-	if fast_forward_until < sim_time:
-		slow_down()
-		fast_forward_until = sim_time + time_skip_amount/2
+	#if fast_forward_until < sim_time:
+	#	slow_down()
+	#	fast_forward_until = sim_time + time_skip_amount/2
 	if next_event_until < sim_time:
 		choose_event()
 		next_event_until = sim_time + GV.SEC_IN_DAY + (sim_time/2) * (randf_range(0.0, 2.0) ** 2)
 		#print(GV.display_countdown(next_event_until - sim_time))
 
+var last_event_time = 0
+
 func choose_event():
 	#Choose unoccupied department
+	var time_since_last_event = last_event_time - sim_time
+	
 	if len(Events.avail_dept) >= 1:
 		var dept = Events.avail_dept.pick_random()
-		Events.cur_dept = dept
+		
+		#var randi = randi_range(0,)
 		var diff = Events.CATG.values().pick_random()
 		var event = Events.events_categories[dept][diff].pick_random()
 		
-		var active_event = ActiveEvent.new(event, dept, GV.SEC_IN_DAY*7)
+		var event_countdown
+		match diff as Events.CATG:
+			Events.CATG.SMALL: event_countdown = GV.SEC_IN_DAY*7
+			Events.CATG.MEDIUM: event_countdown = GV.SEC_IN_DAY*7*60
+			Events.CATG.LARGE: event_countdown = GV.SEC_IN_YEAR
+		
+		var active_event = ActiveEvent.new(event, dept, event_countdown)
 		active_event.event_expire.connect(event_effect)
 		
 		Events.cur_events.append(active_event)
 		Events.avail_dept.erase(dept)
 		print("Event chosen is: ", Events.events_desc[event][0])
-		
-		event_report_ui.add_event_report(active_event)
+		event_report_ui.add_event_report(active_event, dept)
 		
 		var event_notif = event_popup.instantiate()
 		notification_tree.add_child(event_notif)
@@ -76,15 +86,13 @@ func choose_event():
 
 
 func slow_down():
-	print(sim_time_scale)
-	target_sim_speed = max(1, target_sim_speed - (time_skip_amount / 10))
-	print(sim_time_scale)
+	target_sim_speed = max(1, target_sim_speed/10)
 
 func speed_up(speed, length):
-	if fast_forward_until > sim_time:
-		fast_forward_until += length
-	else:
-		fast_forward_until = sim_time + length
+	#if fast_forward_until > sim_time:
+	#	fast_forward_until += length
+	#else:
+	#	fast_forward_until = sim_time + length
 	target_sim_speed = speed
 
 func _on_slow_down_pressed() -> void:
@@ -92,16 +100,16 @@ func _on_slow_down_pressed() -> void:
 
 func _on_forward_pressed() -> void:
 	time_skip_amount = max(GV.SEC_IN_DAY, sim_time)
-	speed_up(time_skip_amount / 5, time_skip_amount)
+	speed_up(sim_time_scale + GV.SEC_IN_DAY / 2, time_skip_amount)
 
 func _on_fast_forward_pressed() -> void:
 	time_skip_amount = max(GV.SEC_IN_DAY, sim_time)
-	speed_up(time_skip_amount, time_skip_amount * 1_000_000)
+	speed_up(sim_time_scale + + GV.SEC_IN_DAY * 30, time_skip_amount)
 	
 func _on_cryo_pressed() -> void:
 	pass # Replace with function body.
 
-func event_effect(event_type : Events.EVENT) -> void:
+func event_effect(event_type : Events.EVENT, outcome) -> void:
 	match event_type as Events.EVENT:
 		Events.EVENT.SAT_COL: GV.res_dict[GV.RES.COMMS]['amount'] -= 10
 		Events.EVENT.MIN_AST: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10

@@ -5,7 +5,10 @@ var text_toggle
 @onready var text_open = $Text_open
 @onready var text_close = $Text_close
 @onready var officer_sprite = $Text_open/Officer_img
-@onready var envent_list = $Text_open/EventsList
+@onready var space_envent_list = $Text_open/SpaceEventsList
+@onready var human_envent_list = $Text_open/HumanEventsList
+@onready var nature_envent_list = $Text_open/NatureEventsList
+
 
 @onready var event_report = preload("res://src/events/event_report.tscn")
 
@@ -25,10 +28,17 @@ func _process(_delta: float) -> void:
 	elif Events.cur_dept == Events.DEPT.NATURE:
 		officer_sprite.play("Reyes")
 
-func add_event_report(event : ActiveEvent):
+func add_event_report(event : ActiveEvent, dept : Events.DEPT):
 	var e : EventReport = event_report.instantiate()
-	e.init_event(event, 'name')
-	envent_list.add_child(e)
+	if dept == Events.DEPT.SPACE:
+		e.init_event(event, "Kessler")
+		space_envent_list.add_child(e)
+	elif dept == Events.DEPT.HUMAN:
+		e.init_event(event, "Monroe")
+		human_envent_list.add_child(e)
+	elif dept == Events.DEPT.NATURE:
+		e.init_event(event, "Reyes")
+		nature_envent_list.add_child(e)
 
 func _on_close_text_pressed() -> void:
 	if text_toggle:

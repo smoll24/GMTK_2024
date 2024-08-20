@@ -5,8 +5,6 @@ class_name EventReport
 @onready var time_tree = $time_tree
 @onready var countdown = $time_tree/Countdown
 
-@onready var officer_name = $Cur_speaker
-
 var choice1_bool = true
 var choice2_bool = true
 
@@ -23,28 +21,20 @@ func _process(delta: float) -> void:
 		if time_remaining > 0:
 			countdown.text = 'Time Remaining: ' + GV.display_countdown(time_remaining)
 		else:
-			expire(Color(1,0.5,0.5,0.5))
+			expire(Color(1,0.5,0.5,0.5), 3)
 
-func expire(color) -> void:
+func expire(color, outcome) -> void:
 	self.modulate = color
 	choice_tree.visible = false
 	time_tree.visible = false
-	active_event.expire()
+	active_event.expire(outcome)
 
 func init_event(event : ActiveEvent, officer_name : String):
 	active_event = event
 	$Cur_text.text = Events.events_desc[active_event.type][1]
 	$choice_tree/Choice1.text = Events.events_desc[active_event.type][2]
 	$choice_tree/Choice2.text = Events.events_desc[active_event.type][3]
-	if Events.cur_dept == Events.DEPT.SPACE:
-		officer_name = "Officer Kessler"
-	elif Events.cur_dept == Events.DEPT.HUMAN:
-		officer_name = "Officer Monroe"
-	if Events.cur_dept == Events.DEPT.NATURE:
-		officer_name = "Officer Reyes"
-
-func _on_choice_1_pressed() -> void:
-	expire(Color(0.5,0.5,0.5,0.5))
+	$Cur_speaker.text = officer_name
 
 
 func _on_choice_1_mouse_entered() -> void:
@@ -59,11 +49,13 @@ func _on_choice_2_mouse_exited() -> void:
 	$choice_tree/Choice2.self_modulate = Color(1,1,1,1)
 
 
-func _on_choice_1_meta_clicked(meta: Variant) -> void:
+func _on_choice_1_meta_clicked(_meta: Variant) -> void:
 	if choice1_bool:
 		print("Choice 1")
+		expire(Color(0.5,0.5,0.5,0.5), 0)
 
 
-func _on_choice_2_meta_clicked(meta: Variant) -> void:
+func _on_choice_2_meta_clicked(_meta: Variant) -> void:
 	if choice2_bool:
 		print("Choice 2")
+		expire(Color(0.5,0.5,0.5,0.5), 2)

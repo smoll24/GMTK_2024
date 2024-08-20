@@ -5,7 +5,7 @@ class_name SkillNode
 @onready var skill_branch = $SkillBranch
 
 @export var max_level : int = 3
-@onready var infinite : bool = false
+@export var infinite : bool = false
 @export var required_prev_level : int = 1
 
 signal level_up(new_level)

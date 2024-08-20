@@ -15,8 +15,8 @@ func _init(event : Events.EVENT, deptartement : Events.DEPT, start_time : float)
 func reduce_countdown(delta : float) -> void:
 	countdown -= delta
 
-func expire() -> void:
-	emit_signal("event_expire", type)
+func expire(outcome) -> void:
+	emit_signal("event_expire", type, outcome)
 	
 	Events.avail_dept.append(dept)
 	Events.cur_events.erase(self)

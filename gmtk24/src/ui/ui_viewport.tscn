@@ -119,7 +119,25 @@ offset_right = 204.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="EventsList" type="VBoxContainer" parent="Text_open"]
+[node name="SpaceEventsList" type="VBoxContainer" parent="Text_open"]
+layout_mode = 0
+offset_left = 792.0
+offset_top = -597.0
+offset_right = 1121.0
+offset_bottom = 583.0
+alignment = 2
+
+[node name="HumanEventsList" type="VBoxContainer" parent="Text_open"]
+visible = false
+layout_mode = 0
+offset_left = 792.0
+offset_top = -597.0
+offset_right = 1121.0
+offset_bottom = 583.0
+alignment = 2
+
+[node name="NatureEventsList" type="VBoxContainer" parent="Text_open"]
+visible = false
 layout_mode = 0
 offset_left = 792.0
 offset_top = -597.0
