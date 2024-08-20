@@ -19,6 +19,8 @@ var target_sim_speed : int = 1
 var cryo_timer = 0
 var fast_forward_upgrade_multiplier = 1
 
+var reduce_damages = 0.0
+
 var start_sim_unix_time
 
 # Called when the node enters the scene tree for the first time.
@@ -34,6 +36,10 @@ func _ready() -> void:
 	$UI/Cryo_frame.visible = false
 	skill_tree.fast_forward_upgrade.connect(upgrade_fast_forward)
 	skill_tree.buy_cryo_freeze.connect(unlock_cryo)
+	skill_tree.buy_shelters.connect(buy_sheleters)
+
+func buy_sheleters() -> void:
+	reduce_damages = lerp(reduce_damages, 0.8, 0.05)
 
 func upgrade_fast_forward() -> void:
 	fast_forward_upgrade_multiplier += 10
@@ -58,6 +64,11 @@ func _process(delta: float) -> void:
 	background.update_time(start_sim_unix_time + sim_time, delta, sim_time_scale)
 	current_time_label.text = "current time: " + GV.display_time_from_seconds(start_sim_unix_time + sim_time)
 	time_scale_label.text = "Time Scale: %s/s" % GV.display_magnitude(sim_time_scale)
+	
+	if cryo_timer > 0:
+		cryo_timer -= delta * sim_time_scale
+		if cryo_timer < 0:
+			end_cryo_freeze()
 	
 	sim_time_scale = int(lerp(float(sim_time_scale),float(target_sim_speed), delta))
 	
@@ -134,8 +145,10 @@ func _on_fast_forward_pressed() -> void:
 
 func _on_cryo_freeze_pressed() -> void:
 	Click.play()
-	speed_up(sim_time_scale + max(GV.SEC_IN_YEAR * 5_000, sim_time), time_skip_amount)
-	cryo_timer = GV.SEC_IN_YEAR * 5_000
+	var cryo_scale = sim_time_scale + max(GV.SEC_IN_YEAR * 5_000, sim_time/10.0)
+	print(cryo_scale)
+	speed_up(cryo_scale/2.0, time_skip_amount)
+	cryo_timer = cryo_scale
 	$Cryo_effect.visible = true
 
 func end_cryo_freeze() -> void:
@@ -143,7 +156,7 @@ func end_cryo_freeze() -> void:
 	target_sim_speed = 1
 
 func event_effect(event_type : Events.EVENT, outcome) -> void:
-	outcome = outcome ** 2
+	outcome = float(outcome ** 2) * (1 - reduce_damages)
 	match event_type as Events.EVENT:
 		Events.EVENT.SAT_COL: GV.res_dict[GV.RES.COMMS]['amount'] -= 10 * outcome
 		Events.EVENT.MIN_AST: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10 * outcome

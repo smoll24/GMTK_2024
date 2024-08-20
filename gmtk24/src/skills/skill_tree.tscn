@@ -221,6 +221,7 @@ resources = {
 }
 
 [node name="MakeDams" parent="BuyCitizens/BuyWood" instance=ExtResource("1_xlj7l")]
+visible = false
 self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
 offset_left = 331.0

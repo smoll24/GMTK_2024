@@ -51,6 +51,10 @@ var cur_events = []
 var cur_dept : DEPT = DEPT.SPACE
 var avail_dept = [DEPT.SPACE, DEPT.HUMAN, DEPT.NATURE]
 
+func _ready() -> void:
+	cur_dept = DEPT.SPACE
+	avail_dept = [DEPT.SPACE, DEPT.HUMAN, DEPT.NATURE]
+
 var events_categories = {
 	DEPT.SPACE: {
 	CATG.SMALL : [EVENT.SAT_COL, EVENT.MIN_AST, EVENT.SOL_FLAR],
