@@ -108,17 +108,21 @@ func speed_up(speed, length):
 	target_sim_speed = speed
 
 func _on_slow_down_pressed() -> void:
+	Click.play()
 	slow_down()
 
 func _on_forward_pressed() -> void:
+	Click.play()
 	time_skip_amount = max(GV.SEC_IN_DAY, sim_time)
 	speed_up(sim_time_scale + GV.SEC_IN_DAY / 2, time_skip_amount)
 
 func _on_fast_forward_pressed() -> void:
+	Click.play()
 	time_skip_amount = max(GV.SEC_IN_DAY, sim_time)
 	speed_up(sim_time_scale + GV.SEC_IN_DAY * 31.2, time_skip_amount)
 
 func _on_cryo_freeze_pressed() -> void:
+	Click.play()
 	speed_up(sim_time_scale + max(GV.SEC_IN_YEAR * 5_000, sim_time), time_skip_amount)
 	cryo_timer = GV.SEC_IN_YEAR * 5_000
 	$Cryo_effect.visible = true
@@ -164,9 +168,11 @@ func event_effect(event_type : Events.EVENT, outcome) -> void:
 
 
 func _on_restart_button_pressed() -> void:
+	Click.play()
 	get_tree().paused = false
 	get_tree().change_scene_to_file("res://src/title_screen.tscn")
 
 
 func _on_skill_tree_toggle_pressed() -> void:
+	Click.play()
 	skill_tree.visible = not skill_tree.visible

@@ -175,7 +175,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("7_b71kp")
 theme_override_font_sizes/font_size = 60
-text = "CityScaler"
+text = "Epochs to Eons"
 horizontal_alignment = 1
 vertical_alignment = 1
 
@@ -201,12 +201,12 @@ theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_gwuim")
 text = "Start"
 
-[node name="Quit_button" type="Button" parent="VBoxContainer"]
+[node name="Sound_button" type="Button" parent="VBoxContainer"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("7_b71kp")
 theme_override_font_sizes/font_size = 30
 theme_override_styles/normal = SubResource("StyleBoxFlat_gwuim")
-text = "Quit"
+text = "Sound"
 
 [connection signal="pressed" from="VBoxContainer/Start_button" to="." method="_on_start_button_pressed"]
-[connection signal="pressed" from="VBoxContainer/Quit_button" to="." method="_on_quit_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/Sound_button" to="." method="_on_sound_button_pressed"]

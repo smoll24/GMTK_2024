@@ -41,12 +41,14 @@ func add_event_report(event : ActiveEvent, dept : Events.DEPT):
 		nature_event_list.add_child(e)
 
 func _on_close_text_pressed() -> void:
+	Click.play()
 	if text_toggle:
 		text_toggle = false
 		text_open.visible = false
 		text_close.visible = true
 
 func _on_open_text_pressed() -> void:
+	Click.play()
 	if not text_toggle:
 		text_toggle = true
 		text_open.visible = true
@@ -54,6 +56,7 @@ func _on_open_text_pressed() -> void:
 		
 
 func _on_space_icon_pressed() -> void:
+	Click.play()
 	Events.cur_dept = Events.DEPT.SPACE
 	space_event_list.visible = true
 	human_event_list.visible = false
@@ -61,6 +64,7 @@ func _on_space_icon_pressed() -> void:
 	dept_label.text = "Department of Space Security"
 	
 func _on_human_icon_pressed() -> void:
+	Click.play()
 	Events.cur_dept = Events.DEPT.HUMAN
 	space_event_list.visible = false
 	human_event_list.visible = true
@@ -68,6 +72,7 @@ func _on_human_icon_pressed() -> void:
 	dept_label.text = "Department of Homeland Security"
 
 func _on_nature_icon_pressed() -> void:
+	Click.play()
 	Events.cur_dept = Events.DEPT.NATURE
 	space_event_list.visible = false
 	human_event_list.visible = false

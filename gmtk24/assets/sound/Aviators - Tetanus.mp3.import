@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8yookikxwkdj"
+path="res://.godot/imported/Aviators - Tetanus.mp3-e4d5dd0b3df76cae5f26e62a3f02c394.mp3str"
+
+[deps]
+
+source_file="res://assets/sound/Aviators - Tetanus.mp3"
+dest_files=["res://.godot/imported/Aviators - Tetanus.mp3-e4d5dd0b3df76cae5f26e62a3f02c394.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -13,12 +13,14 @@ func _ready() -> void:
 	res_close.visible = true
 
 func _on_close_text_pressed() -> void:
+	Click.play()
 	if res_toggle:
 		res_toggle = false
 		res_open.visible = false
 		res_close.visible = true
 
 func _on_open_text_pressed() -> void:
+	Click.play()
 	if not res_toggle:
 		res_toggle = true
 		res_open.visible = true

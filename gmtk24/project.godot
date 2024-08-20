@@ -19,6 +19,8 @@ config/icon="res://icon.svg"
 
 GV="*res://src/GlobalVariables.gd"
 Events="*res://src/events/Events.gd"
+Click="*res://src/sound/click.tscn"
+Tetanus="*res://src/sound/Tetanus.tscn"
 
 [display]
 

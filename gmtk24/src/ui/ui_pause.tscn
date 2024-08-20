@@ -131,4 +131,5 @@ theme_override_styles/normal = SubResource("StyleBoxFlat_n21g1")
 text = "Restart"
 
 [connection signal="pressed" from="VBoxContainer/cont_button" to="." method="_on_cont_button_pressed"]
+[connection signal="pressed" from="VBoxContainer/sound_toggle" to="." method="_on_sound_toggle_pressed"]
 [connection signal="pressed" from="VBoxContainer/restart_button" to="." method="_on_restart_button_pressed"]

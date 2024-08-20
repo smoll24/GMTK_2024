@@ -56,11 +56,13 @@ func _on_choice_2_mouse_exited() -> void:
 
 func _on_choice_1_pressed() -> void:
 	if choice1_bool:
+		Click.play()
 		print("Choice 1")
 		expire(Color(0.5,0.5,0.5,0.5), 0)
 
 func _on_choice_2_pressed() -> void:
 	if choice2_bool:
+		Click.play()
 		print("Choice 2")
 		expire(Color(0.5,0.5,0.5,0.5), 1)
 		

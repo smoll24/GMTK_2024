@@ -52,6 +52,7 @@ func _process(delta: float) -> void:
 		skill_branch.default_color = Color(1,1,1)
 
 func _on_pressed() -> void:
+	Click.play()
 	for res in resources.keys():
 		GV.res_dict[res]['amount'] -= resources[res]
 	

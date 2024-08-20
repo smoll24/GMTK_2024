@@ -17,6 +17,8 @@ signal game_over
 
 var res_dict : Dictionary
 
+var sound = true
+
 func _ready():
 	viewport_size = get_viewport().get_visible_rect().size
 	#rescale_window()

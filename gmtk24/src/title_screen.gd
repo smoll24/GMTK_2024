@@ -12,6 +12,10 @@ var time = 0.5
 var why = 10
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
+
+func _ready() -> void:
+	Tetanus.play()
+
 func _process(delta: float) -> void:
 	if anim_bool1:
 		anim_down()
@@ -40,7 +44,17 @@ func anim_up():
 	
 
 func _on_start_button_pressed() -> void:
+	Click.play()
 	get_tree().change_scene_to_file("res://src/introduction.tscn")
 
-func _on_quit_button_pressed() -> void:
-	get_tree().quit()
+
+func _on_sound_button_pressed() -> void:
+	Click.play()
+	if GV.sound:
+		GV.sound = false
+		Tetanus.volume_db = -100
+		Click.volume_db = -100
+	else:
+		GV.sound = true
+		Tetanus.volume_db = 0
+		Click.volume_db = 0
