@@ -19,12 +19,12 @@ colors = PackedColorArray(0.129412, 0.12549, 0.12549, 0.541176, 0.129412, 0.1254
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_um2xx"]
 gradient = SubResource("Gradient_54u1x")
 
-[sub_resource type="Gradient" id="Gradient_6mu52"]
+[sub_resource type="Gradient" id="Gradient_qyveh"]
 offsets = PackedFloat32Array(0, 0.727273)
 colors = PackedColorArray(0.129412, 0.12549, 0.12549, 0.541176, 0.129412, 0.12549, 0.12549, 1)
 
 [sub_resource type="GradientTexture2D" id="GradientTexture2D_va2nf"]
-gradient = SubResource("Gradient_6mu52")
+gradient = SubResource("Gradient_qyveh")
 
 [node name="ui_top_viewport" type="Control"]
 layout_mode = 3
@@ -167,7 +167,6 @@ scale = Vector2(3, -3)
 [node name="People" parent="Res_open" instance=ExtResource("4_42rt0")]
 position = Vector2(824, 126)
 texture = ExtResource("11_ql56o")
-resource_type = 0
 
 [node name="Food" parent="Res_open" instance=ExtResource("4_42rt0")]
 position = Vector2(825.001, 197)

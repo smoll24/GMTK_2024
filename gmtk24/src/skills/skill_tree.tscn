@@ -32,6 +32,7 @@ grow_vertical = 2
 color = Color(0.164706, 0.160784, 0.160784, 0.968627)
 
 [node name="BuyCitizens" parent="." instance=ExtResource("1_xlj7l")]
+self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
 offset_left = 495.0
 offset_top = 330.0
@@ -53,6 +54,7 @@ resources = {
 }
 
 [node name="UpShelters" parent="BuyCitizens" instance=ExtResource("1_xlj7l")]
+self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
 offset_left = 732.0
 offset_top = 334.0
@@ -73,6 +75,7 @@ resources = {
 }
 
 [node name="PowerPlants" parent="BuyCitizens/UpShelters" instance=ExtResource("1_xlj7l")]
+self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
 offset_left = 729.0
 offset_top = 247.0
@@ -93,6 +96,7 @@ resources = {
 }
 
 [node name="FastForward" parent="BuyCitizens/UpShelters/PowerPlants" instance=ExtResource("1_xlj7l")]
+self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
 offset_left = 739.0
 offset_top = 155.0
@@ -113,6 +117,7 @@ resources = {
 }
 
 [node name="CryoFreezer" parent="BuyCitizens/UpShelters/PowerPlants/FastForward" instance=ExtResource("1_xlj7l")]
+self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
 offset_left = 737.0
 offset_top = 76.0
@@ -133,6 +138,7 @@ resources = {
 }
 
 [node name="BuildBanks" parent="BuyCitizens/UpShelters" instance=ExtResource("1_xlj7l")]
+self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
 offset_left = 754.0
 offset_top = 420.0
@@ -153,6 +159,7 @@ resources = {
 }
 
 [node name="BuyWood" parent="BuyCitizens" instance=ExtResource("1_xlj7l")]
+self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
 offset_left = 263.0
 offset_top = 330.0
@@ -173,6 +180,7 @@ resources = {
 }
 
 [node name="BuyMetal" parent="BuyCitizens/BuyWood" instance=ExtResource("1_xlj7l")]
+self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
 offset_left = 314.0
 offset_top = 424.0
@@ -213,6 +221,7 @@ resources = {
 }
 
 [node name="MakeDams" parent="BuyCitizens/BuyWood" instance=ExtResource("1_xlj7l")]
+self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
 offset_left = 293.0
 offset_top = 252.0
@@ -232,6 +241,7 @@ resources = {
 }
 
 [node name="BuyFood" parent="BuyCitizens" instance=ExtResource("1_xlj7l")]
+self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
 offset_left = 496.0
 offset_top = 244.0
@@ -253,13 +263,3 @@ resources = {
 }
 
 [connection signal="pressed" from="BuyCitizens" to="." method="_on_buy_citizens_pressed"]
-[connection signal="editor_description_changed" from="BuyCitizens/UpShelters" to="." method="_on_up_shelters_editor_description_changed"]
-[connection signal="pressed" from="BuyCitizens/UpShelters/PowerPlants" to="." method="_on_power_plants_pressed"]
-[connection signal="pressed" from="BuyCitizens/UpShelters/PowerPlants/FastForward" to="." method="_on_fast_forward_pressed"]
-[connection signal="pressed" from="BuyCitizens/UpShelters/PowerPlants/FastForward/CryoFreezer" to="." method="_on_cryo_freezer_pressed"]
-[connection signal="pressed" from="BuyCitizens/UpShelters/BuildBanks" to="." method="_on_build_banks_pressed"]
-[connection signal="pressed" from="BuyCitizens/BuyWood" to="." method="_on_buy_wood_pressed"]
-[connection signal="pressed" from="BuyCitizens/BuyWood/BuyMetal" to="." method="_on_buy_metal_pressed"]
-[connection signal="pressed" from="BuyCitizens/BuyWood/BuyMetal/BuyCooms" to="." method="_on_buy_cooms_pressed"]
-[connection signal="pressed" from="BuyCitizens/BuyWood/MakeDams" to="." method="_on_make_dams_pressed"]
-[connection signal="pressed" from="BuyCitizens/BuyFood" to="." method="_on_buy_food_pressed"]
