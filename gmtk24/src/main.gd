@@ -66,7 +66,7 @@ func _process(delta: float) -> void:
 	#	fast_forward_until = sim_time + time_skip_amount/2
 	if next_event_until < sim_time:
 		choose_event()
-		next_event_until = sim_time + GV.SEC_IN_DAY + (sim_time/2) * (randf_range(0.0, 2.0) ** 2)
+		next_event_until = sim_time + GV.SEC_IN_DAY + (sim_time/10) * (randf_range(0.0, 2.0) ** 2)
 		#print(GV.display_countdown(next_event_until - sim_time))
 
 var last_event_time = 0
@@ -91,9 +91,9 @@ func choose_event():
 		
 		var event_countdown
 		match diff as Events.CATG:
-			Events.CATG.SMALL: event_countdown = GV.SEC_IN_DAY*7
+			Events.CATG.SMALL: event_countdown = GV.SEC_IN_DAY * 7
 			Events.CATG.MEDIUM: event_countdown = GV.SEC_IN_DAY*7*60
-			Events.CATG.LARGE: event_countdown = GV.SEC_IN_YEAR
+			Events.CATG.LARGE: event_countdown = GV.SEC_IN_YEAR * 4
 		
 		var active_event = ActiveEvent.new(event, dept, event_countdown)
 		active_event.event_expire.connect(event_effect)

@@ -25,10 +25,11 @@ func _process(delta: float) -> void:
 		if time_remaining > 0:
 			countdown.text = 'Time Remaining: ' + GV.display_countdown(time_remaining)
 		else:
-			expire(Color(1,0.5,0.5,0.5), 3)
+			expire(Color(1,0.5,0.5,0.5), 2)
 
 func expire(color, outcome) -> void:
 	self.modulate = color
+	$Cur_text.text = Events.events_desc[active_event.type][2+outcome]
 	choice_tree.visible = false
 	time_tree.visible = false
 	active_event.expire(outcome)
