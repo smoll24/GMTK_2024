@@ -35,6 +35,8 @@ func _ready() -> void:
 		skill_branch.add_point(parent_node.global_position + parent_node.size/2)
 		self.disabled = true
 		parent_node.level_up.connect(enable_button)
+	else:
+		enabled = true
 
 func enable_button(new_level) -> void:
 	if new_level >= required_prev_level:
@@ -50,6 +52,7 @@ func _process(delta: float) -> void:
 	if enabled and has_resources():
 		self.disabled = false
 		skill_branch.default_color = Color(1,1,1)
+		self.self_modulate = Color(0.9,0.9,0.9)
 	else:
 		self.self_modulate = Color(0.5,0.5,0.5)
 

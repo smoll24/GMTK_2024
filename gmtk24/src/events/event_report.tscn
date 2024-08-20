@@ -63,17 +63,24 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Choice1" type="Button" parent="choice_tree"]
+custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_ia855")
 text = "Choice 1"
 alignment = 0
 autowrap_mode = 3
 
 [node name="Choice2" type="Button" parent="choice_tree"]
+custom_minimum_size = Vector2(300, 50)
 layout_mode = 2
+size_flags_horizontal = 0
+size_flags_vertical = 3
 theme_override_styles/normal = SubResource("StyleBoxFlat_xyrsv")
 text = "Choice 2"
 alignment = 0
+autowrap_mode = 3
 
 [node name="HSeparator4" type="HSeparator" parent="choice_tree"]
 custom_minimum_size = Vector2(0, 10)

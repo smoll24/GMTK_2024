@@ -63,6 +63,7 @@ offset_bottom = 399.0
 text = "Upgrade Shelters [500 wood]"
 icon = ExtResource("2_8phaf")
 autowrap_mode = 3
+max_level = 5
 infinite = true
 resources = {
 0: 0,
@@ -105,7 +106,6 @@ offset_bottom = 229.0
 text = "Upgrade FastForward [1000 metal]"
 icon = ExtResource("6_gu043")
 autowrap_mode = 3
-max_level = 1
 resources = {
 0: 0,
 1: 0,

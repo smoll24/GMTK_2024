@@ -92,7 +92,8 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -189.0
+offset_left = -237.0
+offset_right = 8.0
 grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.129412, 0.12549, 0.12549, 1)
@@ -103,9 +104,9 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -373.0
+offset_left = -421.0
 offset_top = -3.0
-offset_right = -171.0
+offset_right = -219.0
 offset_bottom = 2.0
 grow_horizontal = 0
 grow_vertical = 2
@@ -117,32 +118,35 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = 202.0
-offset_right = 204.0
+offset_left = 154.0
+offset_right = 156.0
 grow_horizontal = 2
 grow_vertical = 2
 
 [node name="SpaceEventsList" type="VBoxContainer" parent="Text_open"]
+visible = false
 layout_mode = 0
-offset_left = 792.0
+offset_left = 744.0
 offset_top = -597.0
-offset_right = 1121.0
+offset_right = 1073.0
 offset_bottom = 583.0
 alignment = 2
 
 [node name="HumanEventsList" type="VBoxContainer" parent="Text_open"]
+visible = false
 layout_mode = 0
-offset_left = 792.0
+offset_left = 744.0
 offset_top = -597.0
-offset_right = 1121.0
+offset_right = 1073.0
 offset_bottom = 583.0
 alignment = 2
 
 [node name="NatureEventsList" type="VBoxContainer" parent="Text_open"]
+visible = false
 layout_mode = 0
-offset_left = 792.0
+offset_left = 744.0
 offset_top = -597.0
-offset_right = 1121.0
+offset_right = 1073.0
 offset_bottom = 583.0
 alignment = 2
 
@@ -151,9 +155,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 719.0
+offset_left = 671.0
 offset_top = -268.0
-offset_right = 719.0
+offset_right = 671.0
 offset_bottom = -899.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -187,9 +191,9 @@ hframes = 6
 
 [node name="Close_text" parent="Text_open" instance=ExtResource("4_dyn61")]
 layout_mode = 0
-offset_left = 728.0
+offset_left = 680.0
 offset_top = 60.0
-offset_right = 742.0
+offset_right = 694.0
 offset_bottom = 79.0
 
 [node name="Officer_bg" type="Label" parent="Text_open"]
@@ -198,9 +202,9 @@ anchors_preset = 13
 anchor_left = 0.5
 anchor_right = 0.5
 anchor_bottom = 1.0
-offset_left = -0.500061
+offset_left = -48.5001
 offset_top = 141.0
-offset_right = 203.0
+offset_right = 155.0
 offset_bottom = -312.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -208,7 +212,7 @@ theme = SubResource("Theme_55n37")
 theme_override_styles/normal = SubResource("StyleBoxFlat_a2ivx")
 
 [node name="Officer_img" type="AnimatedSprite2D" parent="Text_open"]
-position = Vector2(691, 236)
+position = Vector2(643, 236)
 scale = Vector2(0.7, 0.7)
 sprite_frames = SubResource("SpriteFrames_1gxdg")
 animation = &"Reyes"
@@ -219,9 +223,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 719.0
+offset_left = 671.0
 offset_top = 42.0
-offset_right = 719.0
+offset_right = 671.0
 offset_bottom = -589.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -268,9 +272,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 719.0
+offset_left = 671.0
 offset_top = 130.0
-offset_right = 719.0
+offset_right = 671.0
 offset_bottom = -501.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -317,9 +321,9 @@ layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 719.0
+offset_left = 671.0
 offset_top = 217.0
-offset_right = 719.0
+offset_right = 671.0
 offset_bottom = -414.0
 grow_horizontal = 2
 grow_vertical = 2
@@ -367,22 +371,23 @@ anchors_preset = 11
 anchor_left = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -372.0
+offset_left = -420.0
+offset_right = -48.0
 offset_bottom = -563.0
 grow_horizontal = 0
 grow_vertical = 2
 color = Color(0.129412, 0.12549, 0.12549, 1)
 
 [node name="Frame" type="Sprite2D" parent="Text_open"]
-position = Vector2(994, 83)
+position = Vector2(946, 83)
 scale = Vector2(3, 3)
 texture = ExtResource("10_dg1cu")
 
 [node name="Label" type="Label" parent="Text_open"]
 layout_mode = 0
-offset_left = 780.0
+offset_left = 732.0
 offset_top = 35.0
-offset_right = 1152.0
+offset_right = 1104.0
 offset_bottom = 60.0
 theme_override_fonts/font = ExtResource("13_x0248")
 theme_override_font_sizes/font_size = 23

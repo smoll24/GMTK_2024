@@ -20,6 +20,8 @@ func _ready() -> void:
 	text_close.visible = true
 	officer_sprite.play()
 	
+	_on_space_icon_pressed()
+	
 func _process(_delta: float) -> void:
 	if Events.cur_dept == Events.DEPT.SPACE:
 		officer_sprite.play("Kessler")
@@ -30,15 +32,23 @@ func _process(_delta: float) -> void:
 
 func add_event_report(event : ActiveEvent, dept : Events.DEPT):
 	var e : EventReport = event_report.instantiate()
+	
 	if dept == Events.DEPT.SPACE:
 		e.init_event(event, "Kessler")
 		space_event_list.add_child(e)
+		remove_old(space_event_list)
 	elif dept == Events.DEPT.HUMAN:
 		e.init_event(event, "Monroe")
 		human_event_list.add_child(e)
+		remove_old(human_event_list)
 	elif dept == Events.DEPT.NATURE:
 		e.init_event(event, "Reyes")
 		nature_event_list.add_child(e)
+		remove_old(nature_event_list)
+
+func remove_old(event_list):
+	if event_list.get_child_count() > 3:
+		event_list.get_children()[0].queue_free()
 
 func _on_close_text_pressed() -> void:
 	Click.play()

@@ -17,6 +17,7 @@ var next_event_until = GV.SEC_IN_DAY*2
 var sim_time_scale : int = 1
 var target_sim_speed : int = 1
 var cryo_timer = 0
+var fast_forward_upgrade_multiplier = 1
 
 var start_sim_unix_time
 
@@ -30,6 +31,15 @@ func _ready() -> void:
 	city_name_label.text = GV.CityName
 	
 	GV.game_over.connect(game_over_screen)
+	$UI/Cryo_frame.visible = false
+	skill_tree.fast_forward_upgrade.connect(upgrade_fast_forward)
+	skill_tree.buy_cryo_freeze.connect(unlock_cryo)
+
+func upgrade_fast_forward() -> void:
+	fast_forward_upgrade_multiplier += 10
+
+func unlock_cryo() -> void:
+	$UI/Cryo_frame.visible = true
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
@@ -115,12 +125,12 @@ func _on_slow_down_pressed() -> void:
 func _on_forward_pressed() -> void:
 	Click.play()
 	time_skip_amount = max(GV.SEC_IN_DAY, sim_time)
-	speed_up(sim_time_scale + GV.SEC_IN_DAY / 2, time_skip_amount)
+	speed_up(sim_time_scale + (GV.SEC_IN_DAY / 2) * fast_forward_upgrade_multiplier, time_skip_amount)
 
 func _on_fast_forward_pressed() -> void:
 	Click.play()
 	time_skip_amount = max(GV.SEC_IN_DAY, sim_time)
-	speed_up(sim_time_scale + GV.SEC_IN_DAY * 31.2, time_skip_amount)
+	speed_up(sim_time_scale + (GV.SEC_IN_DAY * 31.2) * fast_forward_upgrade_multiplier, time_skip_amount)
 
 func _on_cryo_freeze_pressed() -> void:
 	Click.play()
