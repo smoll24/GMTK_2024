@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://evpntvymwwor"]
+[gd_scene load_steps=19 format=3 uid="uid://evpntvymwwor"]
 
 [ext_resource type="PackedScene" uid="uid://bahqtgm80bqap" path="res://src/background.tscn" id="1_404rv"]
 [ext_resource type="Script" path="res://src/main.gd" id="1_eo8i4"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://brj5osgqq1xqi" path="res://src/ui/ui_top_viewport.tscn" id="7_508dp"]
 [ext_resource type="Texture2D" uid="uid://cnwbimr2625if" path="res://assets/ui/ff3.png" id="7_g1rcf"]
 [ext_resource type="PackedScene" uid="uid://dm312lppyqi6y" path="res://src/ui/ui_pause.tscn" id="8_w2nap"]
+[ext_resource type="FontFile" uid="uid://817qgoiy1gah" path="res://assets/resources/font/PixelOperator.ttf" id="10_bdnti"]
 [ext_resource type="Texture2D" uid="uid://ds02eijxnwgv6" path="res://assets/ui/icicles2.png" id="11_ykb7c"]
 [ext_resource type="Texture2D" uid="uid://daglj0lbuunta" path="res://assets/ui/icicles3.png" id="12_ag5kd"]
 [ext_resource type="Texture2D" uid="uid://gd2e4kcqd6ol" path="res://assets/ui/icicles1.png" id="13_nral6"]
@@ -21,6 +22,9 @@ colors = PackedColorArray(0.0235294, 0.427451, 0.65098, 0.470588, 1, 1, 1, 1)
 gradient = SubResource("Gradient_j5h18")
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_nhuxe"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_e0b1f"]
+bg_color = Color(0, 0, 0, 0.772549)
 
 [node name="Main" type="Control"]
 layout_mode = 3
@@ -342,7 +346,6 @@ layout_mode = 1
 mouse_filter = 2
 
 [node name="Pop_up_box" type="Control" parent="UI_Top"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -390,6 +393,95 @@ rotation = 1.5708
 scale = Vector2(4.89071, -4)
 texture = ExtResource("6_2b8w4")
 hframes = 2
+
+[node name="Win_screen" type="Control" parent="UI_Top/Pop_up_box"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI_Top/Pop_up_box/Win_screen"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -221.0
+offset_top = 199.0
+offset_right = 229.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="UI_Top/Pop_up_box/Win_screen/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.25098, 0.635294, 0.290196, 1)
+theme_override_fonts/font = ExtResource("10_bdnti")
+theme_override_font_sizes/font_size = 50
+text = "YOU WIN!"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI_Top/Pop_up_box/Win_screen/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("10_bdnti")
+theme_override_font_sizes/normal_font_size = 25
+text = "Congratulations! You have guided your city for a prosperous 1.3 eons, and now it has come time for you to retire as Chief in Command."
+fit_content = true
+
+[node name="restart_button" type="Button" parent="UI_Top/Pop_up_box/Win_screen/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_bdnti")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_e0b1f")
+text = "Restart"
+
+[node name="Lose_screen" type="Control" parent="UI_Top/Pop_up_box"]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="UI_Top/Pop_up_box/Lose_screen"]
+layout_mode = 1
+anchors_preset = 13
+anchor_left = 0.5
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -221.0
+offset_top = 199.0
+offset_right = 229.0
+offset_bottom = -180.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 20
+
+[node name="Label" type="Label" parent="UI_Top/Pop_up_box/Lose_screen/VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.847059, 0.262745, 0.262745, 1)
+theme_override_fonts/font = ExtResource("10_bdnti")
+theme_override_font_sizes/font_size = 50
+text = "YOU LOSE"
+horizontal_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="UI_Top/Pop_up_box/Lose_screen/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("10_bdnti")
+theme_override_font_sizes/normal_font_size = 25
+text = "Unfortunately, your city has perished due to its numerous struggles throughout the epochs. Better luck next time!"
+fit_content = true
+
+[node name="restart_button" type="Button" parent="UI_Top/Pop_up_box/Lose_screen/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("10_bdnti")
+theme_override_font_sizes/font_size = 30
+theme_override_styles/normal = SubResource("StyleBoxFlat_e0b1f")
+text = "Restart"
 
 [node name="ui_pause" parent="." instance=ExtResource("8_w2nap")]
 layout_mode = 1
@@ -464,3 +556,5 @@ texture = ExtResource("12_ag5kd")
 [connection signal="pressed" from="UI/FastForward" to="." method="_on_fast_forward_pressed"]
 [connection signal="pressed" from="UI/Forward" to="." method="_on_forward_pressed"]
 [connection signal="pressed" from="UI/SlowDown" to="." method="_on_slow_down_pressed"]
+[connection signal="pressed" from="UI_Top/Pop_up_box/Win_screen/VBoxContainer/restart_button" to="." method="_on_restart_button_pressed"]
+[connection signal="pressed" from="UI_Top/Pop_up_box/Lose_screen/VBoxContainer/restart_button" to="." method="_on_restart_button_pressed"]

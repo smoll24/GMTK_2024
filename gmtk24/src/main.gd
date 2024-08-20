@@ -143,3 +143,8 @@ func event_effect(event_type : Events.EVENT, outcome) -> void:
 		Events.EVENT.VOLCANO: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
 		Events.EVENT.CLIMATE_SHIFT: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
 		Events.EVENT.ECOSYS_COLLAPSE: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+
+
+func _on_restart_button_pressed() -> void:
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://src/title_screen.tscn")
