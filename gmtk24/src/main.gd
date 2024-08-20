@@ -106,8 +106,8 @@ func _on_fast_forward_pressed() -> void:
 	time_skip_amount = max(GV.SEC_IN_DAY, sim_time)
 	speed_up(sim_time_scale + + GV.SEC_IN_DAY * 30, time_skip_amount)
 	
-func _on_cryo_pressed() -> void:
-	pass # Replace with function body.
+func _on_cryo_freeze_pressed() -> void:
+	speed_up(sim_time_scale + + GV.SEC_IN_YEAR, time_skip_amount)
 
 func event_effect(event_type : Events.EVENT, outcome) -> void:
 	match event_type as Events.EVENT:
