@@ -5,25 +5,19 @@ class_name EventReport
 @onready var time_tree = $time_tree
 @onready var countdown = $time_tree/Countdown
 
-@onready var choice1 = $choice_tree/Choice1
-@onready var choice2 = $choice_tree/Choice2
-
 @onready var officer_name = $Cur_speaker
 
-var active_event : ActiveEvent: 
-	set(event):
-		active_event = event
-		$Cur_text.text = Events.events_desc[active_event.type][1]
-		choice1.text = Events.events_desc[active_event.type][2]
-		choice2.text = Events.events_desc[active_event.type][3]
-		if Events.cur_dept == Events.DEPT.SPACE:
-			officer_name.text = "Offcier Kessler"
-		elif Events.cur_dept == Events.DEPT.HUMAN:
-			officer_name.text = "Offcier Monroe"
-		elif Events.cur_dept == Events.DEPT.NATURE:
-			officer_name.text = "Offcier Reyes"
-			
+var choice1_bool = true
+var choice2_bool = true
+
+var active_event : ActiveEvent
+		
 func _process(delta: float) -> void:
+	if choice1_bool == false:
+		$choice_tree/Choice1.self_modulate = Color(1,1,1,0.5)
+	if choice2_bool == false:
+		$choice_tree/Choice2.self_modulate = Color(1,1,1,0.5)
+	
 	if active_event != null:
 		var time_remaining = active_event.countdown
 		if time_remaining > 0:
@@ -36,6 +30,40 @@ func expire(color) -> void:
 	choice_tree.visible = false
 	time_tree.visible = false
 	active_event.expire()
-	
+
+func init_event(event : ActiveEvent, officer_name : String):
+	active_event = event
+	$Cur_text.text = Events.events_desc[active_event.type][1]
+	$choice_tree/Choice1.text = Events.events_desc[active_event.type][2]
+	$choice_tree/Choice2.text = Events.events_desc[active_event.type][3]
+	if Events.cur_dept == Events.DEPT.SPACE:
+		officer_name = "Officer Kessler"
+	elif Events.cur_dept == Events.DEPT.HUMAN:
+		officer_name = "Officer Monroe"
+	if Events.cur_dept == Events.DEPT.NATURE:
+		officer_name = "Officer Reyes"
+
 func _on_choice_1_pressed() -> void:
 	expire(Color(0.5,0.5,0.5,0.5))
+
+
+func _on_choice_1_mouse_entered() -> void:
+	if choice1_bool:
+		$choice_tree/Choice1.self_modulate = Color(1.5,1.5,1.5,1.5)
+func _on_choice_1_mouse_exited() -> void:
+	$choice_tree/Choice1.self_modulate = Color(1,1,1,1)
+func _on_choice_2_mouse_entered() -> void:
+	if choice2_bool:
+		$choice_tree/Choice2.self_modulate = Color(1.5,1.5,1.5,1.5)
+func _on_choice_2_mouse_exited() -> void:
+	$choice_tree/Choice2.self_modulate = Color(1,1,1,1)
+
+
+func _on_choice_1_meta_clicked(meta: Variant) -> void:
+	if choice1_bool:
+		print("Choice 1")
+
+
+func _on_choice_2_meta_clicked(meta: Variant) -> void:
+	if choice2_bool:
+		print("Choice 2")

@@ -19,20 +19,15 @@ func _ready() -> void:
 	
 func _process(_delta: float) -> void:
 	if Events.cur_dept == Events.DEPT.SPACE:
-		officer_sprite.visible = true
 		officer_sprite.play("Kessler")
 	elif Events.cur_dept == Events.DEPT.HUMAN:
-		officer_sprite.visible = true
 		officer_sprite.play("Monroe")
 	elif Events.cur_dept == Events.DEPT.NATURE:
-		officer_sprite.visible = true
 		officer_sprite.play("Reyes")
-	else:
-		officer_sprite.visible = false
 
 func add_event_report(event : ActiveEvent):
 	var e : EventReport = event_report.instantiate()
-	e.active_event = event
+	e.init_event(event, 'name')
 	envent_list.add_child(e)
 
 func _on_close_text_pressed() -> void:
