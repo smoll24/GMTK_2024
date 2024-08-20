@@ -143,39 +143,40 @@ func end_cryo_freeze() -> void:
 	target_sim_speed = 1
 
 func event_effect(event_type : Events.EVENT, outcome) -> void:
+	outcome = outcome ** 2
 	match event_type as Events.EVENT:
-		Events.EVENT.SAT_COL: GV.res_dict[GV.RES.COMMS]['amount'] -= 10
-		Events.EVENT.MIN_AST: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.SOL_FLAR: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.LARG_AST: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.SOL_STORM: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.SPACE_DEBRIS: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.SUN_DEATH: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.ALIENS: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.ROGUE_PLANET: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.BLACK_HOLE: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.SAT_COL: GV.res_dict[GV.RES.COMMS]['amount'] -= 10 * outcome
+		Events.EVENT.MIN_AST: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10 * outcome
+		Events.EVENT.SOL_FLAR: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10 * outcome
+		Events.EVENT.LARG_AST: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 100 * outcome
+		Events.EVENT.SOL_STORM: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 100 * outcome
+		Events.EVENT.SPACE_DEBRIS: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 100 * outcome
+		Events.EVENT.SUN_DEATH: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10000 * outcome
+		Events.EVENT.ALIENS: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 1000 * outcome
+		Events.EVENT.ROGUE_PLANET: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 1000 * outcome
+		Events.EVENT.BLACK_HOLE: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 1000 * outcome
 		
-		Events.EVENT.CIV_UNREST: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.CYBERATTACK: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.ECON_DOWN: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.HAPPY_DECILNE: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.PROTESTS: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.RECESSION: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.CULT: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.NUCLEAR_WAR: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.PANDEMIC: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.ECON_COLLAPSE: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.REVOLUTION: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.CIV_UNREST: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10 * outcome
+		Events.EVENT.CYBERATTACK: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10 * outcome
+		Events.EVENT.ECON_DOWN: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10 * outcome
+		Events.EVENT.HAPPY_DECILNE: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10 * outcome
+		Events.EVENT.PROTESTS: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 100 * outcome
+		Events.EVENT.RECESSION: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 100 * outcome
+		Events.EVENT.CULT: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 100 * outcome
+		Events.EVENT.NUCLEAR_WAR: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10000 * outcome
+		Events.EVENT.PANDEMIC: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10000 * outcome
+		Events.EVENT.ECON_COLLAPSE: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 100 * outcome
+		Events.EVENT.REVOLUTION: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10000 * outcome
 		
-		Events.EVENT.RAIN: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.THUNDER: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.EARTHQUAKE: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.DROUGHT: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.FLOOD: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.TORNADO: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.VOLCANO: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.CLIMATE_SHIFT: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
-		Events.EVENT.ECOSYS_COLLAPSE: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10
+		Events.EVENT.RAIN: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10 * outcome
+		Events.EVENT.THUNDER: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10 * outcome
+		Events.EVENT.EARTHQUAKE: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10 * outcome
+		Events.EVENT.DROUGHT: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 100 * outcome
+		Events.EVENT.FLOOD: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 100 * outcome
+		Events.EVENT.TORNADO: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 100 * outcome
+		Events.EVENT.VOLCANO: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 1000 * outcome
+		Events.EVENT.CLIMATE_SHIFT: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10000 * outcome
+		Events.EVENT.ECOSYS_COLLAPSE: GV.res_dict[GV.RES.PEOPLE]['amount'] -= 10000 * outcome
 
 
 func _on_restart_button_pressed() -> void:
