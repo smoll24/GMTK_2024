@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://ddqnukilp40yk"]
 
-[ext_resource type="StyleBox" uid="uid://dfggf31hx5lxh" path="res://assets/ui/skill_node.tres" id="1_4vi10"]
+[ext_resource type="StyleBox" path="res://assets/ui/skill_node.tres" id="1_4vi10"]
 [ext_resource type="Texture2D" uid="uid://cn240gl7kq2rx" path="res://icon.svg" id="1_njus3"]
 [ext_resource type="Script" path="res://src/skills/skill_node.gd" id="2_xl1t3"]
 

@@ -8,7 +8,7 @@ var text_toggle
 @onready var space_event_list = $Text_open/SpaceEventsList
 @onready var human_event_list = $Text_open/HumanEventsList
 @onready var nature_event_list = $Text_open/NatureEventsList
-
+@onready var dept_label = $Text_open/Label
 
 @onready var event_report = preload("res://src/events/event_report.tscn")
 
@@ -58,15 +58,18 @@ func _on_space_icon_pressed() -> void:
 	space_event_list.visible = true
 	human_event_list.visible = false
 	nature_event_list.visible = false
+	dept_label.text = "Department of Space Security"
 	
 func _on_human_icon_pressed() -> void:
 	Events.cur_dept = Events.DEPT.HUMAN
 	space_event_list.visible = false
 	human_event_list.visible = true
 	nature_event_list.visible = false
+	dept_label.text = "Department of Homeland Security"
 
 func _on_nature_icon_pressed() -> void:
 	Events.cur_dept = Events.DEPT.NATURE
 	space_event_list.visible = false
 	human_event_list.visible = false
 	nature_event_list.visible = true
+	dept_label.text = "Department of Environmental Security"

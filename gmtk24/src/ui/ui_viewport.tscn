@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=3 uid="uid://4yspnc4n75hy"]
+[gd_scene load_steps=19 format=3 uid="uid://4yspnc4n75hy"]
 
 [ext_resource type="Script" path="res://src/ui/ui_viewport.gd" id="1_os2fa"]
 [ext_resource type="Texture2D" uid="uid://l8qlbg0dwrmw" path="res://assets/officers/kesslerframe1.png" id="4_4b0th"]
@@ -12,6 +12,7 @@
 [ext_resource type="Texture2D" uid="uid://b4dbcfc3l6ugy" path="res://assets/ui/satellitetree.png" id="10_l4v4a"]
 [ext_resource type="Texture2D" uid="uid://bhs0o47tjp1qj" path="res://assets/ui/fisttree.png" id="11_ysnjj"]
 [ext_resource type="Texture2D" uid="uid://c4u0n5uhmrqq3" path="res://assets/ui/woodtree.png" id="12_757us"]
+[ext_resource type="FontFile" uid="uid://817qgoiy1gah" path="res://assets/resources/font/PixelOperator.ttf" id="13_x0248"]
 
 [sub_resource type="Gradient" id="Gradient_0v7p3"]
 offsets = PackedFloat32Array(0, 0.727273)
@@ -359,6 +360,23 @@ offset_right = 208.0
 offset_bottom = 747.0
 scale = Vector2(0.6, 0.5)
 icon = ExtResource("12_757us")
+
+[node name="Frame" type="Sprite2D" parent="Text_open"]
+position = Vector2(994, 83)
+scale = Vector2(3, 3)
+texture = ExtResource("10_dg1cu")
+
+[node name="Label" type="Label" parent="Text_open"]
+layout_mode = 0
+offset_left = 780.0
+offset_top = 35.0
+offset_right = 1152.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("13_x0248")
+theme_override_font_sizes/font_size = 23
+text = "Department of Space Security
+"
+horizontal_alignment = 1
 
 [node name="Text_close" type="Control" parent="."]
 visible = false
