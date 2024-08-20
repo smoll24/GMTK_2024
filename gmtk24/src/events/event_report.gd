@@ -9,12 +9,11 @@ var choice1_bool = true
 var choice2_bool = true
 
 var active_event : ActiveEvent
-
 		
 func _process(delta: float) -> void:
-	
-	choice1_bool = has_resources(Events.events_desc[active_event.type][5])
-	choice2_bool = has_resources(Events.events_desc[active_event.type][6])
+	if active_event != null:
+		choice1_bool = has_resources(Events.events_desc[active_event.type][5])
+		choice2_bool = has_resources(Events.events_desc[active_event.type][6])
 	
 	if choice1_bool == false:
 		$choice_tree/Choice1.self_modulate = Color(1,1,1,0.5)
@@ -37,10 +36,11 @@ func expire(color, outcome) -> void:
 func init_event(event : ActiveEvent, officer_name : String):
 	active_event = event
 	$Cur_text.text = Events.events_desc[active_event.type][1]
-	$choice_tree/Choice1.text = Events.events_desc[active_event.type][2] 
-	$choice_tree/Choice2.text = Events.events_desc[active_event.type][3] 
+	$choice_tree/Choice1.text = Events.events_desc[active_event.type][2]
+	$choice_tree/Choice1.text = $choice_tree/Choice1.text + " (" + get_cost(Events.events_desc[active_event.type][5]) + ")"
+	$choice_tree/Choice2.text = Events.events_desc[active_event.type][3]
+	$choice_tree/Choice2.text = $choice_tree/Choice2.text + " (" + get_cost(Events.events_desc[active_event.type][6]) + ")"
 	$Cur_speaker.text = officer_name
-
 
 func _on_choice_1_mouse_entered() -> void:
 	if choice1_bool:
@@ -71,3 +71,17 @@ func has_resources(resources) -> bool:
 		if GV.res_dict[res]['amount'] < resources[res]:
 			return false
 	return true
+	
+func get_cost(resources):
+	var cost = ''
+	var length = len(resources.keys())
+	var i = 0
+	for res in resources.keys():
+		i += 1
+		cost += str(resources[res])
+		cost += ' '
+		cost += str(GV.res_dict[res]['name'])
+		if i != length:
+			cost += ', '
+		
+	return cost
