@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dwbj6730rw8f2"]
+[gd_scene load_steps=22 format=3 uid="uid://evpntvymwwor"]
 
 [ext_resource type="PackedScene" uid="uid://bahqtgm80bqap" path="res://src/background.tscn" id="1_404rv"]
 [ext_resource type="Script" path="res://src/main.gd" id="1_eo8i4"]
@@ -91,6 +91,7 @@ grow_vertical = 2
 mouse_filter = 1
 
 [node name="Text_bg" type="TextureRect" parent="UI"]
+layout_mode = 0
 offset_left = 378.0
 offset_top = 85.0
 offset_right = 459.0

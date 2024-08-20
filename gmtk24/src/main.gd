@@ -16,6 +16,7 @@ var next_event_until = GV.SEC_IN_DAY*2
 
 var sim_time_scale : int = 1
 var target_sim_speed : int = 1
+var cryo_timer = 0
 
 var start_sim_unix_time
 
@@ -108,7 +109,12 @@ func _on_fast_forward_pressed() -> void:
 
 func _on_cryo_freeze_pressed() -> void:
 	speed_up(sim_time_scale + + GV.SEC_IN_YEAR, time_skip_amount)
+	cryo_timer = GV.SEC_IN_YEAR * 5_000
 	$Cryo_effect.visible = true
+
+func end_cryo_freeze() -> void:
+	$Cryo_effect.visible = false
+	target_sim_speed = 1
 
 func event_effect(event_type : Events.EVENT, outcome) -> void:
 	match event_type as Events.EVENT:
