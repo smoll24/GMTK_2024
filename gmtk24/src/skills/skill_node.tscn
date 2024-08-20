@@ -1,19 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddqnukilp40yk"]
+[gd_scene load_steps=5 format=3 uid="uid://ddqnukilp40yk"]
 
+[ext_resource type="StyleBox" uid="uid://dfggf31hx5lxh" path="res://assets/ui/skill_node.tres" id="1_4vi10"]
 [ext_resource type="Texture2D" uid="uid://cn240gl7kq2rx" path="res://icon.svg" id="1_njus3"]
 [ext_resource type="Script" path="res://src/skills/skill_node.gd" id="2_xl1t3"]
 
 [sub_resource type="Theme" id="Theme_4rwm4"]
 Button/colors/font_disabled_color = Color(0.340339, 0.34034, 0.340339, 1)
 Button/colors/icon_disabled_color = Color(0.446777, 0.446777, 0.446777, 1)
+Button/styles/disabled = ExtResource("1_4vi10")
+Button/styles/hover = ExtResource("1_4vi10")
+Button/styles/normal = ExtResource("1_4vi10")
+Button/styles/pressed = ExtResource("1_4vi10")
 
 [node name="SkillNode" type="Button"]
-self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 top_level = true
 z_index = 1
 offset_right = 137.0
 offset_bottom = 78.0
 theme = SubResource("Theme_4rwm4")
+text = "test"
 icon = ExtResource("1_njus3")
 expand_icon = true
 script = ExtResource("2_xl1t3")

@@ -1,9 +1,16 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfqpxdvn3ca7d"]
+[gd_scene load_steps=12 format=3 uid="uid://bfqpxdvn3ca7d"]
 
 [ext_resource type="Script" path="res://src/skills/skill_tree.gd" id="1_duxut"]
 [ext_resource type="PackedScene" uid="uid://ddqnukilp40yk" path="res://src/skills/skill_node.tscn" id="1_xlj7l"]
 [ext_resource type="Texture2D" uid="uid://c0hjpyr1gdqij" path="res://assets/ui/sheltertree.png" id="2_8phaf"]
 [ext_resource type="Texture2D" uid="uid://bhs0o47tjp1qj" path="res://assets/ui/fisttree.png" id="3_heq2u"]
+[ext_resource type="Texture2D" uid="uid://bgqne2brlsr0t" path="res://assets/ui/energytree.png" id="5_7fxyk"]
+[ext_resource type="Texture2D" uid="uid://c4u0n5uhmrqq3" path="res://assets/ui/woodtree.png" id="5_a4tub"]
+[ext_resource type="Texture2D" uid="uid://byayn8ymn2mrm" path="res://assets/ui/financetree.png" id="5_ikamr"]
+[ext_resource type="Texture2D" uid="uid://dpb4dsqoohil2" path="res://assets/ui/ff2.png" id="6_gu043"]
+[ext_resource type="Texture2D" uid="uid://81hjphrobqj7" path="res://assets/ui/metaltree.png" id="6_qngh6"]
+[ext_resource type="Texture2D" uid="uid://cv7ahjl0067ys" path="res://assets/ui/foodtree.png" id="7_0y56v"]
+[ext_resource type="Texture2D" uid="uid://c3k8cjut3hehr" path="res://assets/ui/snowflaketree2.png" id="7_whuqa"]
 
 [node name="SkillTree" type="Control"]
 layout_mode = 3
@@ -23,45 +30,131 @@ grow_horizontal = 2
 grow_vertical = 2
 color = Color(0.164706, 0.160784, 0.160784, 0.968627)
 
-[node name="SkillNode" parent="." instance=ExtResource("1_xlj7l")]
+[node name="BuyCitizens" parent="." instance=ExtResource("1_xlj7l")]
 layout_mode = 0
-offset_left = 518.0
-offset_top = 505.0
-offset_right = 657.0
-offset_bottom = 569.0
-text = "Aquire citizens"
+offset_left = 446.0
+offset_top = 509.0
+offset_right = 670.0
+offset_bottom = 578.0
+text = "Aquire citizens [$500 for 1000 people]"
 icon = ExtResource("3_heq2u")
 autowrap_mode = 3
 max_level = 5
 infinite = true
+resources = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0,
+5: 500,
+6: 0
+}
 
-[node name="SkillNode2" parent="SkillNode" instance=ExtResource("1_xlj7l")]
+[node name="UpShelters" parent="BuyCitizens" instance=ExtResource("1_xlj7l")]
 layout_mode = 0
-offset_left = 659.0
-offset_top = 374.0
-offset_right = 723.0
-offset_bottom = 438.0
+offset_left = 709.0
+offset_top = 314.0
+offset_right = 865.0
+offset_bottom = 378.0
+text = "Upgrade Shelters"
 icon = ExtResource("2_8phaf")
-max_level = 10
+autowrap_mode = 3
 
-[node name="SkillNode4" parent="SkillNode/SkillNode2" instance=ExtResource("1_xlj7l")]
+[node name="PowerPlants" parent="BuyCitizens/UpShelters" instance=ExtResource("1_xlj7l")]
 layout_mode = 0
-offset_left = 762.0
-offset_top = 226.0
-offset_right = 826.0
-offset_bottom = 290.0
+offset_left = 893.0
+offset_top = 314.0
+offset_right = 1068.0
+offset_bottom = 378.0
+text = "Upgrade Powerplant"
+icon = ExtResource("5_7fxyk")
+autowrap_mode = 3
+infinite = true
 
-[node name="SkillNode5" parent="SkillNode/SkillNode2" instance=ExtResource("1_xlj7l")]
+[node name="FastForward" parent="BuyCitizens/UpShelters/PowerPlants" instance=ExtResource("1_xlj7l")]
 layout_mode = 0
-offset_left = 565.0
-offset_top = 223.0
-offset_right = 629.0
-offset_bottom = 287.0
+offset_left = 893.0
+offset_top = 229.0
+offset_right = 1068.0
+offset_bottom = 293.0
+text = "Upgrade FastForward"
+icon = ExtResource("6_gu043")
+autowrap_mode = 3
+max_level = 1
+resources = {
+0: 0,
+1: 0,
+2: 0,
+3: 1000,
+4: 0,
+5: 0,
+6: 0
+}
 
-[node name="SkillNode3" parent="SkillNode" instance=ExtResource("1_xlj7l")]
+[node name="CryoFreezer" parent="BuyCitizens/UpShelters/PowerPlants/FastForward" instance=ExtResource("1_xlj7l")]
 layout_mode = 0
-offset_left = 383.0
-offset_top = 367.0
-offset_right = 447.0
-offset_bottom = 431.0
-required_prev_level = 3
+offset_left = 893.0
+offset_top = 149.0
+offset_right = 1068.0
+offset_bottom = 213.0
+text = "Build Cryofreezer"
+icon = ExtResource("7_whuqa")
+autowrap_mode = 3
+max_level = 1
+
+[node name="BuildBanks" parent="BuyCitizens/UpShelters" instance=ExtResource("1_xlj7l")]
+layout_mode = 0
+offset_left = 709.0
+offset_top = 394.0
+offset_right = 865.0
+offset_bottom = 458.0
+text = "Build Banks"
+icon = ExtResource("5_ikamr")
+autowrap_mode = 3
+
+[node name="BuyWood" parent="BuyCitizens" instance=ExtResource("1_xlj7l")]
+layout_mode = 0
+offset_left = 233.0
+offset_top = 506.0
+offset_right = 389.0
+offset_bottom = 570.0
+text = "Buy Wood []"
+icon = ExtResource("5_a4tub")
+autowrap_mode = 3
+infinite = true
+
+[node name="BuyMetal" parent="BuyCitizens/BuyWood" instance=ExtResource("1_xlj7l")]
+layout_mode = 0
+offset_left = 120.0
+offset_top = 321.0
+offset_right = 276.0
+offset_bottom = 385.0
+text = "Buy Metal"
+icon = ExtResource("6_qngh6")
+autowrap_mode = 3
+infinite = true
+
+[node name="MakeDams" parent="BuyCitizens/BuyWood" instance=ExtResource("1_xlj7l")]
+layout_mode = 0
+offset_left = 312.0
+offset_top = 233.0
+offset_right = 468.0
+offset_bottom = 297.0
+text = "Make Dams"
+icon = ExtResource("5_a4tub")
+autowrap_mode = 3
+
+[node name="BuyFood" parent="BuyCitizens" instance=ExtResource("1_xlj7l")]
+layout_mode = 0
+offset_left = 526.0
+offset_top = 233.0
+offset_right = 682.0
+offset_bottom = 297.0
+text = "Buy Food
+"
+icon = ExtResource("7_0y56v")
+autowrap_mode = 3
+infinite = true
+
+[connection signal="pressed" from="BuyCitizens" to="." method="_on_buy_citizens_pressed"]

@@ -19,7 +19,7 @@ var res_dict : Dictionary = {
 	RES.LUMBER : {'name' : 'Lumber','amount' : 500.0, 'growth' : 1.0/SEC_IN_DAY},
 	RES.METAL : {'name' : 'Metal','amount' : 0.0, 'growth' : 1.0/SEC_IN_DAY},
 	RES.ENERGY : {'name' : 'Energy','amount' : 500.0, 'growth' : 1.0/SEC_IN_DAY},
-	RES.FINANCE : {'name' : 'Finance','amount' : 0.0, 'growth' : 1.0/SEC_IN_DAY},
+	RES.FINANCE : {'name' : 'Finance','amount' : 750.0, 'growth' : 1.0/SEC_IN_DAY},
 	RES.COMMS : {'name' : 'Communication', 'amount' : 100.0, 'growth' : 1.0/SEC_IN_DAY},
 }
 
