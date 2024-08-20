@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bfqpxdvn3ca7d"]
+[gd_scene load_steps=13 format=3 uid="uid://bfqpxdvn3ca7d"]
 
 [ext_resource type="Script" path="res://src/skills/skill_tree.gd" id="1_duxut"]
 [ext_resource type="PackedScene" uid="uid://ddqnukilp40yk" path="res://src/skills/skill_node.tscn" id="1_xlj7l"]
@@ -11,6 +11,7 @@
 [ext_resource type="Texture2D" uid="uid://81hjphrobqj7" path="res://assets/ui/metaltree.png" id="6_qngh6"]
 [ext_resource type="Texture2D" uid="uid://cv7ahjl0067ys" path="res://assets/ui/foodtree.png" id="7_0y56v"]
 [ext_resource type="Texture2D" uid="uid://c3k8cjut3hehr" path="res://assets/ui/snowflaketree2.png" id="7_whuqa"]
+[ext_resource type="Texture2D" uid="uid://b4dbcfc3l6ugy" path="res://assets/ui/satellitetree.png" id="11_mu2si"]
 
 [node name="SkillTree" type="Control"]
 layout_mode = 3
@@ -33,10 +34,10 @@ color = Color(0.164706, 0.160784, 0.160784, 0.968627)
 [node name="BuyCitizens" parent="." instance=ExtResource("1_xlj7l")]
 self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
-offset_left = 446.0
-offset_top = 509.0
-offset_right = 670.0
-offset_bottom = 578.0
+offset_left = 495.0
+offset_top = 330.0
+offset_right = 701.0
+offset_bottom = 399.0
 text = "Aquire citizens [$500 for 1000 people]"
 icon = ExtResource("3_heq2u")
 autowrap_mode = 3
@@ -55,34 +56,53 @@ resources = {
 [node name="UpShelters" parent="BuyCitizens" instance=ExtResource("1_xlj7l")]
 self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
-offset_left = 709.0
-offset_top = 314.0
-offset_right = 865.0
-offset_bottom = 378.0
-text = "Upgrade Shelters"
+offset_left = 732.0
+offset_top = 334.0
+offset_right = 953.0
+offset_bottom = 398.0
+text = "Upgrade Shelters [500 wood]"
 icon = ExtResource("2_8phaf")
 autowrap_mode = 3
+infinite = true
+resources = {
+0: 0,
+1: 0,
+2: 500,
+3: 0,
+4: 0,
+5: 0,
+6: 0
+}
 
 [node name="PowerPlants" parent="BuyCitizens/UpShelters" instance=ExtResource("1_xlj7l")]
 self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
-offset_left = 893.0
-offset_top = 314.0
-offset_right = 1068.0
-offset_bottom = 378.0
-text = "Upgrade Powerplant"
+offset_left = 729.0
+offset_top = 247.0
+offset_right = 1003.0
+offset_bottom = 316.0
+text = "Upgrade Powerplant [250 metal & 250 wood for 1000 energy]"
 icon = ExtResource("5_7fxyk")
 autowrap_mode = 3
 infinite = true
+resources = {
+0: 0,
+1: 0,
+2: 250,
+3: 250,
+4: 0,
+5: 0,
+6: 0
+}
 
 [node name="FastForward" parent="BuyCitizens/UpShelters/PowerPlants" instance=ExtResource("1_xlj7l")]
 self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
-offset_left = 893.0
-offset_top = 229.0
-offset_right = 1068.0
-offset_bottom = 293.0
-text = "Upgrade FastForward"
+offset_left = 739.0
+offset_top = 155.0
+offset_right = 914.0
+offset_bottom = 219.0
+text = "Upgrade FastForward [1000 metal]"
 icon = ExtResource("6_gu043")
 autowrap_mode = 3
 max_level = 1
@@ -99,72 +119,147 @@ resources = {
 [node name="CryoFreezer" parent="BuyCitizens/UpShelters/PowerPlants/FastForward" instance=ExtResource("1_xlj7l")]
 self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
-offset_left = 893.0
-offset_top = 149.0
-offset_right = 1068.0
-offset_bottom = 213.0
-text = "Build Cryofreezer"
+offset_left = 737.0
+offset_top = 76.0
+offset_right = 1002.0
+offset_bottom = 140.0
+text = "Build Cryofreezer [500 metal &  1000 comms]"
 icon = ExtResource("7_whuqa")
 autowrap_mode = 3
 max_level = 1
+resources = {
+0: 0,
+1: 0,
+2: 0,
+3: 500,
+4: 0,
+5: 0,
+6: 1000
+}
 
 [node name="BuildBanks" parent="BuyCitizens/UpShelters" instance=ExtResource("1_xlj7l")]
 self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
-offset_left = 709.0
-offset_top = 394.0
-offset_right = 865.0
-offset_bottom = 458.0
-text = "Build Banks"
+offset_left = 754.0
+offset_top = 420.0
+offset_right = 929.0
+offset_bottom = 484.0
+text = "Build Banks [500 comms]"
 icon = ExtResource("5_ikamr")
 autowrap_mode = 3
+infinite = true
+resources = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0,
+5: 0,
+6: 500
+}
 
 [node name="BuyWood" parent="BuyCitizens" instance=ExtResource("1_xlj7l")]
 self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
-offset_left = 233.0
-offset_top = 506.0
-offset_right = 389.0
-offset_bottom = 570.0
-text = "Buy Wood []"
+offset_left = 263.0
+offset_top = 330.0
+offset_right = 469.0
+offset_bottom = 399.0
+text = "Build Woodmill [$500]"
 icon = ExtResource("5_a4tub")
 autowrap_mode = 3
 infinite = true
+resources = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0,
+5: 500,
+6: 0
+}
 
 [node name="BuyMetal" parent="BuyCitizens/BuyWood" instance=ExtResource("1_xlj7l")]
 self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
-offset_left = 120.0
-offset_top = 321.0
-offset_right = 276.0
-offset_bottom = 385.0
-text = "Buy Metal"
+offset_left = 314.0
+offset_top = 424.0
+offset_right = 470.0
+offset_bottom = 493.0
+text = "Build Mine [$2000]"
 icon = ExtResource("6_qngh6")
 autowrap_mode = 3
 infinite = true
+resources = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0,
+5: 2000,
+6: 0
+}
+
+[node name="BuyCooms" parent="BuyCitizens/BuyWood/BuyMetal" instance=ExtResource("1_xlj7l")]
+layout_mode = 0
+offset_left = 261.0
+offset_top = 513.0
+offset_right = 477.0
+offset_bottom = 582.0
+text = "Buy Satelites [200 metal for 1000 coms]"
+icon = ExtResource("11_mu2si")
+autowrap_mode = 3
+infinite = true
+resources = {
+0: 0,
+1: 0,
+2: 0,
+3: 200,
+4: 0,
+5: 0,
+6: 0
+}
 
 [node name="MakeDams" parent="BuyCitizens/BuyWood" instance=ExtResource("1_xlj7l")]
 self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
-offset_left = 312.0
-offset_top = 233.0
-offset_right = 468.0
-offset_bottom = 297.0
-text = "Make Dams"
+offset_left = 293.0
+offset_top = 252.0
+offset_right = 464.0
+offset_bottom = 316.0
+text = "Make Dams [500 wood]"
 icon = ExtResource("5_a4tub")
 autowrap_mode = 3
+resources = {
+0: 0,
+1: 0,
+2: 500,
+3: 0,
+4: 0,
+5: 0,
+6: 0
+}
 
 [node name="BuyFood" parent="BuyCitizens" instance=ExtResource("1_xlj7l")]
 self_modulate = Color(0.321569, 0.321569, 0.321569, 1)
 layout_mode = 0
-offset_left = 526.0
-offset_top = 233.0
-offset_right = 682.0
-offset_bottom = 297.0
-text = "Buy Food
+offset_left = 496.0
+offset_top = 244.0
+offset_right = 690.0
+offset_bottom = 313.0
+text = "Buy Food [$100 for 1000 food]
 "
 icon = ExtResource("7_0y56v")
 autowrap_mode = 3
 infinite = true
+resources = {
+0: 0,
+1: 0,
+2: 0,
+3: 0,
+4: 0,
+5: 100,
+6: 0
+}
 
 [connection signal="pressed" from="BuyCitizens" to="." method="_on_buy_citizens_pressed"]
