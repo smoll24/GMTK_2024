@@ -30,19 +30,21 @@ func _process(_delta: float) -> void:
 	elif Events.cur_dept == Events.DEPT.NATURE:
 		officer_sprite.play("Reyes")
 
-func add_event_report(event : ActiveEvent, dept : Events.DEPT):
+func add_event_report(event : ActiveEvent, dept : Events.DEPT, time):
 	var e : EventReport = event_report.instantiate()
+	var sufix1 = ' Jr.'.repeat(int(time/(GV.SEC_IN_YEAR * 120)))
+	var sufix2 = ' the ' + str(1 + int(time/(GV.SEC_IN_YEAR * 120)))
 	
 	if dept == Events.DEPT.SPACE:
-		e.init_event(event, "Kessler")
+		e.init_event(event, "Kessler" + sufix2)
 		space_event_list.add_child(e)
 		remove_old(space_event_list)
 	elif dept == Events.DEPT.HUMAN:
-		e.init_event(event, "Monroe")
+		e.init_event(event, "Monroe" + sufix1)
 		human_event_list.add_child(e)
 		remove_old(human_event_list)
 	elif dept == Events.DEPT.NATURE:
-		e.init_event(event, "Reyes")
+		e.init_event(event, "Reyes" + sufix1)
 		nature_event_list.add_child(e)
 		remove_old(nature_event_list)
 

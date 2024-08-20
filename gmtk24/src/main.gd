@@ -101,7 +101,7 @@ func choose_event():
 		Events.cur_events.append(active_event)
 		Events.avail_dept.erase(dept)
 		print("Event chosen is: ", Events.events_desc[event][0])
-		event_report_ui.add_event_report(active_event, dept)
+		event_report_ui.add_event_report(active_event, dept, sim_time)
 		
 		var event_notif = event_popup.instantiate()
 		notification_tree.add_child(event_notif)

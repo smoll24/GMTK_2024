@@ -28,8 +28,9 @@ layout_mode = 2
 theme_override_colors/default_color = Color(0.541176, 0.745098, 0.247059, 1)
 theme_override_fonts/normal_font = ExtResource("1_qnw2m")
 theme_override_font_sizes/normal_font_size = 25
-text = "Officer Kessler"
+text = "Officer"
 fit_content = true
+autowrap_mode = 0
 
 [node name="time_tree" type="VBoxContainer" parent="."]
 layout_mode = 2
