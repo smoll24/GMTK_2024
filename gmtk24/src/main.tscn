@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://evpntvymwwor"]
+[gd_scene load_steps=23 format=3 uid="uid://dwbj6730rw8f2"]
 
 [ext_resource type="PackedScene" uid="uid://bahqtgm80bqap" path="res://src/background.tscn" id="1_404rv"]
 [ext_resource type="Script" path="res://src/main.gd" id="1_eo8i4"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://brj5osgqq1xqi" path="res://src/ui/ui_top_viewport.tscn" id="7_508dp"]
 [ext_resource type="Texture2D" uid="uid://cnwbimr2625if" path="res://assets/ui/ff3.png" id="7_g1rcf"]
 [ext_resource type="PackedScene" uid="uid://dm312lppyqi6y" path="res://src/ui/ui_pause.tscn" id="8_w2nap"]
+[ext_resource type="Texture2D" uid="uid://dslfsknakocfx" path="res://assets/ui/skill_tree.png" id="10_7vdmo"]
 [ext_resource type="FontFile" uid="uid://817qgoiy1gah" path="res://assets/resources/font/PixelOperator.ttf" id="10_bdnti"]
 [ext_resource type="Texture2D" uid="uid://ds02eijxnwgv6" path="res://assets/ui/icicles2.png" id="11_ykb7c"]
 [ext_resource type="Texture2D" uid="uid://daglj0lbuunta" path="res://assets/ui/icicles3.png" id="12_ag5kd"]
@@ -346,6 +347,58 @@ grow_horizontal = 2
 visible = false
 layout_mode = 1
 
+[node name="SkillTree_frame" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 2.0
+offset_top = -338.0
+offset_right = 2.0
+offset_bottom = -969.0
+grow_horizontal = 2
+grow_vertical = 2
+scale = Vector2(0.8, 0.8)
+
+[node name="Frame3" type="Sprite2D" parent="SkillTree_frame"]
+position = Vector2(103, 588)
+rotation = 1.5708
+scale = Vector2(4, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
+
+[node name="Frame4" type="Sprite2D" parent="SkillTree_frame"]
+position = Vector2(63, 634)
+scale = Vector2(4, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
+
+[node name="Frame5" type="Sprite2D" parent="SkillTree_frame"]
+position = Vector2(17, 590.129)
+rotation = 1.5708
+scale = Vector2(4.34412, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
+
+[node name="Frame2" type="Sprite2D" parent="SkillTree_frame"]
+position = Vector2(60, 548)
+scale = Vector2(4.25, 4)
+texture = ExtResource("6_2b8w4")
+hframes = 6
+
+[node name="SkillTreeToggle" type="Button" parent="SkillTree_frame"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -1130.0
+offset_top = 551.0
+offset_right = -972.0
+offset_bottom = 709.0
+grow_horizontal = 0
+scale = Vector2(0.5, 0.5)
+icon = ExtResource("10_7vdmo")
+
 [node name="UI_Top" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -637,5 +690,6 @@ texture = ExtResource("12_ag5kd")
 [connection signal="pressed" from="UI/FastForward_frame/FastForward" to="." method="_on_fast_forward_pressed"]
 [connection signal="pressed" from="UI/Forward_frame/Forward" to="." method="_on_forward_pressed"]
 [connection signal="pressed" from="UI/SlowDown_frame/SlowDown" to="." method="_on_slow_down_pressed"]
+[connection signal="pressed" from="SkillTree_frame/SkillTreeToggle" to="." method="_on_skill_tree_toggle_pressed"]
 [connection signal="pressed" from="UI_Top/Pop_up_box/Win_screen/VBoxContainer/restart_button" to="." method="_on_restart_button_pressed"]
 [connection signal="pressed" from="UI_Top/Pop_up_box/Lose_screen/VBoxContainer/restart_button" to="." method="_on_restart_button_pressed"]
