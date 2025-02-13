@@ -16,10 +16,10 @@ All art and code was made in 5 days in the time of the game jam by Kalanoka, Cmo
 
 ### Credits
 
-Art by Strawfumi
-Code by Cmoll24
-Writing and Code by Kalanoka
-Created using Godot Game Engine
-Sound effects provided by https://www.zapsplat.com/
-'Tetanus' created by Aviators
-Art made with Piskel and Clip Studio Paint
+* Art by Strawfumi
+* Code by Cmoll24
+* Writing and Code by Kalanoka
+* Created using Godot Game Engine
+* Sound effects provided by https://www.zapsplat.com/
+* 'Tetanus' created by Aviators
+* Art made with Piskel and Clip Studio Paint
